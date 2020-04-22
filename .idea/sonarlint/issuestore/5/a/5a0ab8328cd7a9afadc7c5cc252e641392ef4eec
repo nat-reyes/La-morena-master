@@ -1,0 +1,11 @@
+
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(—Ü¹êıÿÿÿÿ
+Dsquid:S1068"-Remove this unused "mActivity" private field.(ïĞÔ’
+Csquid:S1068",Remove this unused "mcontext" private field.(®¬æ
+nsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(•Ä£’ûÿÿÿÿ8¨ê­¹ˆ.
+Hsquid:S1068`"*Remove this unused "nombre" private field.(óø‹8¨ê­¹ˆ.
+gsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(ë´¥íúÿÿÿÿ
+9squid:S1659`""Declare "cant" on a separate line.(óø‹
+nsquid:CommentedOutCodeLinef"<This block of commented-out lines of code should be removed.(¸ïÊÌøÿÿÿÿ8…å–ˆ.
+?squid:S1068`"(Remove this unused "cant" private field.(óø‹
+Dsquid:S1068_"-Remove this unused "imageView" private field.(øû¯

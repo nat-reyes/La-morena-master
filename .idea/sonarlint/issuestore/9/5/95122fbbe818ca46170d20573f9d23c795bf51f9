@@ -1,0 +1,6 @@
+
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ó™´š
+Msquid:S1905#"*Remove this unnecessary cast to "Toolbar".(«ó·øÿÿÿÿ8©»ìˆ.
+’squid:UselessImportCheck"bRemove this unused import 'com.google.android.material.floatingactionbutton.FloatingActionButton'.(ôˆêãÿÿÿÿÿ8¶Á´ìˆ.
+esquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(äÏıÿ
+usquid:UselessImportCheck	"JRemove this unused import 'com.google.android.material.snackbar.Snackbar'.(ë„ƒŠ8¶Á´ìˆ.
