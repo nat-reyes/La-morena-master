@@ -430,7 +430,8 @@ public class Login extends AppCompatActivity {
                                 }
 
 
-                                user = new User(id,idCard,firstName,lastName,email,password,birthDay,gender,number,address,type,token,picture);
+                                //user = new User(id,idCard,firstName,lastName,email,password,birthDay,gender,number,address,type,token,picture);
+                                user = User.getInstance();
                                 saveUser(user);
                                 savePreferences(user);
                                 progressDialog.dismiss();

@@ -1,7 +1,6 @@
 package com.example.lamorena.Activities;
 
 import android.app.ProgressDialog;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkError;
 import com.android.volley.NetworkResponse;
@@ -12,7 +11,7 @@ import com.android.volley.TimeoutError;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-
+import com.example.lamorena.Entities.User;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +42,7 @@ import java.util.regex.Pattern;
 
 public class RegistryUser extends AppCompatActivity {
 
-    private EditText cardId,name,email,password,confirmPassword;
+    private EditText cardId,name,email,password,confirmPassword,apellido,telefono;
     private Url url;
     private RequestQueue queue;
     private ProgressDialog progressDialog;
@@ -64,6 +63,8 @@ public class RegistryUser extends AppCompatActivity {
         email = (EditText) findViewById(R.id.input_email);
         password = (EditText) findViewById(R.id.input_password);
         confirmPassword = (EditText) findViewById(R.id.input_confirmPassword);
+        apellido = (EditText) findViewById(R.id.input_apellido);
+        telefono = (EditText) findViewById(R.id.input_cel);
         mAuth = FirebaseAuth.getInstance();
 
         url = new Url();
@@ -74,17 +75,28 @@ public class RegistryUser extends AppCompatActivity {
 
     public void createAccount(View view) {
         progressDialog = new ProgressDialog(RegistryUser.this, R.style.MyAlertDialogStyle);
+        User usuario = User.getInstance();
+
 
         String cardId = this.cardId.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
         String confirmPassword = this.confirmPassword.getText().toString();
         String name = this.name.getText().toString();
-
+        String apellido = this.apellido.getText().toString();
+        String telefono = this.telefono.getText().toString();
+        FirebaseUser user = mAuth.getCurrentUser();
         if(validatefields(email,password,confirmPassword,name,cardId)){
             if(validatePasswords(password,confirmPassword)) {
-
                 if(Utils.veirifyConnection(this)){
+
+                    usuario.setAddres(this.email.getText().toString());
+                    usuario.setIdCard(this.cardId.getText().toString());
+                    usuario.setFirstName(this.name.getText().toString());
+                    usuario.setApellido(this.apellido.getText().toString());
+                    usuario.setTel(this.telefono.getText().toString());
+                    usuario.setPassword(this.password.getText().toString());
+
                     showDialogWait(progressDialog);
                     //serviceConnectLogin(email, password,name,cardId,view);
                     signUpNewUserWithEmail(email,password);

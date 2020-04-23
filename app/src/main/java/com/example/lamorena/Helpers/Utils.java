@@ -12,7 +12,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-
+import com.example.lamorena.Entities.User;
 import androidx.annotation.NonNull;
 
 import com.example.lamorena.R;
@@ -21,13 +21,16 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -182,11 +185,18 @@ public class Utils {
 
     public static void saveUserFirebaseDatabase(FirebaseUser user, FirebaseFirestore db){
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("UserId",user.getUid());
-        userMap.put("Name",user.getDisplayName());
-        userMap.put("Email",user.getEmail());
-        userMap.put("Phone",user.getPhoneNumber());
+        System.out.println(user.getUid()+" - "+user);
+        User usuario = User.getInstance();
 
+        userMap.put("UserId",user.getUid());
+        userMap.put("Name",usuario.getFirstName());
+        userMap.put("apellido",usuario.getApellido());
+        userMap.put("cedula",usuario.getIdCard());
+        userMap.put("Email",usuario.getAddres());
+        userMap.put("Phone",usuario.getTel());
+        CollectionReference bda=db.collection("Users");
+        Query q = db.collection("Users");
+        q.
         db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {

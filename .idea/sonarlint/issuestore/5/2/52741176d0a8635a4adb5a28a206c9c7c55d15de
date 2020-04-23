@@ -1,25 +1,0 @@
-
-Usquid:S11353"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ8µ”Ä—ˆ.
-Qsquid:S1135Ó"2Complete the task associated to this TODO comment.(åµÈ¶8µ”Ä—ˆ.
-Qsquid:S1135ö"2Complete the task associated to this TODO comment.(‡‚ùˆ8µ”Ä—ˆ.
-isquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(ú•íõ8µ”Ä—ˆ.
-rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†î÷û
-Usquid:S1135)"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ8µ”Ä—ˆ.
-msquid:S14504"VRemove the "mParam1" field and declare it as a local variable in the relevant methods.(•Íï‘
-tsquid:S14505"VRemove the "mParam2" field and declare it as a local variable in the relevant methods.(¡ˆ€ 8µ”Ä—ˆ.
-osquid:CommentedOutCodeLineË"<This block of commented-out lines of code should be removed.(õÂàÿÿÿÿÿ8µ”Ä—ˆ.
-isquid:CommentedOutCodeLineÄ"<This block of commented-out lines of code should be removed.(ôğÏQ8µ”Ä—ˆ.
-|squid:UselessImportCheck"LRemove this unused import 'com.example.appbeber.Activities.ProfileActivity'.(½¿Ş‹üÿÿÿÿ8æ˜Ê»ˆ.
-Bsquid:S10684"+Remove this unused "mParam1" private field.(•Íï‘
-nsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(õÂàÿÿÿÿÿ8µ”Ä—ˆ.
-isquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(ªŒÑï8µ”Ä—ˆ.
-nsquid:CommentedOutCodeLinep"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ8µ”Ä—ˆ.
-ssquid:S00100è"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁğõÇúÿÿÿÿ8µ”Ä—ˆ.
-Usquid:S1135E"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ8µ”Ä—ˆ.
-isquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(ã’æş8µ”Ä—ˆ.
-<squid:S17001"Rename field "categories"(‘Ñİÿÿÿÿÿ8ÃÌÌ—ˆ.
-msquid:HiddenFieldCheck">Rename "categories" which hides the field declared at line 49.(¼ÙÅıÿÿÿÿ8ÃÌÌ—ˆ.
-jsquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(Ó»ñÈ8µ”Ä—ˆ.
-Isquid:S10685"+Remove this unused "mParam2" private field.(¡ˆ€ 8µ”Ä—ˆ.
-jsquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(ã’æş8µ”Ä—ˆ.
-]squid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8¯¡ÛÃˆ.

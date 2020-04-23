@@ -1,27 +1,0 @@
-
-Fsquid:S1905P"*Remove this unnecessary cast to "Toolbar".(«ó·øÿÿÿÿ
-Msquid:S1905E"7Remove this unnecessary cast to "FloatingActionButton".(–“€G
-jsquid:MaximumInheritanceDepth""<This class has 6 parents which is greater than 5 authorized.(ù‡¹êüÿÿÿÿ
-isquid:CommentedOutCodeLinem"<This block of commented-out lines of code should be removed.(¥í§ã8¾¨•ˆ.
-rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ó™´š
-hsquid:S2259w"JA "NullPointerException" could be thrown; "userPhotoUrl" is nullable here.(Ë’¤ğ8ûÉ›ú‹.
-Fsquid:S1659%"#Declare "email" on a separate line.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Lsquid:S1659%")Declare "phoneNumber" on a separate line.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Ssquid:S1659%"0Declare "identificationCard" on a separate line.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-vsquid:S1450%"SRemove the "name" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-wsquid:S1450%"TRemove the "email" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-}squid:S1450%"ZRemove the "phoneNumber" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-„squid:S1450%"aRemove the "identificationCard" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-vsquid:S1450)"SRemove the "user" field and declare it as a local variable in the relevant methods.(š·àûÿÿÿÿ8ûÉ›ú‹.
-`squid:S1854v"=Remove this useless assignment to local variable "userEmail".(Şã¶­øÿÿÿÿ8ûÉ›ú‹.
-Ysquid:S1854u"<Remove this useless assignment to local variable "userName".(å‚‘w8ûÉ›ú‹.
-]squid:S1854s":Remove this useless assignment to local variable "userId".(à¤ÿ¦ûÿÿÿÿ8ûÉ›ú‹.
-Nsquid:S1481s"+Remove this unused "userId" local variable.(à¤ÿ¦ûÿÿÿÿ8ûÉ›ú‹.
-Jsquid:S1481u"-Remove this unused "userName" local variable.(å‚‘w8ûÉ›ú‹.
-Qsquid:S1481v".Remove this unused "userEmail" local variable.(Şã¶­øÿÿÿÿ8ûÉ›ú‹.
-_squid:UnusedPrivateMethode".Remove this unused private "setHeader" method.(Ë¯ü²üÿÿÿÿ8ûÉ›ú‹.
-Ksquid:S1068%"(Remove this unused "name" private field.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Lsquid:S1068%")Remove this unused "email" private field.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Rsquid:S1068%"/Remove this unused "phoneNumber" private field.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Ysquid:S1068%"6Remove this unused "identificationCard" private field.(åŸ×ûÿÿÿÿ8ûÉ›ú‹.
-Ksquid:S1068)"(Remove this unused "user" private field.(š·àûÿÿÿÿ8ûÉ›ú‹.

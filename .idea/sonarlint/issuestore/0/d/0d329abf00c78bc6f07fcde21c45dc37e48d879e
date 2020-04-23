@@ -1,14 +1,0 @@
-
-Osquid:S1068g",Remove this unused "quantity" private field.(Í–üßüÿÿÿÿ8à–ÙÄˆ.
-Nsquid:S1068h"0Remove this unused "productImage" private field.(Í¹€8ûË¤Åˆ.
-Nsquid:S1659g"+Declare "discountPrice" on a separate line.(Í–üßüÿÿÿÿ8ªƒÓÄˆ.
-Isquid:S1659g"&Declare "quantity" on a separate line.(Í–üßüÿÿÿÿ8à–ÙÄˆ.
-Dsquid:S1659h"&Declare "favImage" on a separate line.(Í¹€8ƒÀÕÄˆ.
-Dsquid:S1068"-Remove this unused "mActivity" private field.(ïĞÔ’
-?squid:S1659g"#Declare "price" on a separate line.(Í–üßüÿÿÿÿ
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(—Ü¹êıÿÿÿÿ
-Csquid:S1068",Remove this unused "mcontext" private field.(®¬æ
-Xsquid:S1068f":Remove this unused "onProductClickListener" private field.(Ã ±¡8©ïßÄˆ.
-Jsquid:S1068h",Remove this unused "favImage" private field.(Í¹€8ƒÀÕÄˆ.
-gsquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(ë´¥íúÿÿÿÿ
-Bsquid:S1659g"&Declare "discount" on a separate line.(Í–üßüÿÿÿÿ

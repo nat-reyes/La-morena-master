@@ -78,8 +78,38 @@
                                 android:inputType="textPersonName"
                                 android:hint="@string/firstName" />
                         </com.google.android.material.textfield.TextInputLayout>
-
-
+                        <!--  Email Label -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxBackgroundColor="@color/secondaryTextColor"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="8dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/input_apellido"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:hint="Apellido" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <!--  Email Label -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:boxBackgroundColor="@color/secondaryTextColor"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="8dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/input_cel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:hint="Telefono" />
+                        </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"

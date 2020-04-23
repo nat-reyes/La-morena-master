@@ -1,9 +1,17 @@
 package com.example.lamorena.Entities;
 
 public class User {
-    private  String id,idCard,firstName,lastname,email,password,birthDay,gender,number,addres,picture,type,token;
-
-    public User(String id, String idCard, String firstName, String lastname, String email, String password, String birthDay, String gender, String number, String addres, String type,String token,String picture) {
+    private  String id,idCard,firstName,lastname,email,password,birthDay,gender,number,addres,picture,type,token,apellido,tel;
+    private static User usuario;
+    public static User getInstance(){
+        if(usuario == null){
+            usuario = new User();
+        }
+        return usuario;
+    }
+    private User(){
+    }
+    /*public User(String id, String idCard, String firstName, String lastname, String email, String password, String birthDay, String gender, String number, String addres, String type,String token,String picture) {
         this.id = id;
         this.idCard = idCard;
         this.firstName = firstName;
@@ -17,10 +25,26 @@ public class User {
         this.type = type;
         this.token = token;
         this.picture = picture;
-    }
+    }*/
 
     public String getType() {
         return type;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public void setType(String type) {
