@@ -183,6 +183,10 @@ public class Utils {
     public static void saveUserFirebaseDatabase(FirebaseUser user, FirebaseFirestore db){
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("UserId",user.getUid());
+        Log.e("user", user.getEmail());
+        Log.e("user", user.getPhoneNumber());
+        Log.e("id",  user.getUid());
+        Log.e("db",  db.toString());
         userMap.put("Name",user.getDisplayName());
         userMap.put("Email",user.getEmail());
         userMap.put("Phone",user.getPhoneNumber());
