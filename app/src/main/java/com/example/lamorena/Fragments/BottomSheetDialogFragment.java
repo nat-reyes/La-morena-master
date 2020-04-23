@@ -49,9 +49,6 @@ public class BottomSheetDialogFragment extends com.google.android.material.botto
                 view  = inflater.inflate(R.layout.fragment_bottom_sheet_dialog_id, container, false);
                 break;
 
-            case MODAL_ADDCART:
-                view  = inflater.inflate(R.layout.fragment_bottom_sheet_dialog_cart, container, false);
-                break;
 
                 default:
                     view = inflater.inflate(R.layout.fragment_bottom_sheet_dialog_name, container, false);

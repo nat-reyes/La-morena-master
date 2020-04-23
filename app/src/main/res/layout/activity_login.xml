@@ -18,14 +18,6 @@ tools:context="com.example.lamorena.Activities.Login">
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_beers_round"
-
-        android:elevation="15dp"
-        android:layout_gravity="center_horizontal" />
-
 
     <LinearLayout
         android:layout_marginTop="-50dp"

@@ -64,7 +64,6 @@ public class RegistryUser extends AppCompatActivity {
         email = (EditText) findViewById(R.id.input_email);
         password = (EditText) findViewById(R.id.input_password);
         confirmPassword = (EditText) findViewById(R.id.input_confirmPassword);
-
         mAuth = FirebaseAuth.getInstance();
 
         url = new Url();
@@ -84,6 +83,7 @@ public class RegistryUser extends AppCompatActivity {
 
         if(validatefields(email,password,confirmPassword,name,cardId)){
             if(validatePasswords(password,confirmPassword)) {
+
                 if(Utils.veirifyConnection(this)){
                     showDialogWait(progressDialog);
                     //serviceConnectLogin(email, password,name,cardId,view);

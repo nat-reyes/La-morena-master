@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AppBeber</string>
+    <string name="app_name">La morenar</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Gino Amaury Gongora Capacho</string>
@@ -32,6 +32,7 @@
 
     <string name="accountMenu">Cuenta</string>
     <string name="profile">Perfil</string>
+    <string name="ingreso">Vehiculo</string>
     <string name="purchases">Compras</string>
     <string name="favorites">Favoritos</string>
     <string name="categories">Categorías</string>

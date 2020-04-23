@@ -80,12 +80,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Utils.GoToNextActivityCleanStack(MainActivity.this, CartActivity.class,false,null);
-            }
-        });
+
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -268,12 +263,8 @@ public class MainActivity extends AppCompatActivity
             extras.add(new Utils.Extra("userName",userName));
             extras.add(new Utils.Extra("userEmail",userEmail));
             Utils.GoToNextActivityCleanStack(MainActivity.this, ProfileActivity.class,false,extras);
-        }else if(id == R.id.categories){
+        }else if(id == R.id.ingreso){
             viewPager.setCurrentItem(0);
-        }else if (id == R.id.offers){
-            viewPager.setCurrentItem(1);
-        }else if(id == R.id.purchases){
-            Utils.GoToNextActivityCleanStack(MainActivity.this, Purchases.class,false,null);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

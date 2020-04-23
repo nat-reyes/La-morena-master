@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">AppBeber</string>
+    <string name="app_name">La Morena </string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Gino Amaury Gongora Capacho</string>
-    <string name="nav_header_subtitle">PREMIUM</string>
+    <string name="nav_header_title">Aylin Natalia Reyes Vargas</string>
+    <string name="nav_header_subtitle">Ingenieria de sistemas ufps </string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -32,6 +32,7 @@
 
     <string name="accountMenu">Account</string>
     <string name="profile">Profile</string>
+    <string name="ingreso">Vehicle</string>
     <string name="purchases">Purchases</string>
     <string name="favorites">Favorites</string>
     <string name="categories">Categories</string>

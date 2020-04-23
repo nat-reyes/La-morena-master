@@ -51,6 +51,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -69,16 +70,26 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="foregroundText">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                                <entry key="trimmed" value="true" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="ff6f00" />
-                                      <entry key="backgroundLayerName" value="ic_berr_backgroud" />
-                                      <entry key="foregroundImage" value="C:\Users\ginoa\OneDrive\Documentos\Diseños\AppBeber.png" />
-                                      <entry key="foregroundLayerName" value="ic_beer" />
-                                      <entry key="outputName" value="ic_beers" />
+                                      <entry key="backgroundColor" value="283593" />
+                                      <entry key="foregroundImage" value="C:\Users\Natalia Reyes\Desktop\car2.png" />
+                                      <entry key="outputName" value="ic_car" />
                                     </map>
                                   </option>
                                 </PersistentState>

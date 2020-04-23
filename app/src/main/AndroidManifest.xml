@@ -7,23 +7,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_car"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_car_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeMaterial">
-        <activity
-            android:name="com.example.lamorena.Activities.CartActivity"
-            android:label="@string/title_activity_cart"
-            android:theme="@style/AppThemeMaterial.NoActionBar"></activity>
-        <activity
-            android:name="com.example.lamorena.Activities.ProductInfoActivity"
-            android:label="@string/title_activity_product_info"
-            android:theme="@style/AppThemeMaterial.NoActionBar" />
-        <activity
-            android:name="com.example.lamorena.Activities.Purchases"
-            android:label="@string/title_activity_purchases"
-            android:theme="@style/AppThemeMaterial.NoActionBar" />
         <activity
             android:name="com.example.lamorena.Activities.ProfileActivity"
             android:label="@string/title_activity_product_info"
