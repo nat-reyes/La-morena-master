@@ -18,7 +18,7 @@
             android:id="@+id/imageHeader"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/liquors" />
+            android:src="@drawable/taller_morena" />
 
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

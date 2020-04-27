@@ -1,0 +1,32 @@
+
+b
+java:S1301Ñ"KReplace this "switch" statement by "if" statements to increase readability.(˜ ÆÊ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾¬ÕĞ
+l
+java:S1450*"VRemove the "mParam1" field and declare it as a local variable in the relevant methods.(•Íï‘
+l
+java:S1450+"VRemove the "mParam2" field and declare it as a local variable in the relevant methods.(¡ˆ€ 
+s
+java:S14500"]Remove the "productAdapter" field and declare it as a local variable in the relevant methods.(‰¥‰Õ
+w
+java:S1450/"aRemove the "recyclerViewOffers" field and declare it as a local variable in the relevant methods.(İÖºµ
+M
+java:S1135$"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ
+M
+java:S1135)"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ
+M
+java:S1135B"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ
+W
+java:S1117^"<Rename "products" which hides the field declared at line 52.(½ÎõÒıÿÿÿÿ
+I
+java:S1135Á"2Complete the task associated to this TODO comment.(åµÈ¶
+8	java:S131Ñ""Add a default case to this switch.(˜ ÆÊ
+T	java:S106Ó"9Replace this use of System.out or System.err by a logger.(Ú˜¯ûÿÿÿÿ
+I
+java:S1135æ"2Complete the task associated to this TODO comment.(‡‚ùˆ
+A
+java:S1068*"+Remove this unused "mParam1" private field.(•Íï‘
+A
+java:S1068+"+Remove this unused "mParam2" private field.(¡ˆ€ 
+W	java:S125–"<This block of commented-out lines of code should be removed.(»Ÿúñıÿÿÿÿ
+R	java:S125·"<This block of commented-out lines of code should be removed.(Î¼¹

@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/liquor_2" />
+        android:src="@drawable/taller_morena" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"

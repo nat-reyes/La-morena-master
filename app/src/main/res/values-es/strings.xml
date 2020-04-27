@@ -35,8 +35,8 @@
     <string name="ingreso">Vehiculo</string>
     <string name="purchases">Compras</string>
     <string name="favorites">Favoritos</string>
-    <string name="categories">Categorías</string>
-    <string name="offers">Ofertas</string>
+    <string name="categories">SERVICIOS</string>
+    <string name="offers">CONTACTANOS</string>
     <string name="session">Sesión</string>
     <string name="logout">Cerrar sesión</string>
 

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkError;
@@ -63,6 +64,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -319,6 +322,26 @@ public class Login extends AppCompatActivity {
 
     public void login(View view) {
 
+        DocumentReference docRef = db.collection("Users").document("nUgM36txLIa85ygeSD1E");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        for(String s:document.getData().keySet()){
+                            System.out.println("<3 "+s+" "+document.getData().get(s));
+                        }
+                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
+                    } else {
+                        Log.d("TAG", "No such document");
+                    }
+                } else {
+                    Log.d("TAG", "get failed with ", task.getException());
+                }
+            }
+        });
+
         progressDialog = new ProgressDialog(Login.this, R.style.MyAlertDialogStyle);
 
         String email = this.email.getText().toString();
@@ -331,6 +354,7 @@ public class Login extends AppCompatActivity {
                 signInUserWithEmail(email,password);
             }
         }
+
     }
 
     public void signInUserWithEmail (String email, String password){
@@ -343,6 +367,7 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("LOGIN", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            System.out.println(user.getProviderId()+"-------------------------<3");
                             String name = user.getDisplayName();
                             String email = user.getEmail();
                             String photoUrl;

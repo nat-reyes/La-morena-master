@@ -17,12 +17,15 @@ import androidx.annotation.NonNull;
 
 import com.example.lamorena.R;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -182,12 +185,12 @@ public class Utils {
             this.valor = valor;
         }
     }
-
+    public static String ayuda="";
     public static void saveUserFirebaseDatabase(FirebaseUser user, FirebaseFirestore db){
-        Map<String, Object> userMap = new HashMap<>();
+
         System.out.println(user.getUid()+" - "+user);
         User usuario = User.getInstance();
-
+        Map<String, Object> userMap = new HashMap<>();
         userMap.put("UserId",user.getUid());
         userMap.put("Name",usuario.getFirstName());
         userMap.put("apellido",usuario.getApellido());
@@ -196,10 +199,12 @@ public class Utils {
         userMap.put("Phone",usuario.getTel());
         CollectionReference bda=db.collection("Users");
         Query q = db.collection("Users");
-        q.
+
+
         db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
+                Utils.ayuda=documentReference.getId();
                 Log.d("DBFirebase", "DocumentSnapshot added with ID: " + documentReference.getId());
             }
         }).addOnFailureListener(new OnFailureListener() {

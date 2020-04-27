@@ -87,9 +87,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="283593" />
-                                      <entry key="foregroundImage" value="C:\Users\Natalia Reyes\Desktop\car2.png" />
-                                      <entry key="outputName" value="ic_car" />
+                                      <entry key="backgroundColor" value="3f51b5" />
+                                      <entry key="backgroundLayerName" value="taller" />
+                                      <entry key="foregroundImage" value="C:\Users\david\Downloads\WhatsApp Image 2020-04-23 at 10.00.40 AM.jpeg" />
+                                      <entry key="outputName" value="ic_taller" />
                                     </map>
                                   </option>
                                 </PersistentState>

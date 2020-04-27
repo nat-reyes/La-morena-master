@@ -1,0 +1,55 @@
+
+I
+java:S1481v".Remove this unused "userEmail" local variable.(Şã¶­øÿÿÿÿ
+Q
+java:S1854u"<Remove this useless assignment to local variable "userName".(å‚‘w
+I
+java:S1144e".Remove this unused private "setHeader" method.(Ë¯ü²üÿÿÿÿ
+n
+java:S1450%"SRemove the "name" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ
+Q
+java:S1068%"6Remove this unused "identificationCard" private field.(åŸ×ûÿÿÿÿ
+K
+java:S1659%"0Declare "identificationCard" on a separate line.(åŸ×ûÿÿÿÿ
+o
+java:S1450%"TRemove the "email" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ
+G
+java:S1172„"+Remove this unused method parameter "view".(˜¨Ùûÿÿÿÿ
+U
+java:S1854s":Remove this useless assignment to local variable "userId".(à¤ÿ¦ûÿÿÿÿ
+C
+java:S1068%"(Remove this unused "name" private field.(åŸ×ûÿÿÿÿ
+`
+java:S2259w"JA "NullPointerException" could be thrown; "userPhotoUrl" is nullable here.(Ë’¤ğ
+u
+java:S1450%"ZRemove the "phoneNumber" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ
+B
+java:S1172‰"+Remove this unused method parameter "view".(ˆ°íê
+D
+java:S1068%")Remove this unused "email" private field.(åŸ×ûÿÿÿÿ
+Q	java:S125m"<This block of commented-out lines of code should be removed.(¥í§ã
+|
+java:S1450%"aRemove the "identificationCard" field and declare it as a local variable in the relevant methods.(åŸ×ûÿÿÿÿ
+D
+java:S1659%")Declare "phoneNumber" on a separate line.(åŸ×ûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–Ò
+n
+java:S1450)"SRemove the "user" field and declare it as a local variable in the relevant methods.(š·àûÿÿÿÿ
+F
+java:S1481s"+Remove this unused "userId" local variable.(à¤ÿ¦ûÿÿÿÿ
+B
+java:S1481u"-Remove this unused "userName" local variable.(å‚‘w
+C
+java:S1068)"(Remove this unused "user" private field.(š·àûÿÿÿÿ
+@
+java:S1172"+Remove this unused method parameter "view".(â‹ÒX
+A
+java:S1172z"+Remove this unused method parameter "view".(½Õîµ
+>
+java:S1659%"#Declare "email" on a separate line.(åŸ×ûÿÿÿÿ
+G
+java:S1172"+Remove this unused method parameter "view".(‘ÇÎúÿÿÿÿ
+J
+java:S1068%"/Remove this unused "phoneNumber" private field.(åŸ×ûÿÿÿÿ
+X
+java:S1854v"=Remove this useless assignment to local variable "userEmail".(Şã¶­øÿÿÿÿ
