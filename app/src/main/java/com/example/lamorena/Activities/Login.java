@@ -56,6 +56,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -79,7 +80,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class Login extends AppCompatActivity {
-    private EditText email,password;
+    private EditText email, password;
     private Url url;
     private RequestQueue queue;
     private User user;
@@ -89,9 +90,10 @@ public class Login extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private CallbackManager mCallbackManager;
     private FirebaseFirestore db;
- private CollectionReference mquery;
+    private CollectionReference mquery;
 
     private static final int RC_SIGN_IN = 007;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppThemeMaterial);
@@ -106,14 +108,14 @@ public class Login extends AppCompatActivity {
         password = (EditText) findViewById(R.id.input_password);
         url = new Url();
         queue = Volley.newRequestQueue(Login.this);
-        conection = new ConectionSQLiteHelper(this,"bd_user",null,2);
+        conection = new ConectionSQLiteHelper(this, "bd_user", null, 2);
 
         mAuth = FirebaseAuth.getInstance();
         initializeGoogleSignIn();
         initializeFacebookSignIn();
 
 
-        if(Utils.veirifyConnection(this)){
+        if (Utils.veirifyConnection(this)) {
             //verifyLogin();
             verifyLoginFirebase();
             verifyLoginGoogle();
@@ -146,7 +148,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    private void saveDataUserGoogle (GoogleSignInAccount acct){
+    private void saveDataUserGoogle(GoogleSignInAccount acct) {
         if (acct != null) {
             String personName = acct.getDisplayName();
             String personGivenName = acct.getGivenName();
@@ -156,20 +158,20 @@ public class Login extends AppCompatActivity {
             String personPhoto = acct.getPhotoUrl().toString();
 
             System.out.println("Aqui hay que validar con el correo para que no lo guarde de nuevo ");
-            Utils.saveUserGoogleFirebaseDatabase(acct,db);
+            Utils.saveUserGoogleFirebaseDatabase(acct, db);
 
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userId",personId));
-            extras.add(new Utils.Extra("userPhoto",personPhoto));
-            extras.add(new Utils.Extra("userName",personName));
-            extras.add(new Utils.Extra("userEmail",personEmail));
+            extras.add(new Utils.Extra("userId", personId));
+            extras.add(new Utils.Extra("userPhoto", personPhoto));
+            extras.add(new Utils.Extra("userName", personName));
+            extras.add(new Utils.Extra("userEmail", personEmail));
 
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
 
     }
 
-    private void initializeFacebookSignIn (){
+    private void initializeFacebookSignIn() {
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = findViewById(R.id.buttonFacebookLogin);
@@ -209,7 +211,7 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("FACEBOOK LOGIN", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Utils.saveUserFirebaseDatabase(user,db);
+                            Utils.saveUserFirebaseDatabase(user, db);
                             String name = user.getDisplayName();
                             String email = user.getEmail();
                             String photoUrl;
@@ -222,11 +224,11 @@ public class Login extends AppCompatActivity {
                             String uid = user.getUid();
 
                             ArrayList<Utils.Extra> extras = new ArrayList<>();
-                            extras.add(new Utils.Extra("userId",uid));
-                            extras.add(new Utils.Extra("userPhoto",photoUrl));
-                            extras.add(new Utils.Extra("userName",name));
-                            extras.add(new Utils.Extra("userEmail",email));
-                            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+                            extras.add(new Utils.Extra("userId", uid));
+                            extras.add(new Utils.Extra("userPhoto", photoUrl));
+                            extras.add(new Utils.Extra("userName", name));
+                            extras.add(new Utils.Extra("userEmail", email));
+                            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("FACEBOOK LOGIN", "signInWithCredential:failure", task.getException());
@@ -241,7 +243,7 @@ public class Login extends AppCompatActivity {
     }
 
 
-    private void initializeGoogleSignIn(){
+    private void initializeGoogleSignIn() {
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -267,18 +269,18 @@ public class Login extends AppCompatActivity {
 
     private void verifyLogin() {
         SharedPreferences preferences = getSharedPreferences("credentials", Context.MODE_PRIVATE);
-        String email = preferences.getString("email","01");
-        String password = preferences.getString("password","01");
-        String userId = preferences.getString("userId","01");
+        String email = preferences.getString("email", "01");
+        String password = preferences.getString("password", "01");
+        String userId = preferences.getString("userId", "01");
 
-        if(!email.equals("01")|| !password.equals("01")){
+        if (!email.equals("01") || !password.equals("01")) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userId",userId));
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+            extras.add(new Utils.Extra("userId", userId));
+            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
     }
 
-    private void verifyLoginGoogle(){
+    private void verifyLoginGoogle() {
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
@@ -290,25 +292,25 @@ public class Login extends AppCompatActivity {
             String personPhoto = acct.getPhotoUrl().toString();
 
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userId",personId));
-            extras.add(new Utils.Extra("userPhoto",personPhoto));
-            extras.add(new Utils.Extra("userName",personName));
-            extras.add(new Utils.Extra("userEmail",personEmail));
+            extras.add(new Utils.Extra("userId", personId));
+            extras.add(new Utils.Extra("userPhoto", personPhoto));
+            extras.add(new Utils.Extra("userName", personName));
+            extras.add(new Utils.Extra("userEmail", personEmail));
             System.out.println("Entre por verify google");
 
             Log.e("personname", acct.getDisplayName());
             Log.e(" personId", acct.getId());
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
     }
 
-    private void verifyLoginFirebase (){
+    private void verifyLoginFirebase() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             // Name, email address, and profile photo Url
             String name = currentUser.getDisplayName();
             String email = currentUser.getEmail();
-          //  String photoUrl = currentUser.getPhotoUrl().toString();
+            //  String photoUrl = currentUser.getPhotoUrl().toString();
             String photoUrl;
             if (currentUser.getPhotoUrl() == null) {
                 photoUrl = "";
@@ -325,19 +327,18 @@ public class Login extends AppCompatActivity {
             String uid = currentUser.getUid();
 
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userId",uid));
-            extras.add(new Utils.Extra("userPhoto",photoUrl));
-            extras.add(new Utils.Extra("userName",name));
-            extras.add(new Utils.Extra("userEmail",email));
+            extras.add(new Utils.Extra("userId", uid));
+            extras.add(new Utils.Extra("userPhoto", photoUrl));
+            extras.add(new Utils.Extra("userName", name));
+            extras.add(new Utils.Extra("userEmail", email));
             Log.e("uid", currentUser.getUid());
             Log.e("token", currentUser.getProviderId());
             //revisar tokenid
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
     }
 
     public void login(View view) {
-
 
 
         progressDialog = new ProgressDialog(Login.this, R.style.MyAlertDialogStyle);
@@ -345,17 +346,18 @@ public class Login extends AppCompatActivity {
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
 
-        if(validatefields(email,password)){
-            if(Utils.veirifyConnection(this)){
+        if (validatefields(email, password)) {
+            if (Utils.veirifyConnection(this)) {
                 showDialogWait(progressDialog);
                 //serviceConnectLogin(email,password);
-                signInUserWithEmail(email,password);
+                signInUserWithEmail(email, password);
             }
         }
 
     }
 
-    public void signInUserWithEmail (String email, String password){
+    public void signInUserWithEmail(String email, String password) {
+        mquery = db.collection("Users");
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -367,7 +369,9 @@ public class Login extends AppCompatActivity {
                             Log.d("LOGIN", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             // obtengo datos
-                            String name = user.getDisplayName();String email = user.getEmail();
+
+                            String name = user.getDisplayName();
+                            String email = user.getEmail();
                             String photoUrl;
                             if (user.getPhotoUrl() == null) {
                                 photoUrl = "";
@@ -376,13 +380,15 @@ public class Login extends AppCompatActivity {
                             }
                             boolean emailVerified = user.isEmailVerified();
                             String uid = user.getUid();
-                           // guardo datos
+                            // guardo datos
                             ArrayList<Utils.Extra> extras = new ArrayList<>();
-                            extras.add(new Utils.Extra("userId",uid));
-                            extras.add(new Utils.Extra("userPhoto",photoUrl));
-                            extras.add(new Utils.Extra("userName",name));
-                            extras.add(new Utils.Extra("userEmail",email));
-                            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+                            extras.add(new Utils.Extra("userId", uid));
+                            extras.add(new Utils.Extra("userPhoto", photoUrl));
+                            extras.add(new Utils.Extra("userName", name));
+                            extras.add(new Utils.Extra("userEmail", email));
+                            saveUserAfterSing(extras);
+
+                            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                         } else {
                             progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
@@ -396,45 +402,39 @@ public class Login extends AppCompatActivity {
                     }
 
                 });
-// Ver como valido el usuario de ese for, seria seteandolo con el uid o quemando ese dato
-
-        mquery = db.collection("Users");
-        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                         Log.d("Cuentas:", document.getId()+ " => " + document.getData());
-                        System.out.println("hello");
-
-                         DocumentReference docRef = db.collection("Users").document(document.getId());
-                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    DocumentSnapshot document = task.getResult();
-                                    if (document.exists()) {
-                                        for(String s:document.getData().keySet()){
-                                            System.out.println("<3 "+s+" "+document.getData().get(s));
-
-                                        }
-                                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
-                                    } else {
-                                        Log.d("TAG", "No such document");
-                                    }
-                                } else {
-                                    Log.d("TAG", "get failed with ", task.getException());
-                                }
-                            }
-                        });
-                    }
-                } else {
-                    Log.w("Cuentas:", "Error getting documents.", task.getException());
-                }
-            }
-        });
-
     }
+
+
+                private void saveUserAfterSing(final ArrayList<Utils.Extra> extras) {
+                     final FirebaseUser userFb = mAuth.getCurrentUser();
+
+                    mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                       // idCard, apellido, tel,
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Log.d("Cuentas:", document.getId()+ " => " + document.getData());
+                                    if(document.getId().equalsIgnoreCase(userFb.getUid())){
+                                        Map<String, Object> userMap = new HashMap<>();
+
+                                        for(String clave:document.getData().keySet()){
+                                            System.out.println("<3 "+clave+" "+document.getData().get(clave));
+                                            String value = (String) document.getData().get(clave);
+                                            User usuario = User.getInstance();
+                                            userMap.put(clave,value);
+                                        }
+                                        break;
+                                    }else{
+                                        Log.d("Tag", "No such document");
+                                    }
+                                }
+
+                             }
+                        }
+                        });
+
+                }
 
     private void showDialogWait(ProgressDialog progressDialog) {
         progressDialog.setCanceledOnTouchOutside(false);
