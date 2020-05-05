@@ -260,7 +260,7 @@ public class RegistryUser extends AppCompatActivity {
                             Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,RegistryUser.this,Login.class,true,null);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.d("REGISTER", "createUserWithEmail:success");
+                            Log.d("REGISTER", "No create");
                             progressDialog.dismiss();
                             View contextView = getCurrentFocus();
                             Snackbar.make(contextView, getResources().getString(R.string.errRegistry), Snackbar.LENGTH_LONG)
