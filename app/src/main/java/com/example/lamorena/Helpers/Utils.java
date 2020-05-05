@@ -23,8 +23,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -193,24 +191,21 @@ public class Utils {
         System.out.println(user.getUid()+" - "+user);
         User usuario = User.getInstance();
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("iD",user.getUid());
-        System.out.println(user.getUid());
-        userMap.put("nombre",usuario.getNombre());
+        userMap.put("UserId",user.getUid());
+        userMap.put("Name",usuario.getFirstName());
         userMap.put("apellido",usuario.getApellido());
         userMap.put("cedula",usuario.getIdCard());
-        userMap.put("email",usuario.getEmail());
-        userMap.put("telefono",usuario.getTel());
-        userMap.put("picture",usuario.getPicture());
-        userMap.put("id",usuario.getId());
-        userMap.put("password",usuario.getPassword());
-        System.out.println("ENTRE A LUEGO DE USUARIO");
+        userMap.put("Email",usuario.getAddres());
+        userMap.put("Phone",usuario.getTel());
+        CollectionReference bda=db.collection("Users");
+        Query q = db.collection("Users");
 
-/*
-   db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+
+        db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
+                Utils.ayuda=documentReference.getId();
                 Log.d("DBFirebase", "DocumentSnapshot added with ID: " + documentReference.getId());
-
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -219,13 +214,6 @@ public class Utils {
 
             }
         });
-*/
-        db.collection("Users").document(user.getUid()).set(usuario)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                  Log.d("SUCCESS", "CREATE");                    }
-                });
     }
 
     public static void saveUserGoogleFirebaseDatabase(GoogleSignInAccount acct, FirebaseFirestore db){
@@ -234,7 +222,6 @@ public class Utils {
         userMap.put("Name",acct.getDisplayName());
         userMap.put("Email",acct.getEmail());
 
-        System.out.println("entra aca");
         db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
