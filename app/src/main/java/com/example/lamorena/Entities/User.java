@@ -1,7 +1,10 @@
 package com.example.lamorena.Entities;
 
+import android.net.Uri;
+
 public class User {
-    private  String id,idCard,firstName,lastname,email,password,birthDay,gender,number,addres,picture,type,token,apellido,tel;
+    private  String id,idCard, nombre ,email,password,token,apellido,tel,picture;
+    private Uri urlPhoto;
     private static User usuario;
     public static User getInstance(){
         if(usuario == null){
@@ -27,8 +30,20 @@ public class User {
         this.picture = picture;
     }*/
 
-    public String getType() {
-        return type;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Uri getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(Uri urlPhoto) {
+        this.urlPhoto = urlPhoto;
     }
 
     public String getApellido() {
@@ -47,9 +62,6 @@ public class User {
         this.tel = tel;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getId() {
         return id;
@@ -67,21 +79,6 @@ public class User {
         this.idCard = idCard;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
     public String getEmail() {
         return email;
@@ -99,37 +96,7 @@ public class User {
         this.password = password;
     }
 
-    public String getBirthDay() {
-        return birthDay;
-    }
 
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getAddres() {
-        return addres;
-    }
-
-    public void setAddres(String addres) {
-        this.addres = addres;
-    }
 
     public String getPicture() {
         return picture;

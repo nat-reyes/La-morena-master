@@ -20,6 +20,7 @@
         <activity
             android:name="com.example.lamorena.Activities.RegistryUser"
             android:theme="@style/AppThemeMaterial" />
+
         <activity
             android:name="com.example.lamorena.Activities.Login"
             android:theme="@style/AppTheme.Launcher">
@@ -29,6 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name="com.example.lamorena.Splash.SplashScreenActivity" />
         <activity
             android:name="com.example.lamorena.MainActivity"

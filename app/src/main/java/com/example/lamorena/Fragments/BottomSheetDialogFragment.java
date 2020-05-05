@@ -21,9 +21,10 @@ import static com.example.lamorena.Helpers.Utils.MODAL_PHONE;
 public class BottomSheetDialogFragment extends com.google.android.material.bottomsheet.BottomSheetDialogFragment {
 
     private EditText name,email,phone,idCard;
-
+    private String value;
     private String type;
-    public BottomSheetDialogFragment(String type) {
+    public BottomSheetDialogFragment(String type, String value) {
+        this.value = value;
         this.type = type;
     }
 
@@ -62,20 +63,33 @@ public class BottomSheetDialogFragment extends com.google.android.material.botto
     private void initializeVariables (View view, String type){
         switch (type){
             case MODAL_NAME:
-                name = (EditText) view.findViewById(R.id.input_firstNameDialog);
+                name = (EditText) view.findViewById(R.id.input_profileName);
+                name.setText(value);
                 name.requestFocus();
                 getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
                 break;
             case MODAL_EMAIL:
 
+                email = (EditText) view.findViewById(R.id.input_profileEmail);
+                 email.setText(value);
+                email.requestFocus();
+                getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
                 break;
 
             case MODAL_PHONE:
 
+                phone = (EditText) view.findViewById(R.id.input_profilePhone);
+                phone.setText("mi numero");
+                phone.requestFocus();
+                getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
                 break;
 
             case MODAL_ID:
 
+                idCard = (EditText) view.findViewById(R.id.input_profileId);
+                idCard.setText("Cedula");
+                idCard.requestFocus();
+                getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
                 break;
 
             default:

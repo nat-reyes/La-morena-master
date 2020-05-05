@@ -56,6 +56,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.facebook.FacebookSdk;
@@ -64,9 +65,17 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 
 public class Login extends AppCompatActivity {
@@ -80,7 +89,7 @@ public class Login extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private CallbackManager mCallbackManager;
     private FirebaseFirestore db;
-
+ private CollectionReference mquery;
 
     private static final int RC_SIGN_IN = 007;
     @Override
@@ -146,6 +155,7 @@ public class Login extends AppCompatActivity {
             String personId = acct.getId();
             String personPhoto = acct.getPhotoUrl().toString();
 
+            System.out.println("Aqui hay que validar con el correo para que no lo guarde de nuevo ");
             Utils.saveUserGoogleFirebaseDatabase(acct,db);
 
             ArrayList<Utils.Extra> extras = new ArrayList<>();
@@ -284,7 +294,10 @@ public class Login extends AppCompatActivity {
             extras.add(new Utils.Extra("userPhoto",personPhoto));
             extras.add(new Utils.Extra("userName",personName));
             extras.add(new Utils.Extra("userEmail",personEmail));
+            System.out.println("Entre por verify google");
 
+            Log.e("personname", acct.getDisplayName());
+            Log.e(" personId", acct.getId());
             Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
         }
     }
@@ -316,31 +329,16 @@ public class Login extends AppCompatActivity {
             extras.add(new Utils.Extra("userPhoto",photoUrl));
             extras.add(new Utils.Extra("userName",name));
             extras.add(new Utils.Extra("userEmail",email));
+            Log.e("uid", currentUser.getUid());
+            Log.e("token", currentUser.getProviderId());
+            //revisar tokenid
             Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
         }
     }
 
     public void login(View view) {
 
-        DocumentReference docRef = db.collection("Users").document("nUgM36txLIa85ygeSD1E");
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        for(String s:document.getData().keySet()){
-                            System.out.println("<3 "+s+" "+document.getData().get(s));
-                        }
-                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
-                    } else {
-                        Log.d("TAG", "No such document");
-                    }
-                } else {
-                    Log.d("TAG", "get failed with ", task.getException());
-                }
-            }
-        });
+
 
         progressDialog = new ProgressDialog(Login.this, R.style.MyAlertDialogStyle);
 
@@ -358,6 +356,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void signInUserWithEmail (String email, String password){
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -367,9 +366,8 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("LOGIN", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            System.out.println(user.getProviderId()+"-------------------------<3");
-                            String name = user.getDisplayName();
-                            String email = user.getEmail();
+                            // obtengo datos
+                            String name = user.getDisplayName();String email = user.getEmail();
                             String photoUrl;
                             if (user.getPhotoUrl() == null) {
                                 photoUrl = "";
@@ -378,7 +376,7 @@ public class Login extends AppCompatActivity {
                             }
                             boolean emailVerified = user.isEmailVerified();
                             String uid = user.getUid();
-
+                           // guardo datos
                             ArrayList<Utils.Extra> extras = new ArrayList<>();
                             extras.add(new Utils.Extra("userId",uid));
                             extras.add(new Utils.Extra("userPhoto",photoUrl));
@@ -396,7 +394,46 @@ public class Login extends AppCompatActivity {
 
                         // ...
                     }
+
                 });
+// Ver como valido el usuario de ese for, seria seteandolo con el uid o quemando ese dato
+
+        mquery = db.collection("Users");
+        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                         Log.d("Cuentas:", document.getId()+ " => " + document.getData());
+
+
+                         DocumentReference docRef = db.collection("Users").document(document.getId());
+                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        for(String s:document.getData().keySet()){
+                                            System.out.println("<3 "+s+" "+document.getData().get(s));
+
+                                        }
+                                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
+                                    } else {
+                                        Log.d("TAG", "No such document");
+                                    }
+                                } else {
+                                    Log.d("TAG", "get failed with ", task.getException());
+                                }
+                            }
+                        });
+                    }
+                } else {
+                    Log.w("Cuentas:", "Error getting documents.", task.getException());
+                }
+            }
+        });
+
     }
 
     private void showDialogWait(ProgressDialog progressDialog) {
@@ -457,7 +494,7 @@ public class Login extends AppCompatActivity {
 
                                 //user = new User(id,idCard,firstName,lastName,email,password,birthDay,gender,number,address,type,token,picture);
                                 user = User.getInstance();
-                                saveUser(user);
+//                                saveUser(user);
                                 savePreferences(user);
                                 progressDialog.dismiss();
                                 ArrayList<Utils.Extra> extras = new ArrayList<>();
@@ -516,7 +553,7 @@ public class Login extends AppCompatActivity {
 
         editor.commit();
     }
-
+/*
     private void saveUser(User user) {
         SQLiteDatabase db = conection.getWritableDatabase();
 
@@ -537,7 +574,7 @@ public class Login extends AppCompatActivity {
 
         db.insert(Utils.TABLE_USER,Utils.ATRIBUTE_USER_ID,values);
         db.close();
-    }
+    }*/
 
     public boolean validatefields(String email, String password){
         boolean response = true;

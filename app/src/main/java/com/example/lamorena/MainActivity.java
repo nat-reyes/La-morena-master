@@ -49,7 +49,9 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
 
 
         appBarLayout = (AppBarLayout) findViewById(R.id.appBar);
@@ -139,7 +142,7 @@ public class MainActivity extends AppCompatActivity
         username = (TextView) view.findViewById(R.id.userName);
         userLevel = (TextView) view.findViewById(R.id.userLevel);
         userPhoto = (ImageView) view.findViewById(R.id.userPhoto);
-        //setHeader(username,userLevel,userPhoto);
+//        setHeader(username,userLevel,userPhoto);
         setHeaderData(username,userLevel,userPhoto);
 
     }
@@ -157,12 +160,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setHeaderData (TextView username,TextView userLevel,ImageView userPhoto){
-        userId = getIntent().getStringExtra("userId");
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        System.out.println(currentUser.getDisplayName() + currentUser.getProviderId()+ "3");
+        System.out.println("hey");
+        userId = currentUser.getDisplayName();
+        username.setText(userId);
+        userLevel.setText("Usuario");
+      //  userId = getIntent().getStringExtra("userId");
         userPhotoUrl = getIntent().getStringExtra("userPhoto");
         userName = getIntent().getStringExtra("userName");
         userEmail = getIntent().getStringExtra("userEmail");
 
-        username.setText(getResources().getString(R.string.hi)+" "+userName);
         if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
     }
 

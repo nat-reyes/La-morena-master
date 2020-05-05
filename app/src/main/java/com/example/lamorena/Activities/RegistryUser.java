@@ -15,6 +15,8 @@ import com.example.lamorena.Entities.User;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -49,6 +51,7 @@ public class RegistryUser extends AppCompatActivity {
     private View view;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
+    private User usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,7 @@ public class RegistryUser extends AppCompatActivity {
         apellido = (EditText) findViewById(R.id.input_apellido);
         telefono = (EditText) findViewById(R.id.input_cel);
         mAuth = FirebaseAuth.getInstance();
-
+        usuario = User.getInstance();
         url = new Url();
         queue = Volley.newRequestQueue(RegistryUser.this);
 
@@ -75,7 +78,7 @@ public class RegistryUser extends AppCompatActivity {
 
     public void createAccount(View view) {
         progressDialog = new ProgressDialog(RegistryUser.this, R.style.MyAlertDialogStyle);
-        User usuario = User.getInstance();
+
 
 
         String cardId = this.cardId.getText().toString();
@@ -90,12 +93,12 @@ public class RegistryUser extends AppCompatActivity {
             if(validatePasswords(password,confirmPassword)) {
                 if(Utils.veirifyConnection(this)){
 
-                    usuario.setAddres(this.email.getText().toString());
-                    usuario.setIdCard(this.cardId.getText().toString());
-                    usuario.setFirstName(this.name.getText().toString());
-                    usuario.setApellido(this.apellido.getText().toString());
-                    usuario.setTel(this.telefono.getText().toString());
-                    usuario.setPassword(this.password.getText().toString());
+                    usuario.setEmail(email);
+                    usuario.setIdCard(cardId);
+                    usuario.setNombre(name);
+                    usuario.setApellido(apellido);
+                    usuario.setTel(telefono);
+                    usuario.setPassword(password);
 
                     showDialogWait(progressDialog);
                     //serviceConnectLogin(email, password,name,cardId,view);
@@ -250,6 +253,9 @@ public class RegistryUser extends AppCompatActivity {
                             progressDialog.dismiss();
                             Log.d("REGISTER", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Uri urlPhoto = user.getPhotoUrl();
+                            usuario.setUrlPhoto(urlPhoto);
+                            usuario.setId(user.getUid());
                             Utils.saveUserFirebaseDatabase(user,db);
                             Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,RegistryUser.this,Login.class,true,null);
                         } else {

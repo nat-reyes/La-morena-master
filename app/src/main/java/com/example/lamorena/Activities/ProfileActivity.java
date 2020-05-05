@@ -63,6 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.userEmail);
         phoneNumber = (TextView) findViewById(R.id.userPhoneNumber);
         identificationCard = (TextView) findViewById(R.id.userID);
+
     }
 
     private void addFAB (){
@@ -116,26 +117,30 @@ public class ProfileActivity extends AppCompatActivity {
         String userPhotoUrl = getIntent().getStringExtra("userPhoto");
         String userName = getIntent().getStringExtra("userName");
         String userEmail = getIntent().getStringExtra("userEmail");
+
         if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
     }
 
     public void showFragmentBottomSheetName(View view){
-        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_NAME);
+        System.out.println(getIntent().getStringExtra("userName"));
+        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_NAME,getIntent().getStringExtra("userName") );
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
     }
 
     public void showFragmentBottomSheetEmail(View view){
-        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_EMAIL);
+        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_EMAIL, getIntent().getStringExtra("userEmail"));
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
     }
 
     public void showFragmentBottomSheetPhone(View view){
-        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_PHONE);
+        // No tengo numero de telefono en google
+        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_PHONE, getIntent().getStringExtra(""));
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
     }
 
     public void showFragmentBottomSheetID(View view){
-        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_ID);
+        // No tengo id card para este usuario
+        bottomSheetFragment = new BottomSheetDialogFragment(MODAL_ID, getIntent().getStringExtra("") );
         bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
     }
 

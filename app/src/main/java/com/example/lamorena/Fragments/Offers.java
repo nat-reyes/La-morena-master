@@ -131,6 +131,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
+
                                 Log.d("PRODUCTSQUERY", document.getId() + " => " + document.getData());
                             }
                         } else {
@@ -240,11 +241,11 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
 
     }
 
-
+/*
     public void showFragmentBottomSheetAddCart(){
         bottomSheetFragment = new BottomSheetDialogFragment(MODAL_ADDCART);
         bottomSheetFragment.show(getActivity().getSupportFragmentManager(), bottomSheetFragment.getTag());
-    }
+    }*/
 
 
     @Override
@@ -260,7 +261,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
                 Utils.GoToNextActivityCleanStack(getActivity(), ProductInfoActivity.class,false,null);
                 break;
             case Utils.CLICKADDCART:
-                showFragmentBottomSheetAddCart();
+//r                showFragmentBottomSheetAddCart();
                 break;
         }
 
