@@ -405,7 +405,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                          Log.d("Cuentas:", document.getId()+ " => " + document.getData());
-
+                        System.out.println("hello");
 
                          DocumentReference docRef = db.collection("Users").document(document.getId());
                         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
