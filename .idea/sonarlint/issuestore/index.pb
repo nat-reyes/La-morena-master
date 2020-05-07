@@ -23,3 +23,5 @@ l
 <app/src/main/java/com/example/lamorena/Fragments/Offers.java,c\2\c218abc226297baee995a823d89dce225e42edba
 s
 Capp/src/main/java/com/example/lamorena/Fragments/OrderFragment.java,1\7\17c3c1c437a0b45230ec1573ada246ca87a1e0de
+p
+@app/src/main/java/com/example/lamorena/Fragments/Categories.java,6\b\6b3824d8bcfdd90f0d12eba4dea763aef2feb7e0

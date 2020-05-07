@@ -58,6 +58,8 @@ public class Utils {
     public static final String ATRIBUTE_USER_TYPE="type";
     public static final String ATRIBUTE_USER_TOKEN="token";
     public static final String ATRIBUTE_USER_PICTURE="picture";
+    public static Map<String, Object> sesion;
+    public static String rol;
 
     public static final String CREATE_TABLE_USER = "CREATE TABLE "+TABLE_USER+"("+ATRIBUTE_USER_ID+" TEXT,"+ATRIBUTE_USER_IDCARD+" TEXT,"+ATRIBUTE_USER_FIRSTNAME+
                                                     " TEXT, "+ATRIBUTE_USER_LASTNAME+" TEXT, "+ATRIBUTE_USER_EMAIL+" TEXT, "+ATRIBUTE_USER_PASSWORD+" TEXT,"+ATRIBUTE_USER_BIRTHDAY+
@@ -203,28 +205,25 @@ public class Utils {
         userMap.put("picture",usuario.getPicture());
         userMap.put("id",usuario.getId());
         userMap.put("password",usuario.getPassword());
+        userMap.put("rol","cliente");
         System.out.println("ENTRE A LUEGO DE USUARIO");
 
-/*
-   db.collection("Users").add(userMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d("DBFirebase", "DocumentSnapshot added with ID: " + documentReference.getId());
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w("DBFirebase", "Error adding document", e);
-
-            }
-        });
-*/
         db.collection("Users").document(user.getUid()).set(usuario)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                   Log.d("SUCCESS", "CREATE");                    }
+                });
+    }
+    public static void saveUserFirebaseDatabase2(FirebaseUser user, FirebaseFirestore db,Map<String, Object> userMap1){
+        System.out.println(user.getUid()+" - "+user);
+        String llave = userMap1.get("IdCard")+"";
+        System.out.println("<3 --------- "+llave);
+        db.collection("empleados").document(llave).set(userMap1)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("SUCCESS", "CREATE");                    }
                 });
     }
 

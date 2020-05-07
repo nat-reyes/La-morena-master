@@ -1,159 +1,192 @@
 
-T
-java:S1117É"8Rename "user" which hides the field declared at line 76.(©Í”äýÿÿÿÿ
-U
-java:S1117©"9Rename "email" which hides the field declared at line 73.(Í¶Á¢ùÿÿÿÿ
-P
-java:S1481”"4Remove this unused "personGivenName" local variable.(•úœïÿÿÿÿÿ
-R
-java:S1066ß"/Merge this if statement with the enclosing one.(ŒÒŽÕúÿÿÿÿ8ÚäÓ¼š.
-I
-java:S1135ã"2Complete the task associated to this TODO comment.(…ïœ†
-`
-java:S1192…"IDefine a constant instead of duplicating this literal "password" 4 times.(÷ËÕº
-I
-java:S1135ñ"2Complete the task associated to this TODO comment.(…ïœ†
-Y	java:S125á"<This block of commented-out lines of code should be removed.(”ÏÜ–8ÚäÓ¼š.
-P
-java:S1481°"-Remove this unused "password" local variable.(óø¿þøÿÿÿÿ8ÍÅ¿«š.
-U
-java:S1117ô"9Rename "email" which hides the field declared at line 73.(ò¢ô¥þÿÿÿÿ
-U
-java:S1117µ"9Rename "email" which hides the field declared at line 73.(×ìèíúÿÿÿÿ
-<
-java:S1659I"&Declare "password" on a separate line.(…é¶ê
-I
-java:S1172Ã"+Remove this unused method parameter "view".(½‹“¥8ÛÈÏ¼š.
-[	java:S106Í"9Replace this use of System.out or System.err by a logger.(¨î·æúÿÿÿÿ8ÛÈÏ¼š.
-k
-java:S1192ª"ODefine a constant instead of duplicating this literal "FACEBOOK LOGIN" 6 times.(óË¶–ùÿÿÿÿ
-N
-java:S1481³"2Remove this unused "emailVerified" local variable.(ž´àÝûÿÿÿÿ
-c
-java:S1192˜"GDefine a constant instead of duplicating this literal "userId" 9 times.(ðÂË¦úÿÿÿÿ
-W
-java:S1117Û"9Rename "email" which hides the field declared at line 73.(‡ò¶â8ÛÈÏ¼š.
-_
-java:S1854"CRemove this useless assignment to local variable "personGivenName".(•úœïÿÿÿÿÿ
-^
-java:S1192ˆ"GDefine a constant instead of duplicating this literal "Action" 5 times.( ð“ÿ
-Q
-java:S1481•"5Remove this unused "personFamilyName" local variable.(Å®²îþÿÿÿÿ
-M
-java:S1481¬"*Remove this unused "token" local variable.(¥Áôµøÿÿÿÿ8ÍÅ¿«š.
-_
-java:S1854”"CRemove this useless assignment to local variable "personGivenName".(•úœïÿÿÿÿÿ
-`
-java:S1854•"DRemove this useless assignment to local variable "personFamilyName".(Å®²îþÿÿÿÿ
-U
-java:S1117ü"9Rename "email" which hides the field declared at line 73.(ò¢ô¥þÿÿÿÿ
-R	java:S125ª"<This block of commented-out lines of code should be removed.(Ðÿ÷Ü
-Q
-java:S1481¯".Remove this unused "firstName" local variable.(èêë‘üÿÿÿÿ8ÍÅ¿«š.
-H
-java:S1481Ó"2Remove this unused "emailVerified" local variable.(õÍ§|
-U
-java:S1117„"9Rename "email" which hides the field declared at line 73.(’ÈÿÄùÿÿÿÿ
-X
-java:S1854À":Remove this useless assignment to local variable "gender".(·ãëŽ8ÍÅ¿«š.
-H
-java:S1481û"2Remove this unused "emailVerified" local variable.(õÍ§|
-X
-java:S1854½":Remove this useless assignment to local variable "idCard".(´¥Ù£8ÍÅ¿«š.
-T
-java:S1117ñ"8Rename "user" which hides the field declared at line 76.(©Í”äýÿÿÿÿ
-I
-java:S1135ï"2Complete the task associated to this TODO comment.(…ïœ†
-Q
-java:S1141¼"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-Q	java:S125x"<This block of commented-out lines of code should be removed.(˜Î‹Ã
-]
-java:S1854Á":Remove this useless assignment to local variable "number".(¾ÃŸÆúÿÿÿÿ8ÍÅ¿«š.
-P
-java:S1481´"-Remove this unused "lastName" local variable.(õù†úÿÿÿÿ8ÍÅ¿«š.
-Q	java:S125l"<This block of commented-out lines of code should be removed.(”ûŸï
-a
-java:S1192›"JDefine a constant instead of duplicating this literal "userEmail" 5 times.(×ýÙ˜
-f
-java:S1192™"JDefine a constant instead of duplicating this literal "userPhoto" 5 times.(´Çó†þÿÿÿÿ
-Y
-java:S1854±";Remove this useless assignment to local variable "picture".(µµËØ8ÍÅ¿«š.
-D	java:S108à")Either remove or fill this block of code.(™²¨©ûÿÿÿÿ
-P
-java:S1481"4Remove this unused "personGivenName" local variable.(•úœïÿÿÿÿÿ
-M
-java:S1117‰"6Rename "db" which hides the field declared at line 82.(í¥”ö
-Z
-java:S1854¾"<Remove this useless assignment to local variable "lastName".(Œ‰ºÝ8ÍÅ¿«š.
-Q
-java:S1481"5Remove this unused "personFamilyName" local variable.(Å®²îþÿÿÿÿ
-O	java:S106Þ"9Replace this use of System.out or System.err by a logger.(…¢üÔ
-B
-java:S1172®"+Remove this unused method parameter "view".(öÂÉè
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–Ò
 J
-java:S1481±",Remove this unused "picture" local variable.(µµËØ8ÍÅ¿«š.
-^	java:S125Ê"<This block of commented-out lines of code should be removed.(üë ûÿÿÿÿ8Ñø“­š.
-L
-java:S1144‚"0Remove this unused private "verifyLogin" method.(Þíýÿÿÿÿÿ
-I
-java:S1481·"+Remove this unused "gender" local variable.(»¸Ö¾8ÍÅ¿«š.
+java:S1481å",Remove this unused "address" local variable.(ý´Á¢8ùÝæ¹ž.
+\
+java:S1117á"9Rename "email" which hides the field declared at line 83.(×ìèíúÿÿÿÿ8‡°ü¸ž.
+R
+java:S1066Þ"/Merge this if statement with the enclosing one.(ŒÒŽÕúÿÿÿÿ8‡°ü¸ž.
+u
+java:S1450X"XRemove the "conection" field and declare it as a local variable in the relevant methods.(¤ê”ô8‡°ü¸ž.
+f
+java:S1854š"CRemove this useless assignment to local variable "personGivenName".(•úœïÿÿÿÿÿ8‡°ü¸ž.
+h
+java:S1192§"JDefine a constant instead of duplicating this literal "userEmail" 5 times.(×ýÙ˜8‡°ü¸ž.
+^	java:S125ö"<This block of commented-out lines of code should be removed.(üë ûÿÿÿÿ8‡°ü¸ž.
+X
+java:S1481¡"5Remove this unused "personFamilyName" local variable.(Å®²îþÿÿÿÿ8‡°ü¸ž.
+V	java:S106Š"9Replace this use of System.out or System.err by a logger.(…¢üÔ8‡°ü¸ž.
+B
+java:S1172Ú"+Remove this unused method parameter "view".(öÂÉè
+Y	java:S125ø"<This block of commented-out lines of code should be removed.(ÉÍ”²8‡°ü¸ž.
+O
+java:S1481ß"2Remove this unused "emailVerified" local variable.(õÍ§|8‡°ü¸ž.
+\
+java:S1117ö"9Rename "email" which hides the field declared at line 83.(ò¢ô¥þÿÿÿÿ8‡°ü¸ž.
+m
+java:S1128K"KRemove this unused import 'com.google.firebase.firestore.DocumentSnapshot'.(´Ëá¿ÿÿÿÿÿ8‡°ü¸ž.
+`
+java:S1854Û"=Remove this useless assignment to local variable "firstName".(èêë‘üÿÿÿÿ8‡°ü¸ž.
+P
+java:S1135›"2Complete the task associated to this TODO comment.(…ïœ†8‡°ü¸ž.
+V
+java:S1854ï"8Remove this useless assignment to local variable "type".(†òÓ8ùÝæ¹ž.
+e
+java:S1192“"GDefine a constant instead of duplicating this literal "Action" 5 times.( ð“ÿ8‡°ü¸ž.
+g
+java:S1128H"JRemove this unused import 'com.google.firebase.database.FirebaseDatabase'.(×Ë—8‡°ü¸ž.
+Y	java:S125´"<This block of commented-out lines of code should be removed.(Ø®•ð8‡°ü¸ž.
+P
+java:S1135"2Complete the task associated to this TODO comment.(…ïœ†8‡°ü¸ž.
+X
+java:S1481›"5Remove this unused "personFamilyName" local variable.(Å®²îþÿÿÿÿ8‡°ü¸ž.
+]
+java:S1854í":Remove this useless assignment to local variable "number".(¾ÃŸÆúÿÿÿÿ8ùÝæ¹ž.
+W
+java:S1117Ú"9Rename "email" which hides the field declared at line 83.(‡ò¶â8‡°ü¸ž.
+r
+java:S1192¶"ODefine a constant instead of duplicating this literal "FACEBOOK LOGIN" 6 times.(óË¶–ùÿÿÿÿ8‡°ü¸ž.
+b
+java:S1128M"@Remove this unused import 'com.google.firebase.firestore.Query'.(ß´Ìýÿÿÿÿ8‡°ü¸ž.
+[	java:S106 "9Replace this use of System.out or System.err by a logger.(êß·²ýÿÿÿÿ8‡°ü¸ž.
 V
 java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8å«¿­š.
-L
-java:S1481º")Remove this unused "type" local variable.(Ï¼ìýÿÿÿÿ8ÍÅ¿«š.
-F
-java:S1148Å"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8”Áœ«š.
-W
-java:S1874Z"5Remove this use of "sdkInitialize"; it is deprecated.(²×ØÐûÿÿÿÿ8”Áœ«š.
-X
-java:S1874¦":Remove this use of "setReadPermissions"; it is deprecated.(îÒ±þ8”Áœ«š.
-W
-java:S1854û"ARemove this useless assignment to local variable "emailVerified".(õÍ§|
-i
-java:S3776™"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ï²¸¤
+^
+java:S1854¨";Remove this useless assignment to local variable "usuario".(æáË™þÿÿÿÿ8‡°ü¸ž.
 \
-java:S1854¬"9Remove this useless assignment to local variable "token".(¥Áôµøÿÿÿÿ8ÍÅ¿«š.
-U
-java:S1117Ì"9Rename "email" which hides the field declared at line 73.(ò¢ô¥þÿÿÿÿ
-]
-java:S1854³"ARemove this useless assignment to local variable "emailVerified".(ž´àÝûÿÿÿÿ
-`
-java:S1854¯"=Remove this useless assignment to local variable "firstName".(èêë‘üÿÿÿÿ8ÍÅ¿«š.
+java:S1117"9Rename "email" which hides the field declared at line 83.(’ÈÿÄùÿÿÿÿ8‡°ü¸ž.
 X
-java:S1117°"<Rename "password" which hides the field declared at line 73.(óø¿þøÿÿÿÿ
-S
-java:S1117ý"<Rename "password" which hides the field declared at line 73.(Ê¨¢Ë
-W
-java:S1854Ó"ARemove this useless assignment to local variable "emailVerified".(õÍ§|
-N
-java:S1481³"+Remove this unused "idCard" local variable.(°Ìç³ûÿÿÿÿ8ÍÅ¿«š.
+java:S1854ì":Remove this useless assignment to local variable "gender".(·ãëŽ8ùÝæ¹ž.
+\
+java:S1854Ø"9Remove this useless assignment to local variable "token".(¥Áôµøÿÿÿÿ8‡°ü¸ž.
 M
-java:S1481µ"*Remove this unused "email" local variable.(×ìèíúÿÿÿÿ8ÍÅ¿«š.
-P
-java:S1481¶"-Remove this unused "birthDay" local variable.(Ø¾ßÂþÿÿÿÿ8ÍÅ¿«š.
-V
-java:S1854Ã"8Remove this useless assignment to local variable "type".(†òÓ8ÍÅ¿«š.
-e
-java:S1192š"IDefine a constant instead of duplicating this literal "userName" 5 times.(õÆÞ–ýÿÿÿÿ
-V	java:S106ò"9Replace this use of System.out or System.err by a logger.(È„ß8›çê­š.
-\
-java:S1854¿"9Remove this useless assignment to local variable "email".(œÜ¤Éýÿÿÿÿ8ÍÅ¿«š.
-T	java:S106©"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ
+java:S1481á"*Remove this unused "email" local variable.(×ìèíúÿÿÿÿ8ùÝæ¹ž.
 Z
-java:S1117Ü"<Rename "password" which hides the field declared at line 73.(œ—”ž8ÛÈÏ¼š.
+java:S1117‘"<Rename "password" which hides the field declared at line 83.(÷ËÕº8‡°ü¸ž.
+M
+java:S1481Ø"*Remove this unused "token" local variable.(¥Áôµøÿÿÿÿ8ùÝæ¹ž.
 _
-java:S1854°"<Remove this useless assignment to local variable "password".(óø¿þøÿÿÿÿ8ÍÅ¿«š.
-J
-java:S1481¹",Remove this unused "address" local variable.(ý´Á¢8ÍÅ¿«š.
-I
-java:S1481¸"+Remove this unused "number" local variable.(¹œ‰ù8ÍÅ¿«š.
-O	java:S106Ü"9Replace this use of System.out or System.err by a logger.(ÉÐëš
-Y
-java:S1854Â";Remove this useless assignment to local variable "address".(‡øò¾8ÍÅ¿«š.
+java:S1854Ü"<Remove this useless assignment to local variable "password".(óø¿þøÿÿÿÿ8‡°ü¸ž.
+j
+java:S1192¤"GDefine a constant instead of duplicating this literal "userId" 9 times.(ðÂË¦úÿÿÿÿ8‡°ü¸ž.
+f
+java:S1128E"DRemove this unused import 'com.google.firebase.auth.GetTokenResult'.(¯Œ¢ñùÿÿÿÿ8‡°ü¸ž.
+^
+java:S1854ß"ARemove this useless assignment to local variable "emailVerified".(õÍ§|8‡°ü¸ž.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–Ò
+c
+java:S1128F"FRemove this unused import 'com.google.firebase.database.DataSnapshot'.(þÇŒ„8‡°ü¸ž.
+l
+java:S1192¦"IDefine a constant instead of duplicating this literal "userName" 5 times.(õÆÞ–ýÿÿÿÿ8‡°ü¸ž.
+Y	java:S125ƒ"<This block of commented-out lines of code should be removed.(˜Î‹Ã8‡°ü¸ž.
+d
+java:S1854Â"ARemove this useless assignment to local variable "emailVerified".(ž´àÝûÿÿÿÿ8‡°ü¸ž.
+\
+java:S1117¨"9Rename "email" which hides the field declared at line 83.(ò¢ô¥þÿÿÿÿ8‡°ü¸ž.
+W
+java:S1481 "4Remove this unused "personGivenName" local variable.(•úœïÿÿÿÿÿ8‡°ü¸ž.
+i
+java:S1128J"LRemove this unused import 'com.google.firebase.firestore.DocumentReference'.(«Ë8‡°ü¸ž.
+g
+java:S1854›"DRemove this useless assignment to local variable "personFamilyName".(Å®²îþÿÿÿÿ8‡°ü¸ž.
+f
+java:S1854 "CRemove this useless assignment to local variable "personGivenName".(•úœïÿÿÿÿÿ8‡°ü¸ž.
+\
+java:S1117¸"9Rename "email" which hides the field declared at line 83.(Í¶Á¢ùÿÿÿÿ8‡°ü¸ž.
+Q
+java:S1481Û".Remove this unused "firstName" local variable.(èêë‘üÿÿÿÿ8ùÝæ¹ž.
 S
-java:S1117…"<Rename "password" which hides the field declared at line 73.(÷ËÕº
-`
-java:S1854"DRemove this useless assignment to local variable "personFamilyName".(Å®²îþÿÿÿÿ
-]
-java:S1192¦"FDefine a constant instead of duplicating this literal "email" 5 times.(îÒ±þ
+java:S1144Ž"0Remove this unused private "verifyLogin" method.(Þíýÿÿÿÿÿ8‡°ü¸ž.
+X
+java:S1141è"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‡°ü¸ž.
+J
+java:S1068X"-Remove this unused "conection" private field.(¤ê”ô8‡°ü¸ž.
+[
+java:S1117ò"8Rename "user" which hides the field declared at line 86.(©Í”äýÿÿÿÿ8‡°ü¸ž.
+p
+java:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ï²¸¤8‡°ü¸ž.
+U
+java:S1481Â"2Remove this unused "emailVerified" local variable.(ž´àÝûÿÿÿÿ8‡°ü¸ž.
+Z
+java:S1117©"<Rename "password" which hides the field declared at line 83.(Ê¨¢Ë8‡°ü¸ž.
+I
+java:S1481ã"+Remove this unused "gender" local variable.(»¸Ö¾8ùÝæ¹ž.
+X
+java:S1854é":Remove this useless assignment to local variable "idCard".(´¥Ù£8ùÝæ¹ž.
+J
+java:S1481Ý",Remove this unused "picture" local variable.(µµËØ8ùÝæ¹ž.
+K	java:S108Œ")Either remove or fill this block of code.(™²¨©ûÿÿÿÿ8‡°ü¸ž.
+g
+java:S1854¡"DRemove this useless assignment to local variable "personFamilyName".(Å®²îþÿÿÿÿ8‡°ü¸ž.
+I
+java:S1172Õ"+Remove this unused method parameter "view".(½‹“¥8‡°ü¸ž.
+K
+java:S1172˜"-Remove this unused method parameter "extras".(ÇßÁé8‡°ü¸ž.
+L
+java:S1481æ")Remove this unused "type" local variable.(Ï¼ìýÿÿÿÿ8ùÝæ¹ž.
+[	java:S106¦"9Replace this use of System.out or System.err by a logger.(þå½´þÿÿÿÿ8‡°ü¸ž.
+W
+java:S1874e"5Remove this use of "sdkInitialize"; it is deprecated.(²×ØÐûÿÿÿÿ8ùÝæ¹ž.
+d
+java:S1192²"FDefine a constant instead of duplicating this literal "email" 5 times.(îÒ±þ8‡°ü¸ž.
+[	java:S106Õ"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ8‡°ü¸ž.
+Y	java:S125¹"<This block of commented-out lines of code should be removed.(Ðÿ÷Ü8‡°ü¸ž.
+g
+java:S1128G"KRemove this unused import 'com.google.firebase.database.DatabaseReference'.(ÉÓ¹8‡°ü¸ž.
+Z
+java:S1854ê"<Remove this useless assignment to local variable "lastName".(Œ‰ºÝ8ùÝæ¹ž.
+_
+java:S1117Ü"<Rename "password" which hides the field declared at line 83.(óø¿þøÿÿÿÿ8‡°ü¸ž.
+P
+java:S1481à"-Remove this unused "lastName" local variable.(õù†úÿÿÿÿ8ùÝæ¹ž.
+P
+java:S1481â"-Remove this unused "birthDay" local variable.(Ø¾ßÂþÿÿÿÿ8ùÝæ¹ž.
+[	java:S106«"9Replace this use of System.out or System.err by a logger.(ý¯§˜ûÿÿÿÿ8‡°ü¸ž.
+[
+java:S1117Õ"8Rename "user" which hides the field declared at line 86.(©Í”äýÿÿÿÿ8‡°ü¸ž.
+F
+java:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ùÝæ¹ž.
+W
+java:S1481š"4Remove this unused "personGivenName" local variable.(•úœïÿÿÿÿÿ8‡°ü¸ž.
+V	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(ÉÐëš8‡°ü¸ž.
+P
+java:S1481Ü"-Remove this unused "password" local variable.(óø¿þøÿÿÿÿ8ùÝæ¹ž.
+I
+java:S1481ä"+Remove this unused "number" local variable.(¹œ‰ù8ùÝæ¹ž.
+Z
+java:S1117Û"<Rename "password" which hides the field declared at line 83.(œ—”ž8‡°ü¸ž.
+O
+java:S1481ý"2Remove this unused "emailVerified" local variable.(õÍ§|8‡°ü¸ž.
+\
+java:S1854ë"9Remove this useless assignment to local variable "email".(œÜ¤Éýÿÿÿÿ8ùÝæ¹ž.
+m
+java:S1192¥"JDefine a constant instead of duplicating this literal "userPhoto" 5 times.(´Çó†þÿÿÿÿ8‡°ü¸ž.
+Y
+java:S1854î";Remove this useless assignment to local variable "address".(‡øò¾8ùÝæ¹ž.
+X
+java:S1874²":Remove this use of "setReadPermissions"; it is deprecated.(îÒ±þ8ùÝæ¹ž.
+N
+java:S1481ß"+Remove this unused "idCard" local variable.(°Ìç³ûÿÿÿÿ8ùÝæ¹ž.
+Y	java:S125à"<This block of commented-out lines of code should be removed.(”ÏÜ–8‡°ü¸ž.
+X	java:S125w"<This block of commented-out lines of code should be removed.(”ûŸï8‡°ü¸ž.
+P
+java:S1135"2Complete the task associated to this TODO comment.(…ïœ†8‡°ü¸ž.
+Y
+java:S1854Ý";Remove this useless assignment to local variable "picture".(µµËØ8‡°ü¸ž.
+C
+java:S1659S"&Declare "password" on a separate line.(…é¶ê8‡°ü¸ž.
+\
+java:S1117Ø"9Rename "email" which hides the field declared at line 83.(ò¢ô¥þÿÿÿÿ8‡°ü¸ž.
+^
+java:S1854ý"ARemove this useless assignment to local variable "emailVerified".(õÍ§|8‡°ü¸ž.
+O
+java:S1481¨",Remove this unused "usuario" local variable.(æáË™þÿÿÿÿ8‡°ü¸ž.
+g
+java:S1192‘"IDefine a constant instead of duplicating this literal "password" 4 times.(÷ËÕº8‡°ü¸ž.
+p
+java:S3776˜"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÇßÁé8„¤±Ñž.
+T
+java:S2696«"6Make the enclosing method "static" or remove this set.(ƒœ’ò8„¤±Ñž.
+[	java:S106­"9Replace this use of System.out or System.err by a logger.(¢ÿ†ÿøÿÿÿÿ8„¤±Ñž.
+[	java:S106¯"9Replace this use of System.out or System.err by a logger.(Ïëéåùÿÿÿÿ8„¤±Ñž.
+Y
+java:S2696±"6Make the enclosing method "static" or remove this set.(ª»ÑÐýÿÿÿÿ8„¤±Ñž.

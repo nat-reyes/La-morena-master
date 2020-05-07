@@ -3,7 +3,7 @@ package com.example.lamorena.Entities;
 import android.net.Uri;
 
 public class User {
-    private  String id,idCard, nombre ,email,password,token,apellido,tel,picture;
+    private  String id,idCard, nombre ,email,password,token,apellido,tel,picture,rol;
     private Uri urlPhoto;
     private static User usuario;
     public static User getInstance(){
@@ -96,7 +96,13 @@ public class User {
         this.password = password;
     }
 
+    public String getRol() {
+        return rol;
+    }
 
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 
     public String getPicture() {
         return picture;

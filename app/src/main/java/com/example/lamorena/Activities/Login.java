@@ -58,6 +58,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
 import java.util.regex.Pattern;
 
 import com.facebook.FacebookSdk;
@@ -96,23 +97,26 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("-------------------------------------------------------------------------------------2");
         setTheme(R.style.AppThemeMaterial);
+        System.out.println("-------------------------------------------------------------------------------------3");
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
+        System.out.println("-------------------------------------------------------------------------------------3--");
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-
+        System.out.println("-------------------------------------------------------------------------------------4");
         db = FirebaseFirestore.getInstance();
         email = (EditText) findViewById(R.id.input_email);
         password = (EditText) findViewById(R.id.input_password);
         url = new Url();
         queue = Volley.newRequestQueue(Login.this);
         conection = new ConectionSQLiteHelper(this, "bd_user", null, 2);
-
+        System.out.println("-------------------------------------------------------------------------------------5");
         mAuth = FirebaseAuth.getInstance();
-        initializeGoogleSignIn();
-        initializeFacebookSignIn();
+        //initializeGoogleSignIn();
+        //initializeFacebookSignIn();
 
 
         if (Utils.veirifyConnection(this)) {
@@ -211,6 +215,7 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("FACEBOOK LOGIN", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+
                             Utils.saveUserFirebaseDatabase(user, db);
                             String name = user.getDisplayName();
                             String email = user.getEmail();
@@ -228,6 +233,7 @@ public class Login extends AppCompatActivity {
                             extras.add(new Utils.Extra("userPhoto", photoUrl));
                             extras.add(new Utils.Extra("userName", name));
                             extras.add(new Utils.Extra("userEmail", email));
+
                             Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -300,7 +306,7 @@ public class Login extends AppCompatActivity {
 
             Log.e("personname", acct.getDisplayName());
             Log.e(" personId", acct.getId());
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
+            //Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
     }
 
@@ -334,7 +340,7 @@ public class Login extends AppCompatActivity {
             Log.e("uid", currentUser.getUid());
             Log.e("token", currentUser.getProviderId());
             //revisar tokenid
-            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
+            //Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
         }
     }
 
@@ -355,7 +361,7 @@ public class Login extends AppCompatActivity {
         }
 
     }
-
+static ArrayList<Utils.Extra> extras;
     public void signInUserWithEmail(String email, String password) {
         mquery = db.collection("Users");
 
@@ -381,13 +387,25 @@ public class Login extends AppCompatActivity {
                             boolean emailVerified = user.isEmailVerified();
                             String uid = user.getUid();
                             // guardo datos
-                            ArrayList<Utils.Extra> extras = new ArrayList<>();
+                            extras = new ArrayList<>();
                             extras.add(new Utils.Extra("userId", uid));
                             extras.add(new Utils.Extra("userPhoto", photoUrl));
                             extras.add(new Utils.Extra("userName", name));
                             extras.add(new Utils.Extra("userEmail", email));
                             saveUserAfterSing(extras);
+                            Thread t = new Thread(){
+                                @Override
+                                public void run() {
+                                    try {
+                                        saveUserAfterSing(extras);
+                                        sleep(3000);
 
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            };
+                            t.start();
                             Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                         } else {
                             progressDialog.dismiss();
@@ -405,36 +423,42 @@ public class Login extends AppCompatActivity {
     }
 
 
-                private void saveUserAfterSing(final ArrayList<Utils.Extra> extras) {
-                     final FirebaseUser userFb = mAuth.getCurrentUser();
+    private void saveUserAfterSing(final ArrayList<Utils.Extra> extras) {
+        final FirebaseUser userFb = mAuth.getCurrentUser();
 
-                    mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                       // idCard, apellido, tel,
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Log.d("Cuentas:", document.getId()+ " => " + document.getData());
-                                    if(document.getId().equalsIgnoreCase(userFb.getUid())){
-                                        Map<String, Object> userMap = new HashMap<>();
+        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    // idCard, apellido, tel,
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d("Cuentas:", document.getId() + " => " + document.getData());
+                        if (document.getId().equalsIgnoreCase(userFb.getUid())) {
+                            Map<String, Object> userMap = new HashMap<>();
 
-                                        for(String clave:document.getData().keySet()){
-                                            System.out.println("<3 "+clave+" "+document.getData().get(clave));
-                                            String value = (String) document.getData().get(clave);
-                                            User usuario = User.getInstance();
-                                            userMap.put(clave,value);
-                                        }
-                                        break;
-                                    }else{
-                                        Log.d("Tag", "No such document");
-                                    }
-                                }
-
-                             }
+                            for (String clave : document.getData().keySet()) {
+                                System.out.println("<3 " + clave + " " + document.getData().get(clave));
+                                String value = (String) document.getData().get(clave);
+                                User usuario = User.getInstance();
+                                userMap.put(clave, value);
+                            }
+                            Utils.rol = userMap.get("rol") + "";
+                            if (Utils.rol.equals("cliente")) {
+                                System.out.println("SOY CLIENTE");
+                            } else {
+                                System.out.println("SOY DIOS");
+                            }
+                            Utils.sesion = userMap;
+                            break;
+                        } else {
+                            Log.d("Tag", "No such document");
                         }
-                        });
+                    }
 
                 }
+            }
+        });
+    }
 
     private void showDialogWait(ProgressDialog progressDialog) {
         progressDialog.setCanceledOnTouchOutside(false);
@@ -443,13 +467,13 @@ public class Login extends AppCompatActivity {
         progressDialog.show();
     }
 
-    public void serviceConnectLogin(String email, String password){
-        String urlEnvio = url.getUrlBase()+url.getUrlLogin();
+    public void serviceConnectLogin(String email, String password) {
+        String urlEnvio = url.getUrlBase() + url.getUrlLogin();
         JSONObject jsonObjectData = new JSONObject();
-        try{
-            jsonObjectData.put("email",email);
-            jsonObjectData.put("password",password);
-        }catch(JSONException e){
+        try {
+            jsonObjectData.put("email", email);
+            jsonObjectData.put("password", password);
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -461,7 +485,7 @@ public class Login extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         System.out.println(response);
                         try {
-                            if(response.get("message").equals("Inicio de sesión correcto")){
+                            if (response.get("message").equals("Inicio de sesión correcto")) {
                                 String token = response.getString("token");
                                 JSONObject jsonObject = response.getJSONObject("user");
                                 String id = jsonObject.getString("_id");
@@ -478,7 +502,7 @@ public class Login extends AppCompatActivity {
                                 String address = "";
                                 String type = "";
 
-                                try{
+                                try {
                                     idCard = jsonObject.getString("idCard");
                                     lastName = jsonObject.getString("lastName");
                                     email = jsonObject.getString("email");
@@ -486,7 +510,7 @@ public class Login extends AppCompatActivity {
                                     number = jsonObject.getString("number");
                                     address = jsonObject.getString("address");
                                     type = jsonObject.getString("type");
-                                }catch (Exception e){
+                                } catch (Exception e) {
                                     e.printStackTrace();
 
                                 }
@@ -498,8 +522,8 @@ public class Login extends AppCompatActivity {
                                 savePreferences(user);
                                 progressDialog.dismiss();
                                 ArrayList<Utils.Extra> extras = new ArrayList<>();
-                                extras.add(new Utils.Extra("userId",id));
-                                Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true,extras);
+                                extras.add(new Utils.Extra("userId", id));
+                                Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -519,11 +543,11 @@ public class Login extends AppCompatActivity {
                         } else if (error instanceof AuthFailureError) {
                             //TODO
                         } else if (error instanceof ServerError) {
-                            if(statusCode == 404){
+                            if (statusCode == 404) {
                                 View contextView = findViewById(R.id.context_view);
                                 Snackbar.make(contextView, getResources().getString(R.string.errLogin), Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
-                            }else {
+                            } else {
                                 View contextView = findViewById(R.id.context_view);
                                 Snackbar.make(contextView, getResources().getString(R.string.errServer), Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
@@ -547,9 +571,9 @@ public class Login extends AppCompatActivity {
         String userId = user.getId();
 
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("email",email);
-        editor.putString("password",password);
-        editor.putString("userId",userId);
+        editor.putString("email", email);
+        editor.putString("password", password);
+        editor.putString("userId", userId);
 
         editor.commit();
     }
@@ -576,15 +600,15 @@ public class Login extends AppCompatActivity {
         db.close();
     }*/
 
-    public boolean validatefields(String email, String password){
+    public boolean validatefields(String email, String password) {
         boolean response = true;
         Pattern pattern = Patterns.EMAIL_ADDRESS;
-        if(!pattern.matcher(email).matches()){
+        if (!pattern.matcher(email).matches()) {
             String validateEmail = getResources().getString(R.string.validateEmail);
             this.email.setError(validateEmail);
             response = false;
         }
-        if(password.equals("") || password.length()<6){
+        if (password.equals("") || password.length() < 6) {
             String validatePassword = getResources().getString(R.string.validatePassword);
             this.password.setError(validatePassword);
             response = false;
@@ -593,6 +617,6 @@ public class Login extends AppCompatActivity {
     }
 
     public void goToRegister(View view) {
-        Utils.GoToNextActivityCleanStack(Login.this,RegistryUser.class,false,null);
+        Utils.GoToNextActivityCleanStack(Login.this, RegistryUser.class, false, null);
     }
 }

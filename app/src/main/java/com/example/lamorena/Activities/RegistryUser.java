@@ -78,9 +78,6 @@ public class RegistryUser extends AppCompatActivity {
 
     public void createAccount(View view) {
         progressDialog = new ProgressDialog(RegistryUser.this, R.style.MyAlertDialogStyle);
-
-
-
         String cardId = this.cardId.getText().toString();
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
@@ -99,7 +96,7 @@ public class RegistryUser extends AppCompatActivity {
                     usuario.setApellido(apellido);
                     usuario.setTel(telefono);
                     usuario.setPassword(password);
-
+                    usuario.setRol("cliente");
                     showDialogWait(progressDialog);
                     //serviceConnectLogin(email, password,name,cardId,view);
                     signUpNewUserWithEmail(email,password);

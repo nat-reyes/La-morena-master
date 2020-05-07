@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="aseguradora">aseguradora</string>
+    <string name="empleado">Registrar Empleado</string>
     <string name="app_name">La morenar</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -16,6 +18,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
+    <string name="lastname">Apellido</string>
+    <string name="rol">Cargo</string>
     <string name="email">Correo</string>
     <string name="validateEmail">Por favor ingresa un email valido</string>
     <string name="password">Contraseña</string>

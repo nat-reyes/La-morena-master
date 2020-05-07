@@ -1,65 +1,57 @@
 
-V
-java:S1117R"9Rename "email" which hides the field declared at line 45.(‡ò¶â8£ÿÏ¬š.
-Z
-java:S1854X"8Remove this useless assignment to local variable "user".(©Í”äýÿÿÿÿ8£ÿÏ¬š.
-Y
-java:S1117W"<Rename "telefono" which hides the field declared at line 45.(âé—Ë8£ÿÏ¬š.
-?
-java:S1659-""Declare "name" on a separate line.(¿¡¢½8£ÿÏ¬š.
-P
-java:S1135º"2Complete the task associated to this TODO comment.(…ïœ†8»ß°«š.
-C
-java:S1659-"&Declare "apellido" on a separate line.(¿¡¢½8£ÿÏ¬š.
-e
-java:S1192¦"GDefine a constant instead of duplicating this literal "Action" 5 times.( ð“ÿ8»ß°«š.
-U
-java:S1117U"8Rename "name" which hides the field declared at line 45.(£š‡â8£ÿÏ¬š.
-Q
-java:S1066Z"/Merge this if statement with the enclosing one.(È¤†‡ýÿÿÿÿ8£ÿÏ¬š.
-P
-java:S1135Ÿ"2Complete the task associated to this TODO comment.(…ïœ†8»ß°«š.
-[	java:S106š"9Replace this use of System.out or System.err by a logger.(û¦¢ƒþÿÿÿÿ8»ß°«š.
-Y
-java:S1117S"<Rename "password" which hides the field declared at line 45.(œ—”ž8£ÿÏ¬š.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–Ò
-Y
-java:S1854W"<Remove this useless assignment to local variable "telefono".(âé—Ë8£ÿÏ¬š.
-N
-java:S1172"+Remove this unused method parameter "view".(¯Äƒ¤þÿÿÿÿ8»ß°«š.
-C
-java:S1659-"&Declare "telefono" on a separate line.(¿¡¢½8£ÿÏ¬š.
-Y
-java:S1854V"<Remove this useless assignment to local variable "apellido".(«ÇŒÿ8£ÿÏ¬š.
+V
+java:S1117U"9Rename "email" which hides the field declared at line 47.(‡ò¶â8Ä¡ü¸ž.
 J
-java:S1481W"-Remove this unused "telefono" local variable.(âé—Ë8£ÿÏ¬š.
-@
-java:S1659-"#Declare "email" on a separate line.(¿¡¢½8£ÿÏ¬š.
-C
-java:S1659-"&Declare "password" on a separate line.(¿¡¢½8£ÿÏ¬š.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ8»ß°«š.
+java:S1172p"(Remove this unused method parameter "v".(¨ûæ¡ûÿÿÿÿ8Ä¡ü¸ž.
 P
-java:S1135¸"2Complete the task associated to this TODO comment.(…ïœ†8»ß°«š.
-K	java:S108œ")Either remove or fill this block of code.(™²¨©ûÿÿÿÿ8»ß°«š.
+java:S1135½"2Complete the task associated to this TODO comment.(…ïœ†8Ä¡ü¸ž.
 Q
-java:S1066["/Merge this if statement with the enclosing one.(ŒÒŽÕúÿÿÿÿ8£ÿÏ¬š.
-J
-java:S1659-"-Declare "confirmPassword" on a separate line.(¿¡¢½8£ÿÏ¬š.
-^	java:S125„"<This block of commented-out lines of code should be removed.(àù¶çùÿÿÿÿ8»ß°«š.
+java:S1066^"/Merge this if statement with the enclosing one.(ŒÒŽÕúÿÿÿÿ8Ä¡ü¸ž.
 e
-java:S1117T"CRename "confirmPassword" which hides the field declared at line 45.(ÔÏŠëøÿÿÿÿ8£ÿÏ¬š.
-K
-java:S1481X")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8£ÿÏ¬š.
-W
-java:S1117Q":Rename "cardId" which hides the field declared at line 45.(ÍÃœÇ8£ÿÏ¬š.
+java:S1117W"CRename "confirmPassword" which hides the field declared at line 47.(ÔÏŠëøÿÿÿÿ8Ä¡ü¸ž.
+^	java:S125‡"<This block of commented-out lines of code should be removed.(àù¶çùÿÿÿÿ8Ä¡ü¸ž.
 J
-java:S1481V"-Remove this unused "apellido" local variable.(«ÇŒÿ8£ÿÏ¬š.
-]	java:S125e"<This block of commented-out lines of code should be removed.(å®¼üÿÿÿÿ8»ß°«š.
-M
-java:S1172L"+Remove this unused method parameter "view".(×™Âêúÿÿÿÿ8£ÿÏ¬š.
+java:S1659/"-Declare "confirmPassword" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+C
+java:S1659/"&Declare "apellido" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+[	java:S106‚"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ8Ä¡ü¸ž.
+Z
+java:S1854["8Remove this useless assignment to local variable "user".(©Í”äýÿÿÿÿ8Ä¡ü¸ž.
+U
+java:S1117X"8Rename "name" which hides the field declared at line 47.(£š‡â8Ä¡ü¸ž.
+Q
+java:S1066]"/Merge this if statement with the enclosing one.(È¤†‡ýÿÿÿÿ8Ä¡ü¸ž.
 t
-java:S3776m"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(¨ûæ¡ûÿÿÿÿ8»ß°«š.
-J
-java:S1172m"(Remove this unused method parameter "v".(¨ûæ¡ûÿÿÿÿ8»ß°«š.
+java:S3776p"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(¨ûæ¡ûÿÿÿÿ8Ä¡ü¸ž.
+M
+java:S1172O"+Remove this unused method parameter "view".(×™Âêúÿÿÿÿ8Ä¡ü¸ž.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(û¦¢ƒþÿÿÿÿ8Ä¡ü¸ž.
 Y
-java:S1117V"<Rename "apellido" which hides the field declared at line 45.(«ÇŒÿ8£ÿÏ¬š.
+java:S1117V"<Rename "password" which hides the field declared at line 47.(œ—”ž8Ä¡ü¸ž.
+Y
+java:S1117Y"<Rename "apellido" which hides the field declared at line 47.(«ÇŒÿ8Ä¡ü¸ž.
+]	java:S125h"<This block of commented-out lines of code should be removed.(å®¼üÿÿÿÿ8Ä¡ü¸ž.
+K	java:S108Ÿ")Either remove or fill this block of code.(™²¨©ûÿÿÿÿ8Ä¡ü¸ž.
+W
+java:S1117T":Rename "cardId" which hides the field declared at line 47.(ÍÃœÇ8Ä¡ü¸ž.
+N
+java:S1172–"+Remove this unused method parameter "view".(¯Äƒ¤þÿÿÿÿ8»ß°«š.
+K
+java:S1481[")Remove this unused "user" local variable.(©Í”äýÿÿÿÿ8Ä¡ü¸ž.
+P
+java:S1135»"2Complete the task associated to this TODO comment.(…ïœ†8Ä¡ü¸ž.
+e
+java:S1192©"GDefine a constant instead of duplicating this literal "Action" 5 times.( ð“ÿ8Ä¡ü¸ž.
+P
+java:S1135¢"2Complete the task associated to this TODO comment.(…ïœ†8Ä¡ü¸ž.
+C
+java:S1659/"&Declare "telefono" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+?
+java:S1659/""Declare "name" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+C
+java:S1659/"&Declare "password" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+@
+java:S1659/"#Declare "email" on a separate line.(¿¡¢½8Ä¡ü¸ž.
+Y
+java:S1117Z"<Rename "telefono" which hides the field declared at line 47.(âé—Ë8Ä¡ü¸ž.

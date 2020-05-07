@@ -1,4 +1,7 @@
 <resources>
+    <string name="aseguradora">Aseguradora</string>
+    <string name="empleado">Registrar Empleado</string>
+
     <string name="app_name">La Morena </string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,7 +17,8 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-
+    <string name="lastname">LastName</string>
+    <string name="rol">Cargo</string>
     <string name="email">Email</string>
     <string name="validateEmail">Please enter valid email address</string>
     <string name="password">Password</string>
@@ -31,14 +35,14 @@
     <string name="waitRegister">Creating account</string>
 
     <string name="accountMenu">Account</string>
-    <string name="profile">Profile</string>
-    <string name="ingreso">Vehicle</string>
+    <string name="profile">Perfil</string>
+    <string name="ingreso">Vehiculo</string>
     <string name="purchases">Purchases</string>
     <string name="favorites">Favorites</string>
     <string name="categories">Categories</string>
     <string name="offers">Offers</string>
     <string name="session">Session</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Salir</string>
 
     <string name="register">Register</string>
     <string name="idCard">Identification Card</string>

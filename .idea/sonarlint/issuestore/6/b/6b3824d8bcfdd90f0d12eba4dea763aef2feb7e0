@@ -1,0 +1,41 @@
+
+A
+java:S10681"+Remove this unused "mParam1" private field.(•Íï‘
+M
+java:S11350"2Complete the task associated to this TODO comment.(ğï¢öúÿÿÿÿ
+l
+java:S14501"VRemove the "mParam1" field and declare it as a local variable in the relevant methods.(•Íï‘
+l
+java:S14502"VRemove the "mParam2" field and declare it as a local variable in the relevant methods.(¡ˆ€ 
+Z
+java:S1117Œ">Rename "categories" which hides the field declared at line 46.(¼ÙÅıÿÿÿÿ
+Q	java:S125i"<This block of commented-out lines of code should be removed.(ªŒÑï
+R	java:S125¦"<This block of commented-out lines of code should be removed.(Ó»ñÈ
+M
+java:S1135&"2Complete the task associated to this TODO comment.(ÜûŠ—øÿÿÿÿ
+V	java:S125g"<This block of commented-out lines of code should be removed.(õÂàÿÿÿÿÿ
+R
+java:S1481Œ"/Remove this unused "categories" local variable.(¼ÙÅıÿÿÿÿ8Í¬º.
+W	java:S125È"<This block of commented-out lines of code should be removed.(õÂàÿÿÿÿÿ
+a
+java:S1854Œ">Remove this useless assignment to local variable "categories".(¼ÙÅıÿÿÿÿ8Í¬º.
+Q	java:S125a"<This block of commented-out lines of code should be removed.(ã’æş
+A
+java:S10682"+Remove this unused "mParam2" private field.(¡ˆ€ 
+I
+java:S1135Ğ"2Complete the task associated to this TODO comment.(åµÈ¶
+i	java:S100å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁğõÇúÿÿÿÿ
+4
+java:S1700."Rename field "categories"(‘Ñİÿÿÿÿÿ
+Q	java:S125W"<This block of commented-out lines of code should be removed.(ú•íõ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¾¬ÕĞ
+M
+java:S1135B"2Complete the task associated to this TODO comment.(ßíŠÿÿÿÿÿ
+V	java:S125m"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ
+R	java:S125Ã"<This block of commented-out lines of code should be removed.(ã’æş
+^	java:S125"<This block of commented-out lines of code should be removed.(Ò—Äúÿÿÿÿ8Í¬º.
+I
+java:S1135ó"2Complete the task associated to this TODO comment.(‡‚ùˆ
+Q	java:S125Á"<This block of commented-out lines of code should be removed.(ôğÏQ
+V
+java:S1144£"3Remove this unused private "showCategories" method.(ÄË„Ğıÿÿÿÿ8Í¬º.

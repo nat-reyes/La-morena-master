@@ -1,6 +1,7 @@
 package com.example.lamorena;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import com.example.lamorena.Activities.CartActivity;
 import com.example.lamorena.Activities.ProfileActivity;
 import com.example.lamorena.Activities.Purchases;
+import com.example.lamorena.Activities.RegisterEmployee;
 import com.example.lamorena.Fragments.ProductFragment;
 import com.example.lamorena.R;
 import com.example.lamorena.Activities.Login;
@@ -46,6 +48,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,6 +56,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -75,10 +79,16 @@ public class MainActivity extends AppCompatActivity
     private String userName;
     private String userId;
     private String userEmail;
+    private NavigationView copia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("-------------------------------------------------------------------------------------1"+Utils.rol);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        if(Utils.rol!=null &&Utils.rol.equals("cliente")){
+            setContentView(R.layout.activity_main);
+        }else{
+            setContentView(R.layout.activity_main2);
+        }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -124,7 +134,6 @@ public class MainActivity extends AppCompatActivity
                 userPhoto.setImageBitmap(bm);
             }
         };
-
         loadPhotoAsync.execute(link);
     }
 
@@ -140,6 +149,7 @@ public class MainActivity extends AppCompatActivity
         conectionSQLiteHelper = new ConectionSQLiteHelper(this,"bd_user",null,2);
         View view = navigationView.getHeaderView(0);
         username = (TextView) view.findViewById(R.id.userName);
+        username.setText(Utils.rol);
         userLevel = (TextView) view.findViewById(R.id.userLevel);
         userPhoto = (ImageView) view.findViewById(R.id.userPhoto);
 //        setHeader(username,userLevel,userPhoto);
@@ -271,6 +281,9 @@ public class MainActivity extends AppCompatActivity
             extras.add(new Utils.Extra("userName",userName));
             extras.add(new Utils.Extra("userEmail",userEmail));
             Utils.GoToNextActivityCleanStack(MainActivity.this, ProfileActivity.class,false,extras);
+        }else if(id == R.id.employee){
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            Utils.GoToNextActivityCleanStack(MainActivity.this, RegisterEmployee.class,false,extras);
         }else if(id == R.id.ingreso){
             viewPager.setCurrentItem(0);
         }

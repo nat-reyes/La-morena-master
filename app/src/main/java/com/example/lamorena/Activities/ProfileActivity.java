@@ -26,6 +26,8 @@ import com.example.lamorena.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Map;
+
 import static com.example.lamorena.Helpers.Utils.MODAL_EMAIL;
 import static com.example.lamorena.Helpers.Utils.MODAL_ID;
 import static com.example.lamorena.Helpers.Utils.MODAL_NAME;
@@ -34,7 +36,7 @@ import static com.example.lamorena.Helpers.Utils.MODAL_PHONE;
 public class ProfileActivity extends AppCompatActivity {
 
     private ImageView userPhoto;
-    private TextView name, email, phoneNumber, identificationCard;
+    private TextView name, email, phoneNumber, identificationCard,lastname;
     private ConectionSQLiteHelper conectionSQLiteHelper;
     private Toolbar toolbar;
     private BottomSheetDialogFragment bottomSheetFragment;
@@ -49,11 +51,33 @@ public class ProfileActivity extends AppCompatActivity {
         addFAB();
         setHeaderData(userPhoto);
         setDataUser();
+        setValues();
     }
 
     private void setDataUser() {
          user = FirebaseAuth.getInstance().getCurrentUser();
 
+    }
+    public void setValues(){
+        Map<String, Object> userMap = Utils.sesion;
+        if(userMap.get("nombre")!=null){
+            name.setText(userMap.get("nombre")+"");
+        }
+        if(userMap.get("email")!=null){
+            email.setText(userMap.get("email")+"");
+        }
+        if(userMap.get("password")!=null){
+            identificationCard.setText(userMap.get("password")+"");
+        }
+        if(userMap.get("tel")!=null){
+            phoneNumber.setText(userMap.get("tel")+"");
+        }
+        if(userMap.get("email")!=null){
+            email.setText(userMap.get("email")+"");
+        }
+        if(userMap.get("apellido")!=null){
+            lastname.setText(userMap.get("apellido")+"");
+        }
     }
 
     private void  initializationVariables (){
@@ -63,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.userEmail);
         phoneNumber = (TextView) findViewById(R.id.userPhoneNumber);
         identificationCard = (TextView) findViewById(R.id.userID);
-
+        lastname = (TextView) findViewById(R.id.userLastName);
     }
 
     private void addFAB (){
