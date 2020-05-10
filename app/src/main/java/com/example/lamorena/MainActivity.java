@@ -1,7 +1,6 @@
 package com.example.lamorena;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,12 +9,12 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.example.lamorena.Activities.CartActivity;
+import com.example.lamorena.Activities.IngresoCliente;
+import com.example.lamorena.Activities.Insurer;
 import com.example.lamorena.Activities.ProfileActivity;
-import com.example.lamorena.Activities.Purchases;
-import com.example.lamorena.Activities.RegisterEmployee;
+import com.example.lamorena.Activities.Employee;
+import com.example.lamorena.Activities.Service;
 import com.example.lamorena.Fragments.ProductFragment;
-import com.example.lamorena.R;
 import com.example.lamorena.Activities.Login;
 import com.example.lamorena.Fragments.Categories;
 import com.example.lamorena.Fragments.Offers;
@@ -48,16 +47,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, Categories.OnFragmentInteractionListener, ProductFragment.OnFragmentInteractionListener, Offers.OnFragmentInteractionListener {
@@ -76,13 +73,12 @@ public class MainActivity extends AppCompatActivity
     private GoogleSignInClient mGoogleSignInClient;
 
     private String userPhotoUrl;
-    private String userName;
-    private String userId;
+    private TextView userName;
     private String userEmail;
     private NavigationView copia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("-------------------------------------------------------------------------------------1"+Utils.rol);
+        System.out.println("rol//"+Utils.rol);
         super.onCreate(savedInstanceState);
         if(Utils.rol!=null &&Utils.rol.equals("cliente")){
             setContentView(R.layout.activity_main);
@@ -117,8 +113,8 @@ public class MainActivity extends AppCompatActivity
 //        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
 //        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
 //        tabs.setupWithViewPager(pager);
-
         initializationVariables();
+        setHeaderData();
 
     }
 
@@ -148,12 +144,11 @@ public class MainActivity extends AppCompatActivity
 
         conectionSQLiteHelper = new ConectionSQLiteHelper(this,"bd_user",null,2);
         View view = navigationView.getHeaderView(0);
-        username = (TextView) view.findViewById(R.id.userName);
-        username.setText(Utils.rol);
+        username = (TextView) view.findViewById(R.id.headerName);
         userLevel = (TextView) view.findViewById(R.id.userLevel);
         userPhoto = (ImageView) view.findViewById(R.id.userPhoto);
 //        setHeader(username,userLevel,userPhoto);
-        setHeaderData(username,userLevel,userPhoto);
+     //   setHeaderData(username,userLevel,userPhoto);
 
     }
 
@@ -169,19 +164,15 @@ public class MainActivity extends AppCompatActivity
         cursor.close();
     }
 
-    private void setHeaderData (TextView username,TextView userLevel,ImageView userPhoto){
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        System.out.println(currentUser.getDisplayName() + currentUser.getProviderId()+ "3");
+    private void setHeaderData (){
         System.out.println("hey");
-        userId = currentUser.getDisplayName();
-        username.setText(userId);
-        userLevel.setText("Usuario");
-      //  userId = getIntent().getStringExtra("userId");
-        userPhotoUrl = getIntent().getStringExtra("userPhoto");
-        userName = getIntent().getStringExtra("userName");
-        userEmail = getIntent().getStringExtra("userEmail");
 
-        if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
+        Map<String, Object> userMap = Utils.sesion;
+      //  userId = getIntent().getStringExtra("userId");
+      //  userPhotoUrl = getIntent().getStringExtra("userPhoto");
+         username.setText(userMap.get("nombre")+""+" "+userMap.get("apellido")+"");
+         userLevel.setText(Utils.rol);
+     //   if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
     }
 
     @Override
@@ -276,16 +267,21 @@ public class MainActivity extends AppCompatActivity
 
         }else if(id == R.id.account){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userId",userId));
             extras.add(new Utils.Extra("userPhoto",userPhotoUrl));
-            extras.add(new Utils.Extra("userName",userName));
             extras.add(new Utils.Extra("userEmail",userEmail));
             Utils.GoToNextActivityCleanStack(MainActivity.this, ProfileActivity.class,false,extras);
         }else if(id == R.id.employee){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, RegisterEmployee.class,false,extras);
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Employee.class,false,extras);
         }else if(id == R.id.ingreso){
-            viewPager.setCurrentItem(0);
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            Utils.GoToNextActivityCleanStack(MainActivity.this, IngresoCliente.class,false,extras);
+        }else if(id == R.id.service){
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Service.class,false,extras);
+        }else if(id == R.id.aseguradora){
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Insurer.class,false,extras);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

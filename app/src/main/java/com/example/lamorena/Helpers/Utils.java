@@ -145,6 +145,14 @@ public class Utils {
 
     }
 
+    public static String getRol() {
+        return rol.toString();
+    }
+
+    public static void setRol(String rol) {
+        Utils.rol = rol;
+    }
+
     public static class LoadPhotoAsync extends AsyncTask<String , Void, Bitmap> {
 
         @Override
@@ -216,15 +224,18 @@ public class Utils {
                 });
     }
     public static void saveUserFirebaseDatabase2(FirebaseUser user, FirebaseFirestore db,Map<String, Object> userMap1){
+
         System.out.println(user.getUid()+" - "+user);
         String llave = userMap1.get("IdCard")+"";
-        System.out.println("<3 --------- "+llave);
+        System.out.println("<3 --------- id card "+llave);
         db.collection("empleados").document(llave).set(userMap1)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d("SUCCESS", "CREATE");                    }
+                        Log.d("SUCCESS", "CREATE");
+                    }
                 });
+
     }
 
     public static void saveUserGoogleFirebaseDatabase(GoogleSignInAccount acct, FirebaseFirestore db){

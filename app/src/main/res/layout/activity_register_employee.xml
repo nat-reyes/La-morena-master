@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/primaryColor"
-    tools:context="com.example.lamorena.Activities.RegisterEmployee">
+    tools:context="com.example.lamorena.crud.registrarEmpleado">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -14,7 +14,6 @@
         android:paddingTop="20dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
-
 
 
         <LinearLayout
@@ -171,7 +170,7 @@
             android:backgroundTint="@color/secondaryColor"
             android:textColor="@color/secondaryTextColor"
             android:layout_marginBottom="24dp"
-            android:onClick="createAccountEmployee"
+            android:onClick="createEmployee"
             android:text="@string/register"/>
 
 

@@ -21,8 +21,47 @@
             android:name="com.example.lamorena.Activities.RegistryUser"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.Activities.RegisterEmployee"
+            android:name="com.example.lamorena.Activities.Employee"
             android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name="com.example.lamorena.Activities.Service"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name="com.example.lamorena.Activities.Insurer"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name="com.example.lamorena.crud.registrarEmpleado"
+            android:theme="@style/AppThemeMaterial" />
+
+        <activity
+            android:name="com.example.lamorena.crud.updateEmpleado"
+            android:theme="@style/AppThemeMaterial" />
+
+
+        <activity
+            android:name="com.example.lamorena.crud.registrarServicio"
+            android:theme="@style/AppThemeMaterial" />
+
+        <activity
+            android:name="com.example.lamorena.crud.updateServicio"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name="com.example.lamorena.crud.registrarInsurer"
+            android:theme="@style/AppThemeMaterial" />
+
+        <activity
+            android:name="com.example.lamorena.crud.updateInsurer"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name="com.example.lamorena.crud.listEmpleado"
+            android:theme="@style/AppThemeMaterial" />
+
+        <activity
+            android:name="com.example.lamorena.Activities.IngresoCliente"
+            android:theme="@style/AppThemeMaterial" />
+
+
+
 
         <activity
             android:name="com.example.lamorena.Activities.Login"

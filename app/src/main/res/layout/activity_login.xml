@@ -18,7 +18,6 @@ tools:context="com.example.lamorena.Activities.Login">
     android:paddingLeft="24dp"
     android:paddingRight="24dp">
 
-
     <LinearLayout
         android:layout_marginTop="0dp"
         android:layout_width="match_parent"

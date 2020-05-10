@@ -72,9 +72,21 @@ public class RegistryUser extends AppCompatActivity {
         usuario = User.getInstance();
         url = new Url();
         queue = Volley.newRequestQueue(RegistryUser.this);
-
+         inicializarCampos();
         Utils.veirifyConnection(this);
     }
+
+    public void inicializarCampos(){
+        cardId.setText("123123");
+        name.setText("nata");
+        email.setText("reyes@gmail.com");
+        telefono.setText("3138114921");
+        apellido.setText("reyes");
+        password.setText("123123");
+        confirmPassword.setText("123123");
+
+    }
+
 
     public void createAccount(View view) {
         progressDialog = new ProgressDialog(RegistryUser.this, R.style.MyAlertDialogStyle);

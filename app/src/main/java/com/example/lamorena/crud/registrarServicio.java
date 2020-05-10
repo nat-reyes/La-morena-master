@@ -1,19 +1,22 @@
-package com.example.lamorena.Activities;
+package com.example.lamorena.crud;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
+import com.example.lamorena.Activities.Login;
 import com.example.lamorena.Entities.User;
 import com.example.lamorena.Helpers.Url;
 import com.example.lamorena.Helpers.Utils;
+import com.example.lamorena.MainActivity;
 import com.example.lamorena.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,25 +25,45 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterEmployee extends AppCompatActivity {
+public class registrarServicio extends AppCompatActivity {
 
 
     private EditText cardId, name, email, rol, apellido, telefono;
     private Url url;
     private RequestQueue queue;
-    private ProgressDialog progressDialog;
     private View view;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
+
     private User usuario;
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_employee);
+        setContentView(R.layout.activity_register_service);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+     //   initViews();
+
+    }
+}
+
+/*
+
+    public void inicializarCampos(){
+        cardId.setText("123123");
+        name.setText("nata");
+        email.setText("nat@gmail.com");
+        rol.setText("ing de sistemas");
+        telefono.setText("3138114921");
+        apellido.setText("reyes");
+
+    }
+
+
+
+
+    public void initViews(){
 
         db = FirebaseFirestore.getInstance();
         cardId = (EditText) findViewById(R.id.input_cardId_employee);
@@ -52,11 +75,10 @@ public class RegisterEmployee extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         usuario = User.getInstance();
         url = new Url();
-        //queue = Volley.newRequestQueue(RegistryUser.this);
-        //Utils.veirifyConnection(this);
-    }
 
-    public void createAccountEmployee(View view) {
+    }
+    public void createEmployee(View view) {
+
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
         String cardId = this.cardId.getText().toString();
         String email = this.email.getText().toString();
@@ -65,6 +87,7 @@ public class RegisterEmployee extends AppCompatActivity {
         String apellido = this.apellido.getText().toString();
         String telefono = this.telefono.getText().toString();
         FirebaseUser user = mAuth.getCurrentUser();
+
         if (Utils.veirifyConnection(this)) {
             System.out.println("ENCONTRO CONEXION");
             //showDialogWait(progressDialog);
@@ -76,12 +99,19 @@ public class RegisterEmployee extends AppCompatActivity {
             userMap.put("Tel",telefono);
             userMap.put("Rol",rol);
 
+            System.out.println(user.getUid()+" - "+user);
+            String llave = userMap.get("IdCard")+"";
+            String Nombre = userMap.get("Nombre")+"";
+            String tel= userMap.get("Tel")+"";
+            System.out.println("<3 idcard: "+llave+"Nombre:"+Nombre+"Tel:"+tel);
+
             //serviceConnectLogin(email, password,name,cardId,view);
             Utils.saveUserFirebaseDatabase2(user,db,userMap);
-            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,this,Login.class,true,null);
+            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,this, MainActivity.class,true,null);
         }
 
     }
+
     private void showDialogWait(ProgressDialog progressDialog) {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setCancelable(false);
@@ -89,5 +119,6 @@ public class RegisterEmployee extends AppCompatActivity {
         progressDialog.show();
     }
 
-}
 
+}
+*/

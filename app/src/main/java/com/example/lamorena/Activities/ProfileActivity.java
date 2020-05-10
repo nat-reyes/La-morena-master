@@ -78,6 +78,8 @@ public class ProfileActivity extends AppCompatActivity {
         if(userMap.get("apellido")!=null){
             lastname.setText(userMap.get("apellido")+"");
         }
+
+
     }
 
     private void  initializationVariables (){
@@ -88,6 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
         phoneNumber = (TextView) findViewById(R.id.userPhoneNumber);
         identificationCard = (TextView) findViewById(R.id.userID);
         lastname = (TextView) findViewById(R.id.userLastName);
+
     }
 
     private void addFAB (){

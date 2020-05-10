@@ -364,7 +364,6 @@ public class Login extends AppCompatActivity {
 static ArrayList<Utils.Extra> extras;
     public void signInUserWithEmail(String email, String password) {
         mquery = db.collection("Users");
-
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -393,20 +392,6 @@ static ArrayList<Utils.Extra> extras;
                             extras.add(new Utils.Extra("userName", name));
                             extras.add(new Utils.Extra("userEmail", email));
                             saveUserAfterSing(extras);
-                            Thread t = new Thread(){
-                                @Override
-                                public void run() {
-                                    try {
-                                        saveUserAfterSing(extras);
-                                        sleep(3000);
-
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            };
-                            t.start();
-                            Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
                         } else {
                             progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
@@ -418,46 +403,46 @@ static ArrayList<Utils.Extra> extras;
 
                         // ...
                     }
-
                 });
     }
 
 
     private void saveUserAfterSing(final ArrayList<Utils.Extra> extras) {
         final FirebaseUser userFb = mAuth.getCurrentUser();
+        DocumentReference docRef = db.collection("Users").document(userFb.getUid());
 
-        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
-                    // idCard, apellido, tel,
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d("Cuentas:", document.getId() + " => " + document.getData());
-                        if (document.getId().equalsIgnoreCase(userFb.getUid())) {
-                            Map<String, Object> userMap = new HashMap<>();
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
 
-                            for (String clave : document.getData().keySet()) {
-                                System.out.println("<3 " + clave + " " + document.getData().get(clave));
-                                String value = (String) document.getData().get(clave);
-                                User usuario = User.getInstance();
-                                userMap.put(clave, value);
-                            }
-                            Utils.rol = userMap.get("rol") + "";
-                            if (Utils.rol.equals("cliente")) {
-                                System.out.println("SOY CLIENTE");
-                            } else {
-                                System.out.println("SOY DIOS");
-                            }
-                            Utils.sesion = userMap;
-                            break;
-                        } else {
-                            Log.d("Tag", "No such document");
+                        Map<String, Object> userMap = new HashMap<>();
+
+                        for (String clave : document.getData().keySet()) {
+                            String value = (String) document.getData().get(clave);
+                            userMap.put(clave, value);
                         }
-                    }
+                        Utils.rol = userMap.get("rol") + "";
+                        Utils.sesion = userMap;
+                        Utils.GoToNextActivityCleanStack(Login.this, MainActivity.class, true, extras);
 
+                        if (Utils.rol.equals("cliente")) {
+                            System.out.println("SOY CLIENTE");
+                        }else{
+                            System.out.println("SOY DIOS");
+                        }
+                    } else {
+                        Log.d("consulta", "No such document");
+                    }
+                } else {
+                    Log.d("consulta", "get failed with ", task.getException());
                 }
             }
         });
+
+
     }
 
     private void showDialogWait(ProgressDialog progressDialog) {

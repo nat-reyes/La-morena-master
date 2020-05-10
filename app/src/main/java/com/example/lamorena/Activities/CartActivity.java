@@ -4,7 +4,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import com.example.lamorena.Fragments.OrderFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,13 +19,13 @@ public class CartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_ingreso_cliente);
         addToolbar();
         showFragment();
     }
 
     private void showFragment (){
-        getSupportFragmentManager().beginTransaction().add(R.id.FragmentCartFrame, new OrderFragment()).commit();
+        //getSupportFragmentManager().beginTransaction().add(R.id.FragmentCartFrame, new OrderFragment()).commit();
     }
 
     private void addToolbar (){
