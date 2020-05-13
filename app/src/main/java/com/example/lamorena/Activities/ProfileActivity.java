@@ -145,7 +145,7 @@ public class ProfileActivity extends AppCompatActivity {
         String userName = getIntent().getStringExtra("userName");
         String userEmail = getIntent().getStringExtra("userEmail");
 
-        if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
+     //   if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
     }
 
     public void showFragmentBottomSheetName(View view){

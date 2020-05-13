@@ -40,7 +40,7 @@
     <string name="profile">Perfil</string>
     <string name="ingreso">Vehiculo</string>
     <string name="ingresoAdmin">Ingreso Vehiculo</string>
-
+    <string name="Description">Empleado</string>
     <string name="purchases">Compras</string>
     <string name="favorites">Favoritos</string>
     <string name="categories">SERVICIOS</string>
