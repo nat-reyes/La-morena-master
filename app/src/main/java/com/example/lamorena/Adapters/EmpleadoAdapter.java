@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lamorena.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHolder> implements Filterable {
@@ -36,8 +38,12 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         String animal = mData.get(position);
-        holder.myTextView.setText(animal);
+        holder.textViewTitulo.setText(animal);
+      //  holder.textViewSubt.setText(animal);
+
+
     }
 
 //    @Override
@@ -46,6 +52,7 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHo
 //        holder.myTextView.setText(animal);
 //
 //    }
+
 
 //    @Override
 //    public void onBindViewHolder(ViewHolder holder, int position) {
@@ -64,12 +71,13 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView myTextView;
+        TextView textViewTitulo, textViewSubt;
         private ImageView productImag;
 
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.tvAnimalName);
+            textViewTitulo = itemView.findViewById(R.id.tvEmpleadoName);
+          //  textViewSubt = itemView.findViewById(R.id.tvRolName);
             itemView.setOnClickListener(this);
         }
 
