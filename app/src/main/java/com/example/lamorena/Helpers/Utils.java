@@ -237,6 +237,30 @@ public class Utils {
                 });
 
     }
+    public static void saveInsurerFirebaseDatabase(FirebaseUser user, FirebaseFirestore db,Map<String, Object> userMap1){
+
+        String llave = userMap1.get("Name")+"";
+        db.collection("Aseguradoras").document(llave).set(userMap1)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("SUCCESS", "CREATE");
+                    }
+                });
+
+    }
+    public static void saveServerFirebaseDatabase(FirebaseUser user, FirebaseFirestore db,Map<String, Object> userMap1){
+
+        String llave = userMap1.get("Placa")+"";
+        db.collection("Servicios").document(llave).set(userMap1)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("SUCCESS", "CREATE");
+                    }
+                });
+
+    }
 
     public static void saveUserGoogleFirebaseDatabase(GoogleSignInAccount acct, FirebaseFirestore db){
         Map<String, Object> userMap = new HashMap<>();

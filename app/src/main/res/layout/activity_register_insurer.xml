@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@color/primaryColor"
-    tools:context="com.example.lamorena.crud.registrarEmpleado">
+    tools:context="com.example.lamorena.crud.registrarInsurer">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -55,10 +55,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cardId_employee"
+                                android:id="@+id/input_name_insurer"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
+                                android:inputType="textPersonName"
                                 android:hint="@string/nameInsurer" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,10 +71,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_firstName_employee"
+                                android:id="@+id/input_tel_insurer"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
                                 android:hint="@string/telInsurer" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -87,10 +87,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_apellido_employee"
+                                android:id="@+id/input_address_insurer"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="textPersonName"
                                 android:hint="@string/car_select" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
@@ -101,7 +101,7 @@
 
         </LinearLayout>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login2"
+            android:id="@+id/btn_regiter_insurer"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_below="@id/cv_one_login"
@@ -114,7 +114,7 @@
             android:backgroundTint="@color/secondaryColor"
             android:textColor="@color/secondaryTextColor"
             android:layout_marginBottom="24dp"
-            android:onClick="createEmployee"
+            android:onClick="createInsurer"
             android:text="@string/register"/>
 
     </LinearLayout>

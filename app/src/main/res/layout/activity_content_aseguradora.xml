@@ -7,7 +7,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".Activities.Employee">
+    tools:context=".Activities.Insurer">
 
 
     <TextView

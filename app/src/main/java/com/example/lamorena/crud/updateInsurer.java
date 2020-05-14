@@ -35,7 +35,7 @@ import java.util.Map;
 public class updateInsurer  extends AppCompatActivity {
 
     private Query mQuery;
-    private EditText cardId, name, email, rol, apellido, telefono, id;
+    private EditText cardId, name, email, rol, apellido, telefono, id,direccion;
     private Url url;
     private RequestQueue queue;
     private View view;
@@ -50,7 +50,95 @@ public class updateInsurer  extends AppCompatActivity {
         setContentView(R.layout.activity_update_insurer);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-       // initViews();
+        initViews();
+
+    }
+    public void initViews(){
+
+        db = FirebaseFirestore.getInstance();
+        name = (EditText) findViewById(R.id.input_Id_insurer);
+        telefono = (EditText) findViewById(R.id.input_tele_insurer);
+        direccion = (EditText) findViewById(R.id.input_direccion_insurer);
+        mAuth = FirebaseAuth.getInstance();
+        usuario = User.getInstance();
+
+
+    }
+
+    public void searchInsurer(  View view) {
+
+        id = (EditText) findViewById(R.id.input_consulta_insurer);
+
+        if(id!=null) {
+            String idSearch = this.id.getText().toString();
+
+            if(!idSearch.isEmpty()){
+
+                DocumentReference docRef = db.collection("Aseguradoras").document(idSearch);
+
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+
+                                Map<String, Object> userMap = new HashMap<>();
+
+                                for (String clave : document.getData().keySet()) {
+                                    String value = (String) document.getData().get(clave);
+                                    System.out.println("clave"+clave+"get"+value);
+                                    userMap.put(clave, value);
+                                }
+                                llenarCampos(userMap);
+
+                            } else {
+                                Log.d("consulta", "No such document");
+                            }
+                        } else {
+                            Log.d("consulta", "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+            }
+
+        }else{
+            Toast.makeText(this,"Ingrese nombre de la aseguradora ", Toast.LENGTH_SHORT);
+        }
+    }
+    public void llenarCampos( Map<String, Object> userMap ){
+        name.setText(userMap.get("Name")+"");
+        telefono.setText(userMap.get("Telefono")+"");
+        direccion.setText(userMap.get("Direccion")+"");
+    }
+    public void updateInsurer(View view) {
+
+        progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
+        String name = this.name.getText().toString();
+        String telefono = this.telefono.getText().toString();
+        String direccion = this.direccion.getText().toString();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (Utils.veirifyConnection(this)) {
+            System.out.println("ENCONTRO CONEXION");
+            //showDialogWait(progressDialog);
+            Map<String, Object> userMap = new HashMap<>();
+            userMap.put("Name",name);
+            userMap.put("Telefono",telefono);
+            userMap.put("Direccion",direccion);
+
+            System.out.println(user.getUid()+" - "+user);
+            String llave = userMap.get("IdCard")+"";
+            String Nombre = userMap.get("Nombre")+"";
+            String tel= userMap.get("Tel")+"";
+            System.out.println("<3 idcard: "+llave+"Nombre:"+Nombre+"Tel:"+tel);
+
+            //serviceConnectLogin(email, password,name,cardId,view);
+            Utils.saveInsurerFirebaseDatabase(user,db,userMap);
+            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,this, MainActivity.class,true,null);
+        }
 
     }
 }

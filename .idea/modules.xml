@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/La-morena-master.iml" filepath="$PROJECT_DIR$/La-morena-master.iml" group="La-morena-master" />
+      <module fileurl="file://$PROJECT_DIR$/app/La-morena-master-app.iml" filepath="$PROJECT_DIR$/app/La-morena-master-app.iml" group="La-morena-master/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="La-morena-master/app" />
     </modules>
   </component>

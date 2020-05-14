@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class listEmpleado extends AppCompatActivity {
+
     private ListView listview;
     private ArrayList<String> names;
     EmpleadoAdapter adapter;

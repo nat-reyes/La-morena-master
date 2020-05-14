@@ -25,3 +25,11 @@ s
 Capp/src/main/java/com/example/lamorena/Fragments/OrderFragment.java,1\7\17c3c1c437a0b45230ec1573ada246ca87a1e0de
 p
 @app/src/main/java/com/example/lamorena/Fragments/Categories.java,6\b\6b3824d8bcfdd90f0d12eba4dea763aef2feb7e0
+o
+?app/src/main/java/com/example/lamorena/crud/updateEmpleado.java,c\1\c1c959ef7115581c0699f392b1f341e9c35efe6e
+n
+>app/src/main/java/com/example/lamorena/crud/updateInsurer.java,0\d\0dec8c082bf77332917e8fda01cd5ca43077e7e0
+n
+>app/src/main/java/com/example/lamorena/Activities/Insurer.java,a\9\a91c36da5d161c2acbd5976d035931d9d340e571
+o
+?app/src/main/java/com/example/lamorena/Activities/Employee.java,1\b\1bc1829bc76bfa34a749632ba3004d97abf8c5d3

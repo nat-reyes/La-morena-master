@@ -35,7 +35,7 @@ import java.util.Map;
 public class updateServicio  extends AppCompatActivity{
 
     private Query mQuery;
-    private EditText cardId, name, email, rol, apellido, telefono, id;
+    private EditText nombre,precio,tiempo_promedio,placa,id;
     private Url url;
     private RequestQueue queue;
     private View view;
@@ -50,7 +50,104 @@ public class updateServicio  extends AppCompatActivity{
         setContentView(R.layout.activity_update_service);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-       // initViews();
+        initViews();
+    }
+    public void initViews(){
+
+        db = FirebaseFirestore.getInstance();
+
+        nombre = (EditText) findViewById(R.id.input_update_service_name);
+        precio = (EditText) findViewById(R.id.input_update_service_price);
+        tiempo_promedio = (EditText) findViewById(R.id.input_update_service_time);
+        placa = (EditText) findViewById(R.id.input_update_service_placa);
+
+        mAuth = FirebaseAuth.getInstance();
+        usuario = User.getInstance();
+        url = new Url();
+
+    }
+
+    public void searchService(  View view) {
+
+        id = (EditText) findViewById(R.id.input_consulta_service);
+
+        if(id!=null) {
+            String idSearch = this.id.getText().toString();
+
+            if(!idSearch.isEmpty()){
+
+                DocumentReference docRef = db.collection("Servicios").document(idSearch);
+
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+
+                                Map<String, Object> userMap = new HashMap<>();
+
+                                for (String clave : document.getData().keySet()) {
+                                    String value = (String) document.getData().get(clave);
+                                    System.out.println("clave"+clave+"get"+value);
+                                    userMap.put(clave, value);
+                                }
+                                llenarCampos(userMap);
+
+                            } else {
+                                Log.d("consulta", "No such document");
+                            }
+                        } else {
+                            Log.d("consulta", "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+            }
+
+        }else{
+            Toast.makeText(this,"Ingrese cedula del empleado", Toast.LENGTH_SHORT);
+        }
+
+
+    }
+    public void llenarCampos( Map<String, Object> userMap ){
+
+        nombre.setText(userMap.get("Nombre")+"");
+        tiempo_promedio.setText(userMap.get("Duracion")+"");
+        precio.setText(userMap.get("Precio")+"");
+        placa.setText(userMap.get("Placa")+"");
+
+    }
+    public void createService(View view) {
+
+        progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
+        String nombre = this.nombre.getText().toString();
+        String precio = this.precio.getText().toString();
+        String duracion = this.tiempo_promedio.getText().toString();
+        String placa = this.placa.getText().toString();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (Utils.veirifyConnection(this)) {
+            System.out.println("ENCONTRO CONEXION");
+            //showDialogWait(progressDialog);
+            Map<String, Object> userMap = new HashMap<>();
+            userMap.put("Nombre",nombre);
+            userMap.put("Precio",precio);
+            userMap.put("Duracion",duracion);
+            userMap.put("Placa",placa);
+
+            System.out.println(user.getUid()+" - "+user);
+            String llave = userMap.get("IdCard")+"";
+            String Nombre = userMap.get("Nombre")+"";
+            String tel= userMap.get("Tel")+"";
+            System.out.println("<3 idcard: "+llave+"Nombre:"+Nombre+"Tel:"+tel);
+
+            //serviceConnectLogin(email, password,name,cardId,view);
+            Utils.saveServerFirebaseDatabase(user,db,userMap);
+            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,this, MainActivity.class,true,null);
+        }
 
     }
 }

@@ -28,7 +28,7 @@ import java.util.Map;
 public class registrarInsurer extends AppCompatActivity {
 
 
-    private EditText cardId, name, email, rol, apellido, telefono;
+    private EditText cardId, name, email, rol, apellido, telefono,direccion;
     private Url url;
     private RequestQueue queue;
     private View view;
@@ -37,16 +37,17 @@ public class registrarInsurer extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     private User usuario;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_insurer);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        //initViews();
+        initViews();
 
     }
-    }
+
 
 /*
 
@@ -62,21 +63,49 @@ public class registrarInsurer extends AppCompatActivity {
 
 
 
+*/
 
-    public void initViews(){
+    public void initViews() {
 
         db = FirebaseFirestore.getInstance();
-        cardId = (EditText) findViewById(R.id.input_cardId_employee);
-        name = (EditText) findViewById(R.id.input_firstName_employee);
-        email = (EditText) findViewById(R.id.input_email_employee);
-        rol = (EditText) findViewById(R.id.input_cargo_employee);
-        apellido = (EditText) findViewById(R.id.input_apellido_employee);
-        telefono = (EditText) findViewById(R.id.input_cel_employee);
+        name = (EditText) findViewById(R.id.input_name_insurer);
+        telefono = (EditText) findViewById(R.id.input_tel_insurer);
+        direccion= (EditText) findViewById(R.id.input_address_insurer);
         mAuth = FirebaseAuth.getInstance();
         usuario = User.getInstance();
         url = new Url();
 
     }
+
+    public void createInsurer(View view) {
+
+        progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
+        String name = this.name.getText().toString();
+        String telefono = this.telefono.getText().toString();
+        String direccion = this.direccion.getText().toString();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (Utils.veirifyConnection(this)) {
+            System.out.println("ENCONTRO CONEXION");
+            //showDialogWait(progressDialog);
+            Map<String, Object> userMap = new HashMap<>();
+            userMap.put("Name",name);
+            userMap.put("Telefono",telefono);
+            userMap.put("Direccion",direccion);
+
+            System.out.println(user.getUid()+" - "+user);
+            String llave = userMap.get("IdCard")+"";
+            String Nombre = userMap.get("Nombre")+"";
+            String tel= userMap.get("Tel")+"";
+            System.out.println("<3 idcard: "+llave+"Nombre:"+Nombre+"Tel:"+tel);
+
+            //serviceConnectLogin(email, password,name,cardId,view);
+            Utils.saveInsurerFirebaseDatabase(user,db,userMap);
+            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk),1000,this, MainActivity.class,true,null);
+        }
+
+    }
+    /*
     public void createEmployee(View view) {
 
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
@@ -122,3 +151,4 @@ public class registrarInsurer extends AppCompatActivity {
 
 }
 */
+}

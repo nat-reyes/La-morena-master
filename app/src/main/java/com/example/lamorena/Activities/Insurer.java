@@ -15,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.example.lamorena.Helpers.Url;
 import com.example.lamorena.R;
 import com.example.lamorena.crud.listEmpleado;
+import com.example.lamorena.crud.registrarInsurer;
 import com.example.lamorena.crud.registrarServicio;
 import com.example.lamorena.crud.updateEmpleado;
 import com.example.lamorena.crud.updateInsurer;
@@ -57,12 +58,12 @@ public class Insurer extends AppCompatActivity {
 
     }
 
-    public void registerService(){
+    public void registerInsurer(){
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
 
         Log.d("menu", ">>Registrar empleado>");
         Intent intent = new Intent();
-        intent.setClass(this, registrarServicio.class);
+        intent.setClass(this, registrarInsurer.class);
         startActivity(intent);
     }
 
@@ -73,27 +74,27 @@ public class Insurer extends AppCompatActivity {
         btn_reg_insurer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerService();
+                registerInsurer();
             }
         });
 
         btn_list_insurer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listService();
+                listInsurer();
             }
         });
 
         btn_upd_insurer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateService();
+                updateInsurer();
             }
         });
     }
 
 
-    public void listService(){
+    public void listInsurer(){
 
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
 
@@ -104,7 +105,7 @@ public class Insurer extends AppCompatActivity {
 
     }
 
-    public void updateService(){
+    public void updateInsurer(){
 
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
 

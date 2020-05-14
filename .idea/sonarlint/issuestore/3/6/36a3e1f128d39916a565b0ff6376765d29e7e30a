@@ -1,0 +1,48 @@
+
+]	java:S125O"<This block of commented-out lines of code should be removed.(å®¼üÿÿÿÿ8ä¸Þ‚Ÿ.
+H
+java:S1659"&Declare "apellido" on a separate line.(³íÝÇþÿÿÿÿ8ä¸Þ‚Ÿ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–Ò
+E
+java:S1659"#Declare "email" on a separate line.(³íÝÇþÿÿÿÿ8ä¸Þ‚Ÿ.
+U	java:S106E"9Replace this use of System.out or System.err by a logger.(»¤ôã8ä¸Þ‚Ÿ.
+H
+java:S1659"&Declare "telefono" on a separate line.(³íÝÇþÿÿÿÿ8ä¸Þ‚Ÿ.
+M
+java:S1172;"+Remove this unused method parameter "view".(°¬ßüýÿÿÿÿ8ä¸Þ‚Ÿ.
+V
+java:S1117>"9Rename "email" which hides the field declared at line 28.(‡ò¶â8ä¸Þ‚Ÿ.
+U
+java:S1117@"8Rename "name" which hides the field declared at line 28.(£š‡â8ä¸Þ‚Ÿ.
+t
+java:S1450"RRemove the "url" field and declare it as a local variable in the relevant methods.(óÊÉÕùÿÿÿÿ8ä¸Þ‚Ÿ.
+M
+java:S1068#"+Remove this unused "usuario" private field.(Åà¬“úÿÿÿÿ8ä¸Þ‚Ÿ.
+C
+java:S1659"!Declare "rol" on a separate line.(³íÝÇþÿÿÿÿ8ä¸Þ‚Ÿ.
+]	java:S125F"<This block of commented-out lines of code should be removed.(÷úìÐþÿÿÿÿ8ä¸Þ‚Ÿ.
+Y
+java:S1117A"<Rename "apellido" which hides the field declared at line 28.(«ÇŒÿ8ä¸Þ‚Ÿ.
+N
+java:S1128"1Remove this unused import 'android.app.Activity'.(‡ÊÍÆ8•Ù»åž.
+
+java:S1450"]Remove the "progressDialog" field and declare it as a local variable in the relevant methods.(·á…Çùÿÿÿÿ8ä¸Þ‚Ÿ.
+Y
+java:S1117B"<Rename "telefono" which hides the field declared at line 28.(âé—Ë8ä¸Þ‚Ÿ.
+x
+java:S1450#"VRemove the "usuario" field and declare it as a local variable in the relevant methods.(Åà¬“úÿÿÿÿ8ä¸Þ‚Ÿ.
+T
+java:S1068"2Remove this unused "progressDialog" private field.(·á…Çùÿÿÿÿ8ä¸Þ‚Ÿ.
+X	java:S1257"<This block of commented-out lines of code should be removed.(áÁ…ò8ä¸Þ‚Ÿ.
+W
+java:S1117=":Rename "cardId" which hides the field declared at line 28.(ÍÃœÇ8ä¸Þ‚Ÿ.
+T
+java:S1117?"7Rename "rol" which hides the field declared at line 28.(‘´ä§8ä¸Þ‚Ÿ.
+D
+java:S1659""Declare "name" on a separate line.(³íÝÇþÿÿÿÿ8ä¸Þ‚Ÿ.
+I
+java:S1068"'Remove this unused "url" private field.(óÊÉÕùÿÿÿÿ8ä¸Þ‚Ÿ.
+F
+java:S1068")Remove this unused "queue" private field.(®¤œé8ä¸Þ‚Ÿ.
+P
+java:S1144U"3Remove this unused private "showDialogWait" method.(Œâú›8»”äçž.

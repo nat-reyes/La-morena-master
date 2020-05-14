@@ -20,10 +20,10 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="60dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_consulta_id"
+                android:id="@+id/input_consulta_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="text"
                 android:hint="@string/searchService"
                 android:textColorHighlight="@color/black"
                 android:shadowColor="@color/black"/>
@@ -43,6 +43,7 @@
             android:backgroundTint="@color/secondaryColor"
             android:textColor="@color/secondaryTextColor"
             android:layout_marginBottom="24dp"
+            android:onClick="searchService"
             android:text="@string/selectEmpployee"/>
 
     </LinearLayout>
@@ -94,7 +95,7 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cardId_employee"
+                                android:id="@+id/input_update_service_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="number"
@@ -110,10 +111,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_firstName_employee"
+                                android:id="@+id/input_update_service_price"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
                                 android:hint="@string/price_service" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -126,10 +127,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_apellido_employee"
+                                android:id="@+id/input_update_service_time"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="text"
                                 android:hint="@string/service_time" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -142,10 +143,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cel_employee"
+                                android:id="@+id/input_update_service_placa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="text"
                                 android:hint="@string/idService" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
@@ -167,6 +168,7 @@
             android:backgroundTint="@color/secondaryColor"
             android:textColor="@color/secondaryTextColor"
             android:layout_marginBottom="24dp"
+            android:onClick="createService"
             android:text="@string/register"/>
             <!--android:onClick="createEmployee"-->
 

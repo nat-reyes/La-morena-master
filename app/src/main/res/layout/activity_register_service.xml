@@ -55,10 +55,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cardId_employee"
+                                android:id="@+id/input_name_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
+                                android:inputType="text"
                                 android:hint="@string/nameService" />
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,10 +71,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_firstName_employee"
+                                android:id="@+id/input_price_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textPersonName"
+                                android:inputType="number"
                                 android:hint="@string/price_service" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -87,10 +87,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_apellido_employee"
+                                android:id="@+id/input_time_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="text"
                                 android:hint="@string/service_time" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -103,10 +103,10 @@
                             android:layout_marginRight="5dp"
                             android:layout_marginTop="8dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cel_employee"
+                                android:id="@+id/input_id_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="text"
                                 android:hint="@string/idService" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
@@ -128,7 +128,7 @@
             android:backgroundTint="@color/secondaryColor"
             android:textColor="@color/secondaryTextColor"
             android:layout_marginBottom="24dp"
-            android:onClick="createEmployee"
+            android:onClick="createService"
             android:text="@string/register"/>
 
 
