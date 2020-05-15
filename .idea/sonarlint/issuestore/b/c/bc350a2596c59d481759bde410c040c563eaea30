@@ -1,0 +1,45 @@
+
+M
+java:S1172="+Remove this unused method parameter "view".(÷×žµùÿÿÿÿ8«Þïš¡.
+]	java:S125H"<This block of commented-out lines of code should be removed.(÷úìÐþÿÿÿÿ8«Þïš¡.
+T
+java:S1128"9Remove this unused import 'android.os.PersistableBundle'.(Ñƒ¨’øÿÿÿÿ
+F
+java:S1659"$Declare "precio" on a separate line.(ÛÎ¼áýÿÿÿÿ8ðžäš¡.
+W
+java:S1117@":Rename "nombre" which hides the field declared at line 31.(ëÉã“8Ãñš¡.
+W
+java:S1117A":Rename "precio" which hides the field declared at line 31.(§ðƒŠ8·Çñš¡.
+U	java:S106G"9Replace this use of System.out or System.err by a logger.(»¤ôã8«Þïš¡.
+{	java:S116"ZRename this field "tiempo_promedio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÛÎ¼áýÿÿÿÿ8ðžäš¡.
+
+java:S1450%"]Remove the "progressDialog" field and declare it as a local variable in the relevant methods.(·á…Çùÿÿÿÿ8«Þïš¡.
+]	java:S125U"<This block of commented-out lines of code should be removed.(å®¼üÿÿÿÿ8ÝÛôš¡.
+B
+java:S1068 "'Remove this unused "url" private field.(óÊÉÕùÿÿÿÿ
+O
+java:S1128
+"9Remove this unused import 'androidx.annotation.Nullable'.(¾Èêš
+[
+java:S1117C"9Rename "placa" which hides the field declared at line 31.(¼ìÿÿÿÿÿ8Õàñš¡.
+r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÝ¬ûÿÿÿÿ8ÝÛôš¡.
+F
+java:S1068'"+Remove this unused "usuario" private field.(Åà¬“úÿÿÿÿ
+?
+java:S1068!")Remove this unused "queue" private field.(®¤œé
+E
+java:S1659"#Declare "placa" on a separate line.(ÛÎ¼áýÿÿÿÿ8ðžäš¡.
+x
+java:S1450'"VRemove the "usuario" field and declare it as a local variable in the relevant methods.(Åà¬“úÿÿÿÿ8’Òßš¡.
+M
+java:S1128"2Remove this unused import 'android.widget.Button'.(²òžýÿÿÿÿ
+Z	java:S106S"9Replace this use of System.out or System.err by a logger.(®•ë‘ýÿÿÿÿ8ÝÛôš¡.
+M
+java:S1068%"2Remove this unused "progressDialog" private field.(·á…Çùÿÿÿÿ
+O
+java:S1659"-Declare "tiempo_promedio" on a separate line.(ÛÎ¼áýÿÿÿÿ8ðžäš¡.
+X	java:S125_"<This block of commented-out lines of code should be removed.(²Êáë8ÝÛôš¡.
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(×Å®úÿÿÿÿ
+t
+java:S1450 "RRemove the "url" field and declare it as a local variable in the relevant methods.(óÊÉÕùÿÿÿÿ8’Òßš¡.
+Z	java:S106O"9Replace this use of System.out or System.err by a logger.(øýâûÿÿÿÿ8ÝÛôš¡.

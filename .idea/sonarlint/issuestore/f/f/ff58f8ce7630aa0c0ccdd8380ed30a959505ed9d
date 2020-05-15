@@ -1,0 +1,38 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãËýà
+>
+java:S1659")Declare "description" on a separate line.(†ó±.
+;
+java:S1659"&Declare "category" on a separate line.(†ó±.
+;
+java:S1659"&Declare "quantity" on a separate line.(†ó±.
+5
+java:S1659" Declare "id" on a separate line.(†ó±.
+8
+java:S1659"#Declare "photo" on a separate line.(†ó±.
+@
+java:S1659"%Declare "offSale" on a separate line.(ŽšãÈýÿÿÿÿ
+<
+java:S1659"!Declare "iva" on a separate line.(ŽšãÈýÿÿÿÿ
+=
+java:S1659""Declare "cant" on a separate line.(ŽšãÈýÿÿÿÿ
+=
+java:S1068"(Remove this unused "name" private field.(†ó±.
+D
+java:S1068"/Remove this unused "description" private field.(†ó±.
+A
+java:S1068",Remove this unused "category" private field.(†ó±.
+A
+java:S1068",Remove this unused "quantity" private field.(†ó±.
+;
+java:S1068"&Remove this unused "id" private field.(†ó±.
+>
+java:S1068")Remove this unused "photo" private field.(†ó±.
+D
+java:S1068")Remove this unused "price" private field.(ŽšãÈýÿÿÿÿ
+F
+java:S1068"+Remove this unused "offSale" private field.(ŽšãÈýÿÿÿÿ
+B
+java:S1068"'Remove this unused "iva" private field.(ŽšãÈýÿÿÿÿ
+C
+java:S1068"(Remove this unused "cant" private field.(ŽšãÈýÿÿÿÿ

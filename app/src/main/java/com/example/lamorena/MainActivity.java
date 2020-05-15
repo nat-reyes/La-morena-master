@@ -20,6 +20,7 @@ import com.example.lamorena.Fragments.Categories;
 import com.example.lamorena.Fragments.Offers;
 import com.example.lamorena.Helpers.Utils;
 import com.example.lamorena.SQLite.ConectionSQLiteHelper;
+import com.example.lamorena.crud.registrarIngreso;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -282,6 +283,9 @@ public class MainActivity extends AppCompatActivity
         }else if(id == R.id.aseguradora){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
             Utils.GoToNextActivityCleanStack(MainActivity.this, Insurer.class,false,extras);
+        }else if(id == R.id.ingresoAdmin){
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            Utils.GoToNextActivityCleanStack(MainActivity.this, registrarIngreso.class,false,extras);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

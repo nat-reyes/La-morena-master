@@ -12,59 +12,50 @@
         android:roundIcon="@mipmap/ic_icon"
         android:supportsRtl="true"
         android:theme="@style/AppThemeMaterial">
+        <activity android:name=".crud.registrarIngreso"></activity>
         <activity
-            android:name="com.example.lamorena.Activities.ProfileActivity"
+            android:name=".Activities.ProfileActivity"
             android:label="@string/title_activity_product_info"
             android:theme="@style/AppThemeMaterial.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name="com.example.lamorena.Activities.RegistryUser"
+            android:name=".Activities.RegistryUser"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.Activities.Employee"
+            android:name=".Activities.Employee"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.Activities.Service"
+            android:name=".Activities.Service"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.Activities.Insurer"
+            android:name=".Activities.Insurer"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.crud.registrarEmpleado"
-            android:theme="@style/AppThemeMaterial" />
-
-        <activity
-            android:name="com.example.lamorena.crud.updateEmpleado"
-            android:theme="@style/AppThemeMaterial" />
-
-
-        <activity
-            android:name="com.example.lamorena.crud.registrarServicio"
-            android:theme="@style/AppThemeMaterial" />
-
-        <activity
-            android:name="com.example.lamorena.crud.updateServicio"
+            android:name=".crud.registrarEmpleado"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.crud.registrarInsurer"
-            android:theme="@style/AppThemeMaterial" />
-
-        <activity
-            android:name="com.example.lamorena.crud.updateInsurer"
+            android:name=".crud.updateEmpleado"
             android:theme="@style/AppThemeMaterial" />
         <activity
-            android:name="com.example.lamorena.crud.listEmpleado"
+            android:name=".crud.registrarServicio"
             android:theme="@style/AppThemeMaterial" />
-
         <activity
-            android:name="com.example.lamorena.Activities.IngresoCliente"
+            android:name=".crud.updateServicio"
             android:theme="@style/AppThemeMaterial" />
-
-
-
-
         <activity
-            android:name="com.example.lamorena.Activities.Login"
+            android:name=".crud.registrarInsurer"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".crud.updateInsurer"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".crud.listEmpleado"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".Activities.IngresoCliente"
+            android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".Activities.Login"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,22 +63,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
-            android:name="com.example.lamorena.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppThemeMaterial.NoActionBar" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-
-
     </application>
 
 </manifest>

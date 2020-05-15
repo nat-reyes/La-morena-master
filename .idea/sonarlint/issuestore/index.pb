@@ -33,3 +33,7 @@ n
 >app/src/main/java/com/example/lamorena/Activities/Insurer.java,a\9\a91c36da5d161c2acbd5976d035931d9d340e571
 o
 ?app/src/main/java/com/example/lamorena/Activities/Employee.java,1\b\1bc1829bc76bfa34a749632ba3004d97abf8c5d3
+r
+Bapp/src/main/java/com/example/lamorena/crud/registrarServicio.java,b\c\bc350a2596c59d481759bde410c040c563eaea30
+q
+Aapp/src/main/java/com/example/lamorena/crud/registrarInsurer.java,9\0\908ddba94dd5b399e736af22b3dbeffc3c598643

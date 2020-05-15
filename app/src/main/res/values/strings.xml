@@ -14,7 +14,6 @@
     <string name="Description">Empleado</string>
 
 
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -74,8 +73,6 @@
     <string name="updateService">Update service</string>
 
 
-
-
     <string name="nameInsurer">Name Insurer</string>
     <string name="telInsurer">Tel Insurer</string>
     <string name="car_select">Direccion</string>
@@ -84,14 +81,6 @@
     <string name="idService"> Identifier</string>
     <string name="price_service"> Price </string>
     <string name="service_time"> Promedy Time </string>
-
-
-
-
-
-
-
-
 
 
     <string name="hi">Hi</string>
@@ -121,7 +110,8 @@
     <string name="shipment">Shipment</string>
     <string name="payment">Payment</string>
 
-    <string name="facebook_app_id">237743414061472</string> <string name="fb_login_protocol_scheme">fb237743414061472</string>
+    <string name="facebook_app_id">237743414061472</string>
+    <string name="fb_login_protocol_scheme">fb237743414061472</string>
 
     <string name="hint_placa"> Plate </string>
     <string name="car_name"> Car name </string>
@@ -134,9 +124,7 @@
     <string name="searchService"> Buscar servicio </string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
-
 
 
     <string-array name="country_arrays">
@@ -145,20 +133,6 @@
         <item> BMW </item>
         <item>Ford</item>
     </string-array>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
