@@ -48,18 +48,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:layout_margin="5dp"
                             >
                             <TextView
+                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
                                 android:text="Servicio"/>
                             <Spinner
+                                android:layout_marginTop="20dp"
                                 android:id="@+id/spinner_1"
-                                android:layout_width="325dp"
-                                android:layout_height="30dp"
-                                android:layout_margin="5dp"
-                                android:background="@drawable/formatorspinner"/>
+                                android:layout_width="280dp"
+                                android:layout_height="30dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -69,14 +69,15 @@
                             android:layout_margin="5dp"
                             >
                             <TextView
+                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Empleado"/>
                             <Spinner
                                 android:id="@+id/spinner_2"
-                                android:layout_width="325dp"
+                                android:layout_width="280dp"
                                 android:layout_height="30dp"
-                                android:layout_margin="5dp" />
+                                android:layout_marginTop="20dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -87,15 +88,15 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             >
                             <TextView
+                                android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Aseguradora"/>
                             <Spinner
-                                android:backgroundTint="@color/black"
                                 android:id="@+id/spinner_3"
-                                android:layout_width="325dp"
+                                android:layout_width="280dp"
                                 android:layout_height="30dp"
-                                android:layout_margin="5dp" />
+                                android:layout_marginTop="20dp"/>
                         </LinearLayout>
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"

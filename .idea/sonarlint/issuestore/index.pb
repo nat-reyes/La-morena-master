@@ -37,3 +37,7 @@ r
 Bapp/src/main/java/com/example/lamorena/crud/registrarServicio.java,b\c\bc350a2596c59d481759bde410c040c563eaea30
 q
 Aapp/src/main/java/com/example/lamorena/crud/registrarInsurer.java,9\0\908ddba94dd5b399e736af22b3dbeffc3c598643
+r
+Bapp/src/main/java/com/example/lamorena/crud/registrarEmpleado.java,d\7\d789dbb8dd85c602ebc8b5b33e58ed7c702c336e
+q
+Aapp/src/main/java/com/example/lamorena/crud/registrarIngreso.java,c\9\c904d60e9f87fef9c5e1371e1a31c87c8dafea58
