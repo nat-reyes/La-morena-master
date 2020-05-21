@@ -78,7 +78,7 @@
     <string name="car_select">Direccion</string>
 
     <string name="nameService">Name service </string>
-    <string name="idService"> Identifier</string>
+    <string name="idService"> Descripcion</string>
     <string name="price_service"> Price </string>
     <string name="service_time"> Promedy Time </string>
 

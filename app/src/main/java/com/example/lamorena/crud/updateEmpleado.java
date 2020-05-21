@@ -55,16 +55,6 @@ public class updateEmpleado  extends AppCompatActivity{
         }
 
 
-        public void inicializarCampos(){
-            cardId.setText("123123");
-            name.setText("nata");
-            email.setText("nat@gmail.com");
-            rol.setText("ing de sistemas");
-            telefono.setText("3138114921");
-            apellido.setText("reyes");
-
-        }
-
 
         public void initViews(){
 

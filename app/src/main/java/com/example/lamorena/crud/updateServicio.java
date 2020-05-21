@@ -59,7 +59,7 @@ public class updateServicio  extends AppCompatActivity{
         nombre = (EditText) findViewById(R.id.input_update_service_name);
         precio = (EditText) findViewById(R.id.input_update_service_price);
         tiempo_promedio = (EditText) findViewById(R.id.input_update_service_time);
-        placa = (EditText) findViewById(R.id.input_update_service_placa);
+        placa = (EditText) findViewById(R.id.input_update_descrp);
 
         mAuth = FirebaseAuth.getInstance();
         usuario = User.getInstance();
@@ -107,7 +107,7 @@ public class updateServicio  extends AppCompatActivity{
             }
 
         }else{
-            Toast.makeText(this,"Ingrese cedula del empleado", Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Ingrese nombre servicio", Toast.LENGTH_SHORT);
         }
 
 
@@ -117,9 +117,10 @@ public class updateServicio  extends AppCompatActivity{
         nombre.setText(userMap.get("Nombre")+"");
         tiempo_promedio.setText(userMap.get("Duracion")+"");
         precio.setText(userMap.get("Precio")+"");
-        placa.setText(userMap.get("Placa")+"");
+        placa.setText(userMap.get("Descripcion")+"");
 
     }
+
     public void createService(View view) {
 
         progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
@@ -136,13 +137,10 @@ public class updateServicio  extends AppCompatActivity{
             userMap.put("Nombre",nombre);
             userMap.put("Precio",precio);
             userMap.put("Duracion",duracion);
-            userMap.put("Placa",placa);
+            userMap.put("Descripcion",placa);
 
             System.out.println(user.getUid()+" - "+user);
-            String llave = userMap.get("IdCard")+"";
-            String Nombre = userMap.get("Nombre")+"";
-            String tel= userMap.get("Tel")+"";
-            System.out.println("<3 idcard: "+llave+"Nombre:"+Nombre+"Tel:"+tel);
+
 
             //serviceConnectLogin(email, password,name,cardId,view);
             Utils.saveServerFirebaseDatabase(user,db,userMap);

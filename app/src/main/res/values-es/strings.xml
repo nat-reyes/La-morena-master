@@ -81,7 +81,7 @@
 
 
     <string name="nameService">Nombre Servicio</string>
-    <string name="idService"> Identificador </string>
+    <string name="idService"> Descripcion </string>
     <string name="price_service"> Precio </string>
     <string name="service_time"> Promedio de duracion </string>
 

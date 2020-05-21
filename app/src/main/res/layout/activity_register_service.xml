@@ -107,7 +107,7 @@
                             app:boxBackgroundColor="@color/secondaryTextColor">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_id_service"
+                                android:id="@+id/input_descripcion"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/idService"

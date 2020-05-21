@@ -28,7 +28,7 @@ import java.util.Map;
 public class registrarServicio extends AppCompatActivity {
 
 
-    private EditText nombre,precio,tiempo_promedio,placa;
+    private EditText nombre,precio,tiempo_promedio,descripcion;
     private Url url;
     private RequestQueue queue;
     private View view;
@@ -52,7 +52,7 @@ public class registrarServicio extends AppCompatActivity {
         nombre = (EditText) findViewById(R.id.input_name_service);
         precio = (EditText) findViewById(R.id.input_price_service);
         tiempo_promedio = (EditText) findViewById(R.id.input_time_service);
-        placa = (EditText) findViewById(R.id.input_id_service);
+        descripcion = findViewById(R.id.input_descripcion);
         mAuth = FirebaseAuth.getInstance();
         usuario = User.getInstance();
         url = new Url();
@@ -64,7 +64,7 @@ public class registrarServicio extends AppCompatActivity {
         String nombre = this.nombre.getText().toString();
         String precio = this.precio.getText().toString();
         String duracion = this.tiempo_promedio.getText().toString();
-        String placa = this.placa.getText().toString();
+        String descripcion = this.descripcion.getText().toString();
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (Utils.veirifyConnection(this)) {
@@ -74,7 +74,7 @@ public class registrarServicio extends AppCompatActivity {
             userMap.put("Nombre",nombre);
             userMap.put("Precio",precio);
             userMap.put("Duracion",duracion);
-            userMap.put("Placa",placa);
+           userMap.put("Descripcion", descripcion);
 
             System.out.println(user.getUid()+" - "+user);
             String llave = userMap.get("IdCard")+"";
