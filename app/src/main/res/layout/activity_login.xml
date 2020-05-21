@@ -10,6 +10,19 @@ android:layout_height="match_parent"
     android:id="@+id/context_view"
 tools:context="com.example.lamorena.Activities.Login">
 
+    <TextView android:id="@+id/link_signu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:text="LA MORENA"
+        android:textAppearance="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:textStyle="bold"
+        android:onClick="goToRegister"
+        android:gravity="center"
+        android:textSize="45dp"/>
+
+
+
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -47,8 +60,6 @@ tools:context="com.example.lamorena.Activities.Login">
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:orientation="vertical">
-
-
                     <!--  Email Label -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"

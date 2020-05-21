@@ -46,12 +46,7 @@ public class listEmpleado extends AppCompatActivity {
         actionBar.setTitle("Listado");
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        ArrayList<String> animalNames = new ArrayList<>();
-        animalNames.add("Horse");
-        animalNames.add("Cow");
-        animalNames.add("Camel");
-        animalNames.add("Sheep");
-        animalNames.add("Goat");
+
 
        getData();
 
@@ -72,14 +67,14 @@ public class listEmpleado extends AppCompatActivity {
         names = new ArrayList<>();
 
         mquery = db.collection("empleados");
-        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+     mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
                 if(task.isSuccessful()){
                     for (QueryDocumentSnapshot document : task.getResult()){
                         DocumentReference docRef =  db.collection("empleados").document(document.getId());
-     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
      @Override
      public void onComplete(@NonNull Task<DocumentSnapshot> task) {
          if(task.isSuccessful()){
@@ -91,25 +86,21 @@ public class listEmpleado extends AppCompatActivity {
                  String fullname = "";
                  String name = "";
                  for (String clave: document.getData().keySet()){
-
-                    if(clave.equalsIgnoreCase("Nombre")){
+                        if(clave.equalsIgnoreCase("Nombre")){
                          String value = (String) document.getData().get(clave);
-                         System.out.println("z3"+clave+"-"+document.getData().get(clave));
                          name =value+" ";
 
                      }
 
                      if(clave.equalsIgnoreCase("Apellido")){
-
                          String value = (String) document.getData().get(clave);
-                         System.out.println("z3"+clave+"-"+document.getData().get(clave));
+                      //   System.out.println("z3"+clave+"-"+document.getData().get(clave));
                          fullname =value+" ";
                          name = name+" "+fullname;
                       //  System.out.println("Guardo---"+"-"+names.get(num))
                          names.add(name);
                        break;
                     }
-
                  }
                  cargarRecycle(names);
 
@@ -128,14 +119,7 @@ public class listEmpleado extends AppCompatActivity {
             }
         });
 
-
-     cargarRecycle(names);
     }
-
-
-
-
-
 
     public void cargarRecycle(ArrayList<String> names){
         System.out.println("Cargo");

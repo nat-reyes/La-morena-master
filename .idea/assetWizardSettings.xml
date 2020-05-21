@@ -24,6 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -45,6 +46,17 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="50" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundClipArt">
                                         <value>
                                           <PersistentState>
@@ -63,7 +75,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="95" />
+                                                <entry key="scalingPercent" value="50" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -86,11 +98,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="backgroundColor" value="3f51b5" />
-                                      <entry key="backgroundLayerName" value="taller" />
-                                      <entry key="foregroundImage" value="C:\Users\david\Downloads\WhatsApp Image 2020-04-23 at 10.00.40 AM.jpeg" />
-                                      <entry key="outputName" value="ic_taller" />
+                                      <entry key="backgroundColor" value="ffffff" />
+                                      <entry key="foregroundImage" value="C:\Users\Natalia Reyes\Downloads\icons8-chevron-down-48.png" />
+                                      <entry key="foregroundLayerName" value="ic_arrow_fg" />
+                                      <entry key="outputName" value="ic_arrow" />
                                     </map>
                                   </option>
                                 </PersistentState>

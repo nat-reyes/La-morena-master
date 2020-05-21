@@ -7,6 +7,7 @@
     android:gravity="center"
     android:background="@color/primaryColor"
     tools:context="com.example.lamorena.crud.registrarIngreso">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -22,6 +23,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_one_login_employee"
                     android:layout_width="match_parent"
@@ -33,6 +35,7 @@
                     app:cardElevation="10dp"
                     app:cardPreventCornerOverlap="false"
                     app:cardUseCompatPadding="true">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -42,24 +45,26 @@
                         android:layout_marginRight="5dp"
                         android:orientation="vertical">
 
-
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            >
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
-                                android:text="Servicio"/>
-                            <Spinner
-                                android:layout_marginTop="20dp"
+                                android:layout_marginTop="15dp"
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:text="Selecciona Servicio"/>
+
+                            <com.jaredrummler.materialspinner.MaterialSpinner
                                 android:id="@+id/spinner_1"
-                                android:layout_width="280dp"
-                                android:layout_height="30dp"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"/>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -72,12 +77,15 @@
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Empleado"/>
-                            <Spinner
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:text="Selecciona Empleado"/>
+
+                            <com.jaredrummler.materialspinner.MaterialSpinner
                                 android:id="@+id/spinner_2"
-                                android:layout_width="280dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -85,38 +93,57 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_margin="5dp"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            >
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                             <TextView
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Aseguradora"/>
-                            <Spinner
+                                android:textStyle="bold"
+                                android:textSize="15dp"
+                                android:text="Selecciona Aseguradora"/>
+
+                            <com.jaredrummler.materialspinner.MaterialSpinner
                                 android:id="@+id/spinner_3"
-                                android:layout_width="280dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="20dp"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"/>
                         </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"/>
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:text="Placa del vehiculo"/>
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             app:boxBackgroundColor="@color/secondaryTextColor"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:layout_marginTop="8dp">
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="5dp">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_cardId_employee"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="number"
-                                android:hint="Placa" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                android:layout_marginTop="20dp"
+                                android:layout_margin="20dp"
+                                 />
+                        </com.google.android.material.textfield.TextInputLayout >
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
         </LinearLayout>
+
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_login2"
             android:layout_width="250dp"

@@ -30,7 +30,6 @@
                     android:id="@+id/cv_one_login_employee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:elevation="10dp"
                     app:cardBackgroundColor="#fcfcfc"
                     app:cardCornerRadius="10dp"
@@ -41,73 +40,78 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="30dp"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="30dp"
                         android:layout_marginRight="5dp"
+                        android:layout_marginBottom="30dp"
                         android:orientation="vertical">
+
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            app:boxBackgroundColor="@color/secondaryTextColor"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginTop="8dp">
+                            app:boxBackgroundColor="@color/secondaryTextColor">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_name_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:hint="@string/nameService" />
+                                android:hint="@string/nameService"
+                                android:inputType="text" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            app:boxBackgroundColor="@color/secondaryTextColor"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginTop="8dp">
+                            app:boxBackgroundColor="@color/secondaryTextColor">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_price_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
-                                android:hint="@string/price_service" />
+                                android:hint="@string/price_service"
+                                android:inputType="number" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            app:boxBackgroundColor="@color/secondaryTextColor"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginTop="8dp">
+                            app:boxBackgroundColor="@color/secondaryTextColor">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_time_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:hint="@string/service_time" />
+                                android:hint="@string/service_time"
+                                android:inputType="text" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
                         <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                            app:boxBackgroundColor="@color/secondaryTextColor"
                             android:layout_marginLeft="5dp"
+                            android:layout_marginTop="8dp"
                             android:layout_marginRight="5dp"
-                            android:layout_marginTop="8dp">
+                            app:boxBackgroundColor="@color/secondaryTextColor">
+
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/input_id_service"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:hint="@string/idService" />
+                                android:hint="@string/idService"
+                                android:inputType="text" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

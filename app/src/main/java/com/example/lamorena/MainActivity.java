@@ -87,8 +87,11 @@ public class MainActivity extends AppCompatActivity
             setContentView(R.layout.activity_main2);
         }
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+
+        /** Drawer */
 
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -136,14 +139,6 @@ public class MainActivity extends AppCompatActivity
 
     private void initializationVariables() {
         mAuth = FirebaseAuth.getInstance();
-        acct = GoogleSignIn.getLastSignedInAccount(this);
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        conectionSQLiteHelper = new ConectionSQLiteHelper(this,"bd_user",null,2);
         View view = navigationView.getHeaderView(0);
         username = (TextView) view.findViewById(R.id.headerName);
         userLevel = (TextView) view.findViewById(R.id.userLevel);
@@ -265,7 +260,6 @@ public class MainActivity extends AppCompatActivity
             }else{
                 Utils.GoToNextActivityCleanStack(MainActivity.this, Login.class,true,null);
             }
-
         }else if(id == R.id.account){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
             extras.add(new Utils.Extra("userPhoto",userPhotoUrl));
