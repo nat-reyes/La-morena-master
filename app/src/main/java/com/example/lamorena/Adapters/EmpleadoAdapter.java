@@ -39,26 +39,13 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        String animal = mData.get(position);
-        holder.textViewTitulo.setText(animal);
-      //  holder.textViewSubt.setText(animal);
+        String Titulo = mData.get(position);
+        holder.textViewTitulo.setText(Titulo);
+        holder.textViewSubt.setText(Titulo);
 
 
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//        String animal = mData.get(position);
-//        holder.myTextView.setText(animal);
-//
-//    }
-
-
-//    @Override
-//    public void onBindViewHolder(ViewHolder holder, int position) {
-//        String animal = mData.get(position);
-//        holder.myTextView.setText(animal);
-//    }
 
     @Override
     public int getItemCount() {

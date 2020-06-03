@@ -262,6 +262,20 @@ public class Utils {
 
     }
 
+    public static void saveIngresoFirebaseDatabase(FirebaseFirestore db,Map<String, Object> userMap1){
+
+        String llave = userMap1.get("Fecha")+"";
+        db.collection("Ingreso").document(llave).set(userMap1)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("SUCCESS", "Saved");
+                    }
+                });
+
+    }
+
+
     public static void saveUserGoogleFirebaseDatabase(GoogleSignInAccount acct, FirebaseFirestore db){
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("UserId",acct.getId());

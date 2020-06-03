@@ -11,8 +11,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:layout_marginTop="-40dp"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
+        android:paddingTop="2dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
         <LinearLayout
@@ -63,7 +64,7 @@
                                 android:id="@+id/spinner_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="20dp"/>
+                                android:layout_margin="10dp"/>
 
                         </LinearLayout>
 
@@ -85,7 +86,7 @@
                                 android:id="@+id/spinner_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="20dp"/>
+                                android:layout_margin="10dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -106,7 +107,7 @@
                                 android:id="@+id/spinner_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="20dp"/>
+                                android:layout_margin="10dp"/>
                         </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -128,16 +129,39 @@
                             android:layout_marginBottom="20dp"
                             android:layout_marginTop="5dp">
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/input_cardId_employee"
+                                android:id="@+id/placa_servicio"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_margin="10dp"
+                                android:inputType="textPersonName"                                 />
+                        </com.google.android.material.textfield.TextInputLayout >
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="15dp"
+                            android:text="Cedula"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundColor="@color/secondaryTextColor"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="5dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/cedula_client"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:inputType="number"
                                 android:layout_marginTop="20dp"
-                                android:layout_margin="20dp"
-                                 />
+                                android:layout_margin="10dp"
+                                />
                         </com.google.android.material.textfield.TextInputLayout >
 
                     </LinearLayout>
+
 
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
@@ -145,7 +169,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login2"
+            android:id="@+id/btn_registrar_servicio"
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_below="@id/cv_one_login"

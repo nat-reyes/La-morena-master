@@ -56,20 +56,12 @@ public class Service extends AppCompatActivity {
 
     }
 
-    public void registerService(){
-        progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
-
-        Log.d("menu", ">>Registrar empleado>");
-        Intent intent = new Intent();
-        intent.setClass(this, registrarServicio.class);
-        startActivity(intent);
-    }
 
 
 
     public void initActions(){
 
-        btn_reg_service.setOnClickListener(new View.OnClickListener() {
+           btn_reg_service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 registerService();
@@ -89,6 +81,15 @@ public class Service extends AppCompatActivity {
                 updateService();
             }
         });
+    }
+
+    public void registerService(){
+        progressDialog = new ProgressDialog(this, R.style.MyAlertDialogStyle);
+
+        Log.d("menu", ">>Registrar empleado>");
+        Intent intent = new Intent();
+        intent.setClass(this, registrarServicio.class);
+        startActivity(intent);
     }
 
 

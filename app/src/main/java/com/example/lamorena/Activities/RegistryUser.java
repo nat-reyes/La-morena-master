@@ -108,7 +108,6 @@ public class RegistryUser extends AppCompatActivity {
                     usuario.setApellido(apellido);
                     usuario.setTel(telefono);
                     usuario.setPassword(password);
-                    usuario.setRol("cliente");
                     showDialogWait(progressDialog);
                     //serviceConnectLogin(email, password,name,cardId,view);
                     signUpNewUserWithEmail(email,password);

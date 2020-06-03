@@ -90,7 +90,7 @@
                                 android:id="@+id/input_apellido_employee"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="textPersonName"
                                 android:hint="Apellido" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -106,7 +106,7 @@
                                 android:id="@+id/input_cel_employee"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="number"
                                 android:hint="Telefono" />
                         </com.google.android.material.textfield.TextInputLayout>
                         <!--  Email Label -->
@@ -138,7 +138,7 @@
                                 android:id="@+id/input_cargo_employee"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="textEmailAddress"
+                                android:inputType="textShortMessage"
                                 android:hint="@string/rol" />
                         </com.google.android.material.textfield.TextInputLayout>
 

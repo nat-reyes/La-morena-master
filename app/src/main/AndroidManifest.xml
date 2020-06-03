@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_icon"
         android:supportsRtl="true"
         android:theme="@style/AppThemeMaterial">
-        <activity android:name=".crud.registrarIngreso"></activity>
+
         <activity
             android:name=".Activities.ProfileActivity"
             android:label="@string/title_activity_product_info"
@@ -54,6 +54,16 @@
         <activity
             android:name=".Activities.IngresoCliente"
             android:theme="@style/AppThemeMaterial" />
+        <activity
+            android:name=".Activities.IngresoVehiculo"
+            android:theme="@style/AppThemeMaterial" />
+        <activity android:name=".crud.registrarIngreso"
+            android:theme="@style/AppThemeMaterial">
+        </activity>
+        <activity android:name=".crud.listIngresos"
+            android:theme="@style/AppThemeMaterial">
+        </activity>
+
         <activity
             android:name=".Activities.Login"
             android:theme="@style/AppTheme.Launcher">

@@ -75,6 +75,7 @@ tools:context="com.example.lamorena.Activities.Login">
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
+                            android:text="davito2196@gmail.com"
                             android:hint="@string/email" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,6 +94,7 @@ tools:context="com.example.lamorena.Activities.Login">
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPassword"
+                            android:text="123123"
                             android:hint="@string/password"/>
                     </com.google.android.material.textfield.TextInputLayout>
 

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.lamorena.Activities.IngresoCliente;
+import com.example.lamorena.Activities.IngresoVehiculo;
 import com.example.lamorena.Activities.Insurer;
 import com.example.lamorena.Activities.ProfileActivity;
 import com.example.lamorena.Activities.Employee;
@@ -22,10 +23,8 @@ import com.example.lamorena.Helpers.Utils;
 import com.example.lamorena.SQLite.ConectionSQLiteHelper;
 import com.example.lamorena.crud.registrarIngreso;
 import com.facebook.login.LoginManager;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.AppBarLayout;
@@ -52,7 +51,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity
     private String userPhotoUrl;
     private TextView userName;
     private String userEmail;
-    private NavigationView copia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("rol//"+Utils.rol);
@@ -279,7 +276,7 @@ public class MainActivity extends AppCompatActivity
             Utils.GoToNextActivityCleanStack(MainActivity.this, Insurer.class,false,extras);
         }else if(id == R.id.ingresoAdmin){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, registrarIngreso.class,false,extras);
+            Utils.GoToNextActivityCleanStack(MainActivity.this, IngresoVehiculo.class,false,extras);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

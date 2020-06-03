@@ -44,6 +44,7 @@ public class listEmpleado extends AppCompatActivity {
         setContentView(R.layout.list_fragment_em);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Listado");
+
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 

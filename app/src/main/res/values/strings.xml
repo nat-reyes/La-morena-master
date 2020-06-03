@@ -11,6 +11,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="registerService">Register service</string>
+    <string name="registerVehicle">Register vehicle</string>
+    <string name="listIngresos">list Ingresos</string>
+
+
     <string name="Description">Empleado</string>
 
 

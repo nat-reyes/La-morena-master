@@ -70,6 +70,9 @@
     <string name="updateEmployee">Actualizar empleado</string>
     <string name="searchEmployee">Buscar empleado</string>
     <string name="selectEmpployee">Seleccionar</string>
+    <string name="registerVehicle">Registrar vehiculo</string>
+    <string name="listIngresos">Listar Ingresos </string>
+
 
 
 
