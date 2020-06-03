@@ -85,9 +85,13 @@ public class listIngresos extends AppCompatActivity {
 
                                         }
                                         System.out.println(placa+estado.toString());
-                                        IngresoItem item = new IngresoItem(R.drawable.ic_revision, placa, estado.toString());
-                                        mData.add(item);
-                                        cargarRecycle(mData);
+                                        if(estado.toString().equalsIgnoreCase("true")){
+                                            String estadoFinal = "Activo";
+                                            IngresoItem item = new IngresoItem(R.drawable.ic_revision, placa, estadoFinal);
+                                            mData.add(item);
+                                            cargarRecycle(mData);
+                                        }
+
 
                                     } else {
                                         Log.d("tag", "Document snapshot" + document.getData());
