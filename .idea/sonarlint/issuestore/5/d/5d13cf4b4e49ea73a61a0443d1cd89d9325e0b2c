@@ -1,0 +1,24 @@
+
+u
+java:S1104K"SMake context a static final constant or non-public and provide accessors if needed.(±¹ï±úÿÿÿÿ8¯ÓĞè§.
+n
+java:S1104J"QMake boton a static final constant or non-public and provide accessors if needed.(£ÆıÀ8–Ô¼è§.
+U	java:S106["9Replace this use of System.out or System.err by a logger.(¶ÁğÓ8†øäè§.
+r
+java:S1104L"PMake item a static final constant or non-public and provide accessors if needed.(ÛòüŠúÿÿÿÿ8Í”„é§.
+o
+java:S1104H"ZMake textViewTitulo a static final constant or non-public and provide accessors if needed.(ññ¿
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½÷ççüÿÿÿÿ
+k
+java:S1104I"UMake stateImag a static final constant or non-public and provide accessors if needed.(† Ê•
+S
+java:S1128"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ8ÒÃê§.
+V	java:S125i"<This block of commented-out lines of code should be removed.(©¯æûşÿÿÿÿ
+?
+java:S1659H"*Declare "textViewSubt" on a separate line.(ññ¿
+T
+java:S1068"2Remove this unused "mClickListener" private field.(ªáÅøÿÿÿÿ8†øäè§.
+£
+java:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ¸™áúÿÿÿÿ8İêÃè§.
+m
+java:S1104H"XMake textViewSubt a static final constant or non-public and provide accessors if needed.(ññ¿

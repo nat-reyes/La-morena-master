@@ -264,7 +264,7 @@ public class Utils {
 
     public static void saveIngresoFirebaseDatabase(FirebaseFirestore db,Map<String, Object> userMap1){
 
-        String llave = userMap1.get("Fecha")+"";
+        String llave = userMap1.get("Fecha")+"-"+userMap1.get("Placa");
         db.collection("Ingreso").document(llave).set(userMap1)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

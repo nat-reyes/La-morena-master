@@ -1,0 +1,31 @@
+
+F
+java:S1068(")Remove this unused "mAuth" private field.(ªĞ”’8É±ƒè§.
+k
+java:S1450%"URemove the "mquery" field and declare it as a local variable in the relevant methods.(Ê•€º
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(×•¾å8ÍÉ˜é§.
+U	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(úŠø|8ÍÉ˜é§.
+h	java:S101 "MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(û°Š%8È±ƒè§.
+V
+java:S18542"9Remove this useless assignment to local variable "mAuth".(²ƒ¶â8È±ƒè§.
+E
+java:S1604="(Make this anonymous inner class a lambda(Š¹¿•8È±ƒè§.
+x
+java:S1450$"VRemove the "adapter" field and declare it as a local variable in the relevant methods.(ô‚ÄÈşÿÿÿÿ8È±ƒè§.
+o
+java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(¾œ½8È±ƒè§.
+K
+java:S1172€"(Remove this unused method parameter "v".(€˜³¹ıÿÿÿÿ8ÍÉ˜é§.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(¬ó˜°ıÿÿÿÿ8ÍÉ˜é§.
+V
+java:S11172"9Rename "mAuth" which hides the field declared at line 40.(²ƒ¶â8È±ƒè§.
+J
+java:S1068&"(Remove this unused "user" private field.(š·àûÿÿÿÿ8É±ƒè§.
+G
+java:S14812"*Remove this unused "mAuth" local variable.(²ƒ¶â8É±ƒè§.
+J
+java:S1604D"(Make this anonymous inner class a lambda(ğ±£šÿÿÿÿÿ8È±ƒè§.
+N
+java:S1068"",Remove this unused "listview" private field.(Ïª·ÿÿÿÿÿ8É±ƒè§.
+l
+java:S1128"JRemove this unused import 'com.example.lamorena.Adapters.EmpleadoAdapter'.(É“şüûÿÿÿÿ8È±ƒè§.

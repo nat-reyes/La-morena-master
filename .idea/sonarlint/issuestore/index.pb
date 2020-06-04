@@ -57,3 +57,9 @@ p
 @app/src/main/java/com/example/lamorena/crud/listAseguradora.java,4\a\4a755adcded76742cbe4dbd43681200d6aa9c413
 t
 Dapp/src/main/java/com/example/lamorena/Adapters/ServicioAdapter.java,8\5\85e454ab1f843784d734f2020685574f35dcf22d
+m
+=app/src/main/java/com/example/lamorena/crud/listIngresos.java,c\b\cbb082e2791b75758e1d78feb07e35aec693a788
+s
+Capp/src/main/java/com/example/lamorena/Adapters/IngresoAdapter.java,5\d\5d13cf4b4e49ea73a61a0443d1cd89d9325e0b2c
+r
+Bapp/src/main/java/com/example/lamorena/Activities/IngresoItem.java,f\1\f1360510d33367ffe238dbb6ecd92afd7c69b696

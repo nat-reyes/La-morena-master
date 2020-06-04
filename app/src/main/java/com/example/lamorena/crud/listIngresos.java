@@ -2,6 +2,7 @@ package com.example.lamorena.crud;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -72,27 +73,33 @@ public class listIngresos extends AppCompatActivity {
                                     if (document.exists()) {
                                         String placa = "";
                                         Object estado = true;
-
+                                        IngresoItem item = new IngresoItem(R.drawable.ic_revision);
                                         for (String clave : document.getData().keySet()) {
-
                                             if (clave.equalsIgnoreCase("Placa")) {
-                                                placa = (String) document.getData().get(clave);
+                                                item.setPlaca((String) document.getData().get(clave));
+                                            } else if (clave.equalsIgnoreCase("Empleado")) {
+                                                item.setEmpleado((String) document.getData().get(clave));
+                                            } else if (clave.equalsIgnoreCase("Estado")) {
+                                                item.setEstado(document.getData().get(clave)+"");
+                                            } else if (clave.equalsIgnoreCase("Fecha")) {
+                                                item.setFecha(document.getData().get(clave)+"");
+                                            } else if (clave.equalsIgnoreCase("Hora")) {
+                                                item.setHora(document.getData().get(clave) + "");
+                                            } else if (clave.equalsIgnoreCase("Servicio")) {
+                                                item.setServicio((String) document.getData().get(clave));
+                                            } else if (clave.equalsIgnoreCase("Total")) {
+                                                item.setTotal(document.getData().get(clave) + "");
+                                            } else if (clave.equalsIgnoreCase("aseguradora")) {
+                                                item.setAseguradora((String) document.getData().get(clave));
+                                            } else if (clave.equalsIgnoreCase("idCard")) {
+                                                item.setIdcard((String) document.getData().get(clave));
                                             }
-                                            if (clave.equalsIgnoreCase("Estado")) {
-                                                estado = document.getData().get(clave);
-
-                                            }
-
                                         }
-                                        System.out.println(placa+estado.toString());
-                                        if(estado.toString().equalsIgnoreCase("true")){
-                                            String estadoFinal = "Activo";
-                                            IngresoItem item = new IngresoItem(R.drawable.ic_revision, placa, estadoFinal);
+                                        System.out.println(placa + estado.toString());
+                                        if (!item.getEstado().equalsIgnoreCase("finalizado")) {
                                             mData.add(item);
                                             cargarRecycle(mData);
                                         }
-
-
                                     } else {
                                         Log.d("tag", "Document snapshot" + document.getData());
                                     }
@@ -116,6 +123,12 @@ public class listIngresos extends AppCompatActivity {
         adapter = new IngresoAdapter(this, mData);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    public void metodo(View v) {
+        System.out.println("--------------------------------------------");
+        View placa = findViewById(R.id.tvPlacaRevision);
+        System.out.println(placa.toString() + placa.getId());
     }
 }
 

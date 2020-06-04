@@ -89,9 +89,7 @@ public class listEmpleado extends AppCompatActivity {
                                                 break;
                                             }
                                         }
-                                        for(String t:names){
-                                            System.out.println(t+"_______<<>>");
-                                        }
+
                                         cargarRecycle(names);
 
                                     } else {
