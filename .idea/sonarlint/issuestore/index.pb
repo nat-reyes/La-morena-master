@@ -63,3 +63,5 @@ s
 Capp/src/main/java/com/example/lamorena/Adapters/IngresoAdapter.java,5\d\5d13cf4b4e49ea73a61a0443d1cd89d9325e0b2c
 r
 Bapp/src/main/java/com/example/lamorena/Activities/IngresoItem.java,f\1\f1360510d33367ffe238dbb6ecd92afd7c69b696
+o
+?app/src/main/java/com/example/lamorena/crud/updateServicio.java,c\1\c1f3fc001e5db6905e10a8b3067bda34cf83b106

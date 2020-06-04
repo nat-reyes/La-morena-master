@@ -45,7 +45,7 @@ public class registrarIngreso extends AppCompatActivity {
 
 
     private FirebaseFirestore mfire;
-    private MaterialSpinner spinner, spinner2, spinner3,estados;
+    private MaterialSpinner spinner, spinner2, spinner3, estados;
     private CollectionReference mquery;
     private FirebaseFirestore db;
     private ArrayList<String> empleados;
@@ -56,21 +56,25 @@ public class registrarIngreso extends AppCompatActivity {
     private Button btn_registrar;
     public static boolean estado;
     private EditText placa, cedula;
-    private String selectAseguradora, selectService, selectEmpleado,selectEstado;
+    private String selectAseguradora, selectService, selectEmpleado, selectEstado;
     Date currentTime;
     private TextView mplaca, mcedula, mservicio, mtotal, mhora, mestado;
     private IngresoItem servicio;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
-        servicio = (IngresoItem) b.get("servicio");
-        System.out.println("<3<3" + servicio.toString());
+        if (b != null) {
+            servicio = (IngresoItem) b.get("servicio");
+        }
         if (servicio != null) {
             setContentView(R.layout.activity_modificar_ingreso);
             mplaca = (TextView) findViewById(R.id.mod_placa);
@@ -332,17 +336,7 @@ public class registrarIngreso extends AppCompatActivity {
 
         System.out.println("ENTRE");
 
-        //        for ( Map.Entry<String, String> entry : serv.entrySet() )
-//        {
-//
-//            if (entry.getKey().equalsIgnoreCase("Nombre")){
-//                serviceName.add(entry.getValue());
-//            }
-//            System.out.println("Clave=" + entry.getKey() );
-//            System.out.println("Valor=" + entry.getValue());
-//        }
-
-        spinner.setItems(estadosservicios);
+        spinner.setItems(serviceName);
         int arrowColor = Color.parseColor("#fbc02d");
         spinner.setArrowColor(arrowColor);
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
@@ -378,9 +372,10 @@ public class registrarIngreso extends AppCompatActivity {
             }
         });
     }
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void setItems2() {
-        estadosservicios=new ArrayList<String>();
+        estadosservicios = new ArrayList<String>();
         estadosservicios.add("activo");
         estadosservicios.add("en proceso");
         estadosservicios.add("finalizado");
@@ -388,7 +383,6 @@ public class registrarIngreso extends AppCompatActivity {
         int arrowColor = Color.parseColor("#fbc02d");
         estados.setArrowColor(arrowColor);
         estados.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener<String>() {
-
 
 
             @Override
@@ -400,7 +394,8 @@ public class registrarIngreso extends AppCompatActivity {
         });
 
     }
-    public void registrar2(View v){
+
+    public void registrar2(View v) {
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("Servicio", servicio.getServicio());
         userMap.put("Empleado", servicio.getEmpleado());
