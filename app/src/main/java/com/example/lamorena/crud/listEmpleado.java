@@ -37,7 +37,6 @@ public class listEmpleado extends AppCompatActivity {
     FirebaseAuth mAuth;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,74 +46,64 @@ public class listEmpleado extends AppCompatActivity {
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        getData();
 
-
-       getData();
-
-//
-//        listEmployeeFragment listFragment = (listEmployeeFragment) getSupportFragmentManager().findFragmentById(R.id.listEmpleados);
-//
-//        if(listFragment==null){
-//            listFragment = listEmployeeFragment.newInstance();
-//            getSupportFragmentManager().beginTransaction().
-//                    add(R.id.listEmpleados, listFragment).
-//                    commit();
-//
-//        }
     }
 
 
-    public void getData(){
+    public void getData() {
         names = new ArrayList<>();
 
         mquery = db.collection("empleados");
-     mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                if(task.isSuccessful()){
-                    for (QueryDocumentSnapshot document : task.getResult()){
-                        DocumentReference docRef =  db.collection("empleados").document(document.getId());
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        DocumentReference docRef = db.collection("empleados").document(document.getId());
+
                         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-     @Override
-     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-         if(task.isSuccessful()){
-             DocumentSnapshot document = task.getResult();
-             if(document.exists()){
-                 //rol
-                 int num = 0;
-                 //nombre
-                 String fullname = "";
-                 String name = "";
-                 for (String clave: document.getData().keySet()){
-                        if(clave.equalsIgnoreCase("Nombre")){
-                         String value = (String) document.getData().get(clave);
-                         name =value+" ";
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
 
-                     }
+                                        //rol
+                                        int num = 0;
+                                        //nombre
+                                        String fullname = "";
+                                        String name = "";
+                                        for (String clave : document.getData().keySet()) {
+                                            if (clave.equalsIgnoreCase("Nombre")) {
+                                                String value = (String) document.getData().get(clave);
+                                                name = value + " ";
+                                            }
+                                            if (clave.equalsIgnoreCase("Apellido")) {
+                                                String value = (String) document.getData().get(clave);
+                                                //   System.out.println("z3"+clave+"-"+document.getData().get(clave));
+                                                fullname = value + " ";
+                                                name = name + " " + fullname;
+                                                names.add(name);
+                                                break;
+                                            }
+                                        }
+                                        for(String t:names){
+                                            System.out.println(t+"_______<<>>");
+                                        }
+                                        cargarRecycle(names);
 
-                     if(clave.equalsIgnoreCase("Apellido")){
-                         String value = (String) document.getData().get(clave);
-                      //   System.out.println("z3"+clave+"-"+document.getData().get(clave));
-                         fullname =value+" ";
-                         name = name+" "+fullname;
-                      //  System.out.println("Guardo---"+"-"+names.get(num))
-                         names.add(name);
-                       break;
+                                    } else {
+                                        Log.d("tag", "Document snapshot" + document.getData());
+                                    }
+                                } else {
+                                    Log.d("TAG", "No such document");
+                                }
+                            }
+                        });
                     }
-                 }
-                 cargarRecycle(names);
-
-             }else{
-                 Log.d("tag", "Document snapshot"+document.getData());
-             }
-         }else{
-             Log.d("TAG", "No such document");
-         }
-     }
- });
-                    }
-                } else{
+                } else {
                     Log.w("Cuentas:", "Error getting doc.", task.getException());
                 }
             }
@@ -122,12 +111,15 @@ public class listEmpleado extends AppCompatActivity {
 
     }
 
-    public void cargarRecycle(ArrayList<String> names){
+    public void cargarRecycle(ArrayList<String> names) {
+
         System.out.println("Cargo");
+
         RecyclerView recyclerView = findViewById(R.id.recycleEmpleados);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EmpleadoAdapter(this, names);
         recyclerView.setAdapter(adapter);
 
-    }}
+    }
+}
 

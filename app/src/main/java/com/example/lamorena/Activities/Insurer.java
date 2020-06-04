@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.RequestQueue;
 import com.example.lamorena.Helpers.Url;
 import com.example.lamorena.R;
+import com.example.lamorena.crud.listAseguradora;
 import com.example.lamorena.crud.listEmpleado;
 import com.example.lamorena.crud.listInsurer;
 import com.example.lamorena.crud.registrarInsurer;
@@ -101,7 +102,7 @@ public class Insurer extends AppCompatActivity {
 
         Log.d("menu", ">>Registrar empleado>");
         Intent intent = new Intent();
-        intent.setClass(this, listEmpleado.class);
+        intent.setClass(this, listAseguradora.class);
         startActivity(intent);
 
     }

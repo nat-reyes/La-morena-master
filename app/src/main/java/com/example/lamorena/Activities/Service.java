@@ -15,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.example.lamorena.Helpers.Url;
 import com.example.lamorena.R;
 import com.example.lamorena.crud.listEmpleado;
+import com.example.lamorena.crud.listServicio;
 import com.example.lamorena.crud.registrarServicio;
 import com.example.lamorena.crud.updateEmpleado;
 import com.example.lamorena.crud.updateServicio;
@@ -99,7 +100,7 @@ public class Service extends AppCompatActivity {
 
         Log.d("menu", ">>Registrar empleado>");
         Intent intent = new Intent();
-        intent.setClass(this, listEmpleado.class);
+        intent.setClass(this, listServicio.class);
         startActivity(intent);
 
     }

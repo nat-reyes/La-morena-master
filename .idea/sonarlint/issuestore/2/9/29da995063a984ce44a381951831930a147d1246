@@ -1,0 +1,25 @@
+
+@
+java:S1481."*Remove this unused "mAuth" local variable.(²ƒ¶â
+h
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(¾œ½
+S	java:S106m"9Replace this use of System.out or System.err by a logger.(ÊÈ‚¬şÿÿÿÿ
+O
+java:S1854."9Remove this useless assignment to local variable "mAuth".(²ƒ¶â
+V	java:S1255"<This block of commented-out lines of code should be removed.(£ç·ùúÿÿÿÿ
+l
+java:S1128"JRemove this unused import 'com.example.lamorena.Adapters.EmpleadoAdapter'.(É“şüûÿÿÿÿ8•Ñîä§.
+V	java:S125="<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+V	java:S1257"<This block of commented-out lines of code should be removed.(ú‰†«üÿÿÿÿ
+G
+java:S1068",Remove this unused "listview" private field.(Ïª·ÿÿÿÿÿ
+†
+java:S1319l"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(È¢ôÁ
+Q	java:S125;"<This block of commented-out lines of code should be removed.(ÍÖ³¢
+>
+java:S1604E"(Make this anonymous inner class a lambda(Š¹¿•
+O
+java:S1117."9Rename "mAuth" which hides the field declared at line 37.(²ƒ¶â
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(³šŸ¨şÿÿÿÿ
+C
+java:S1604L"(Make this anonymous inner class a lambda(ğ±£šÿÿÿÿÿ

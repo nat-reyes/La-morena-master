@@ -1,0 +1,19 @@
+
+C
+java:S1604C"(Make this anonymous inner class a lambda(ð±£šÿÿÿÿÿ
+h
+java:S37767"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(¾œ½
+>
+java:S1604;"(Make this anonymous inner class a lambda(Š¹¿•
+@
+java:S1481."*Remove this unused "mAuth" local variable.(²ƒ¶â
+X	java:S125A"<This block of commented-out lines of code should be removed.(ÒˆÉü8ÿÎâ§.
+O
+java:S1854."9Remove this useless assignment to local variable "mAuth".(²ƒ¶â
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ê³Ç´üÿÿÿÿ
+O
+java:S1117."9Rename "mAuth" which hides the field declared at line 36.(²ƒ¶â
+G
+java:S1068",Remove this unused "listview" private field.(Ïª·ÿÿÿÿÿ
+
+java:S1319d"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(È¢ôÁ8§îÚä§.

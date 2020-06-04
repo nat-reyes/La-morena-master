@@ -1,31 +1,27 @@
 
-Q	java:S125A"<This block of commented-out lines of code should be removed.(ÍÖ³¢
-C
-java:S1481Y"(Remove this unused "num" local variable.(†¬›Äûÿÿÿÿ
-T	java:S106"9Replace this use of System.out or System.err by a logger.(ÊÈ‚¬şÿÿÿÿ
 I
 java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
 2
-java:S1643k"Use a StringBuilder instead.(½ñ²Õ
+java:S1643W"Use a StringBuilder instead.(½ñ²Õ
 O
 java:S1117/"9Rename "mAuth" which hides the field declared at line 37.(²ƒ¶â
-‡
-java:S1319Œ"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(È¢ôÁ
-S	java:S106a"9Replace this use of System.out or System.err by a logger.(ûÈ™—úÿÿÿÿ
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(ÊÈ‚¬şÿÿÿÿ
 @
 java:S1481/"*Remove this unused "mAuth" local variable.(²ƒ¶â
-O
-java:S1854/"9Remove this useless assignment to local variable "mAuth".(²ƒ¶â
-V	java:S125C"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-C
-java:S1604R"(Make this anonymous inner class a lambda(ğ±£šÿÿÿÿÿ
-h
-java:S3776G"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(¾œ½
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(äÔæª
->
-java:S1604K"(Make this anonymous inner class a lambda(Š¹¿•
 G
 java:S1068",Remove this unused "listview" private field.(Ïª·ÿÿÿÿÿ
-V	java:S125="<This block of commented-out lines of code should be removed.(ú‰†«üÿÿÿÿ
-S	java:S106i"9Replace this use of System.out or System.err by a logger.(ûÈ™—úÿÿÿÿ
-V	java:S125;"<This block of commented-out lines of code should be removed.(£ç·ùúÿÿÿÿ
+>
+java:S1604:"(Make this anonymous inner class a lambda(Š¹¿•
+C
+java:S1604B"(Make this anonymous inner class a lambda(ğ±£šÿÿÿÿÿ
+h
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(¾œ½
+†
+java:S1319r"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(È¢ôÁ
+O
+java:S1854/"9Remove this useless assignment to local variable "mAuth".(²ƒ¶â
+X	java:S125U"<This block of commented-out lines of code should be removed.(óº‘´8œû¹à§.
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(äÔæª
+Z	java:S106]"9Replace this use of System.out or System.err by a logger.(ó™¼åşÿÿÿÿ8Àµ¼ä§.
+C
+java:S1481J"(Remove this unused "num" local variable.(†¬›Äûÿÿÿÿ
