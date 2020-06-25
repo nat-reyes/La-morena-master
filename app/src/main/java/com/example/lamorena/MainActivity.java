@@ -22,6 +22,7 @@ import com.example.lamorena.Fragments.Categories;
 import com.example.lamorena.Fragments.Offers;
 import com.example.lamorena.Helpers.Utils;
 import com.example.lamorena.SQLite.ConectionSQLiteHelper;
+import com.example.lamorena.crud.listIngresos;
 import com.example.lamorena.crud.registrarIngreso;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -276,7 +277,12 @@ public class MainActivity extends AppCompatActivity
             Utils.GoToNextActivityCleanStack(MainActivity.this, Employee.class,false,extras);
         }else if(id == R.id.ingreso){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, IngresoCliente.class,false,extras);
+            extras.add(new Utils.Extra("accion","activos"));
+            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class,false,extras);
+        }else if(id == R.id.historial){
+            ArrayList<Utils.Extra> extras = new ArrayList<>();
+            extras.add(new Utils.Extra("accion","historial"));
+            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class,false,extras);
         }else if(id == R.id.service){
             ArrayList<Utils.Extra> extras = new ArrayList<>();
             Utils.GoToNextActivityCleanStack(MainActivity.this, Service.class,false,extras);
