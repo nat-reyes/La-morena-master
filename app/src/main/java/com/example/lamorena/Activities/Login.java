@@ -361,7 +361,9 @@ public class Login extends AppCompatActivity {
         }
 
     }
-static ArrayList<Utils.Extra> extras;
+
+    public static ArrayList<Utils.Extra> extras;
+
     public void signInUserWithEmail(String email, String password) {
         mquery = db.collection("Users");
         mAuth.signInWithEmailAndPassword(email, password)
@@ -430,7 +432,7 @@ static ArrayList<Utils.Extra> extras;
 
                         if (Utils.rol.equals("cliente")) {
                             System.out.println("SOY CLIENTE");
-                        }else{
+                        } else {
                             System.out.println("SOY DIOS");
                         }
                     } else {

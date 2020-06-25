@@ -1,5 +1,6 @@
 package com.example.lamorena.crud;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,8 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lamorena.Activities.IngresoItem;
+import com.example.lamorena.Activities.Login;
 import com.example.lamorena.Adapters.EmpleadoAdapter;
 import com.example.lamorena.Adapters.IngresoAdapter;
+import com.example.lamorena.Helpers.Utils;
 import com.example.lamorena.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,6 +41,7 @@ public class listIngresos extends AppCompatActivity {
     private FirebaseUser user;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
+    private String accion;
 
 
     @Override
@@ -46,9 +50,14 @@ public class listIngresos extends AppCompatActivity {
         mData = new ArrayList<>();
         setContentView(R.layout.list_frag_ingreso);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Listado");
+        //actionBar.setTitle("Listado");
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        if (b != null) {
+            accion=b.getString("accion");
+        }
         getData();
 
 
@@ -96,10 +105,21 @@ public class listIngresos extends AppCompatActivity {
                                             }
                                         }
                                         System.out.println(placa + estado.toString());
-                                        if (!item.getEstado().equalsIgnoreCase("finalizado")) {
+                                        if (!item.getEstado().equalsIgnoreCase("finalizado") && Utils.rol.equals("admin")) {
                                             mData.add(item);
                                             cargarRecycle(mData);
+                                        }else if(Utils.rol.equals("cliente") && Utils.sesion.get("idCard").toString().equals(item.getIdcard())){
+                                            if(item.getEstado().equals("finalizado") && accion.equals("historial")){
+                                                mData.add(item);
+                                                cargarRecycle(mData);
+                                            }else if(accion.equals("activos")&&(item.getEstado().equals("activo")||item.getEstado().equals("en proceso"))){
+                                                mData.add(item);
+                                                cargarRecycle(mData);
+                                            }
+
                                         }
+                                        System.out.println(Utils.sesion.get("idCard")+" _    "+item.getIdcard());
+                                        System.out.println(Utils.rol+"<3");
                                     } else {
                                         Log.d("tag", "Document snapshot" + document.getData());
                                     }

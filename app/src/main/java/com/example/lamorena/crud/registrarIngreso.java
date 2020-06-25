@@ -59,6 +59,7 @@ public class registrarIngreso extends AppCompatActivity {
     private String selectAseguradora, selectService, selectEmpleado, selectEstado;
     Date currentTime;
     private TextView mplaca, mcedula, mservicio, mtotal, mhora, mestado;
+    private TextView vplaca,  vservicio, vtotal, vestado;
     private IngresoItem servicio;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -76,20 +77,33 @@ public class registrarIngreso extends AppCompatActivity {
             servicio = (IngresoItem) b.get("servicio");
         }
         if (servicio != null) {
-            setContentView(R.layout.activity_modificar_ingreso);
-            mplaca = (TextView) findViewById(R.id.mod_placa);
-            mplaca.setText(servicio.getPlaca());
-            mcedula = (TextView) findViewById(R.id.mod_cedula);
-            mcedula.setText(servicio.getIdcard());
-            mservicio = (TextView) findViewById(R.id.mod_servicio);
-            mservicio.setText(servicio.getServicio());
-            mtotal = (TextView) findViewById(R.id.mod_total);
-            mtotal.setText(servicio.getTotal());
-            mhora = (TextView) findViewById(R.id.mod_hora);
-            mhora.setText(servicio.getFecha());
-            estados = (MaterialSpinner) findViewById(R.id.estados);
-            db = FirebaseFirestore.getInstance();
-            setItems2();
+            if(Utils.rol.equals("cliente")){
+                setContentView(R.layout.activity_ver_ingreso);
+                vplaca = (TextView) findViewById(R.id.ver_placa);
+                vplaca.setText(servicio.getPlaca());
+                vservicio = (TextView) findViewById(R.id.ver_servicio);
+                vservicio.setText(servicio.getServicio());
+                vtotal = (TextView) findViewById(R.id.ver_total);
+                vtotal.setText(servicio.getTotal());
+                vestado = (TextView) findViewById(R.id.ver_estado);
+                vestado.setText(servicio.getEstado());
+            }else{
+                setContentView(R.layout.activity_modificar_ingreso);
+                mplaca = (TextView) findViewById(R.id.mod_placa);
+                mplaca.setText(servicio.getPlaca());
+                mcedula = (TextView) findViewById(R.id.mod_cedula);
+                mcedula.setText(servicio.getIdcard());
+                mservicio = (TextView) findViewById(R.id.mod_servicio);
+                mservicio.setText(servicio.getServicio());
+                mtotal = (TextView) findViewById(R.id.mod_total);
+                mtotal.setText(servicio.getTotal());
+                mhora = (TextView) findViewById(R.id.mod_hora);
+                mhora.setText(servicio.getFecha());
+                estados = (MaterialSpinner) findViewById(R.id.estados);
+                db = FirebaseFirestore.getInstance();
+                setItems2();
+            }
+
         } else {
             setContentView(R.layout.activity_registrar_ingreso);
             spinner = (MaterialSpinner) findViewById(R.id.spinner_1);
@@ -407,8 +421,11 @@ public class registrarIngreso extends AppCompatActivity {
         userMap.put("idCard", servicio.getIdcard());
 
         //Vincular esto a esa cedula en caso de que exista para un cliente.
-
-        Utils.saveIngresoFirebaseDatabase(db, userMap);
-        Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk), 1000, this, MainActivity.class, true, null);
+        if(!Utils.rol.equals("cliente")) {
+            Utils.saveIngresoFirebaseDatabase(db, userMap);
+            Utils.snackBarAndContinue(getResources().getString(R.string.userRegistrationOk), 1000, this, MainActivity.class, true, null);
+        }else{
+            Toast.makeText(this, "SOLO LOS ADMIN TIENEN ACCESO A ESTA OPCION", Toast.LENGTH_SHORT).show();
+        }
     }
 }

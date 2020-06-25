@@ -1,26 +1,0 @@
-
-@
-java:S1481/"*Remove this unused "mAuth" local variable.(²ƒ¶â
-†
-java:S1319p"pThe type of the "names" object should be an interface such as "List" rather than the implementation "ArrayList".(È¢ôÁ
-2
-java:S1643W"Use a StringBuilder instead.(½ñ²Õ
-O
-java:S1854/"9Remove this useless assignment to local variable "mAuth".(²ƒ¶â
-h
-java:S37766"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(¾œ½
-C
-java:S1604B"(Make this anonymous inner class a lambda(ð±£šÿÿÿÿÿ
->
-java:S1604:"(Make this anonymous inner class a lambda(Š¹¿•
-O
-java:S1117/"9Rename "mAuth" which hides the field declared at line 37.(²ƒ¶â
-X	java:S125U"<This block of commented-out lines of code should be removed.(óº‘´8œû¹à§.
-S	java:S106r"9Replace this use of System.out or System.err by a logger.(ÊÈ‚¬þÿÿÿÿ
-I
-java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
-G
-java:S1068",Remove this unused "listview" private field.(Ïª·ÿÿÿÿÿ
-C
-java:S1481J"(Remove this unused "num" local variable.(†¬›Äûÿÿÿÿ
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(äÔæª
