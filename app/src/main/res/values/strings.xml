@@ -238,6 +238,7 @@
     </string>
     <string name="title_activity_purchases">Purchases</string>
     <string name="title_activity_cart">CartActivity</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>

@@ -140,7 +140,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             quantity = (TextView) itemView.findViewById(R.id.productQuantity);
             productImage = (ImageView) itemView.findViewById(R.id.productImage);
             favImage = (ImageView) itemView.findViewById(R.id.favIcon);
-            addCart = (Button)itemView.findViewById(R.id.addCartButton);
+//            addCart = (Button)itemView.findViewById(R.id.addCartButton);
             this.onProductClickListener = productClickListener;
             onClickProductCard(itemView);
             onClickAddCart(addCart);

@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.lamorena.Activities.ProductInfoActivity;
 import com.example.lamorena.Adapters.ProductAdapter;
@@ -66,7 +67,6 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
     private ArrayList<Product> products;
 
     private   BottomSheetDialogFragment bottomSheetFragment;
-
     private Query mQuery;
 
     public Offers() {
@@ -85,6 +85,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
     public static Offers newInstance(String param1, String param2) {
         Offers fragment = new Offers();
         Bundle args = new Bundle();
+
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -173,7 +174,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
         View view =  inflater.inflate(R.layout.fragment_offers, container, false);
         ArrayList<Product> products = testProducts();
         getAllProductsFirebase();
-        showProducts(products,view);
+//        showProducts(products,view);
         return view;
     }
 
@@ -203,23 +204,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
     }
 
     private void showProducts (ArrayList<Product> products, View view){
-        recyclerViewOffers = (RecyclerView) view.findViewById(R.id.recyclerOffers);
-        //recyclerViewCategory.setLayoutManager(new GridLayoutManager(getContext(),2));
-        recyclerViewOffers.setLayoutManager(new GridLayoutManager(getContext(),2));
-        productAdapter = new ProductAdapterFirebase(mQuery,getActivity(),getContext(),this, ProductAdapter.TYPE_PRODUCTSEARCH);
-        recyclerViewOffers.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewOffers.setAdapter(productAdapter);
 
-        //swipe layout
-        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeToRefresh);
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                shuffle();
-                mSwipeRefreshLayout.setRefreshing(false);
-            }
-        });
 
     }
 

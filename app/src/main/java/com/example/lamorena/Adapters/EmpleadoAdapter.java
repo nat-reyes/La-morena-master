@@ -41,7 +41,7 @@ public class EmpleadoAdapter extends RecyclerView.Adapter<EmpleadoAdapter.ViewHo
 
         String Titulo = mData.get(position);
         holder.textViewTitulo.setText(Titulo);
-        holder.textViewSubt.setText(Titulo);
+//        holder.textViewSubt.setText(Titulo);
 
 
     }

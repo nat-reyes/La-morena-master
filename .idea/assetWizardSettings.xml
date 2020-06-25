@@ -170,8 +170,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_revision" />
-                            <entry key="sourceFile" value="C:\Users\Natalia Reyes\Downloads\vehiculo.svg" />
+                            <entry key="outputName" value="ic_servicio_de_auto" />
+                            <entry key="sourceFile" value="C:\Users\Natalia Reyes\Downloads\servicio-de-auto.svg" />
                           </map>
                         </option>
                       </PersistentState>

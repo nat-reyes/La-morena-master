@@ -1,6 +1,7 @@
 package com.example.lamorena;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -47,6 +48,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -66,7 +68,6 @@ public class MainActivity extends AppCompatActivity
     private ConectionSQLiteHelper conectionSQLiteHelper;
     private NavigationView navigationView;
     private DrawerLayout drawer;
-
     private FirebaseAuth mAuth;
     private GoogleSignInAccount acct;
     private GoogleSignInClient mGoogleSignInClient;
@@ -76,15 +77,15 @@ public class MainActivity extends AppCompatActivity
     private String userEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("rol//"+Utils.rol);
+        System.out.println("rol//" + Utils.rol);
         super.onCreate(savedInstanceState);
-        if(Utils.rol!=null &&Utils.rol.equals("cliente")){
+        if (Utils.rol != null && Utils.rol.equals("cliente")) {
             setContentView(R.layout.activity_main);
-        }else{
+        } else {
             setContentView(R.layout.activity_main2);
         }
         Toolbar toolbar = findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        // setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
 
 
@@ -93,23 +94,24 @@ public class MainActivity extends AppCompatActivity
         drawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
 
-
         appBarLayout = (AppBarLayout) findViewById(R.id.appBar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setTabTextColors(Color.parseColor("#fafafa"),Color.parseColor("#ffffff"));
+        tabLayout.setTabTextColors(Color.parseColor("#fafafa"), Color.parseColor("#ffffff"));
 //        tabLayout.setBackgroundColor(Color.parseColor("#484848"));
-  //      appBarLayout.addView(tabLayout);
+        //      appBarLayout.addView(tabLayout);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
 
 //        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
 //        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
@@ -118,6 +120,12 @@ public class MainActivity extends AppCompatActivity
         setHeaderData();
 
     }
+
+    private void habilitarMap(){
+
+
+    }
+
 
     private void showProfilePhoto (final ImageView userPhoto , String link){
 
@@ -197,6 +205,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         public CharSequence getPageTitle ( int position){
+
             return tituloTabs[position];
         }
     }

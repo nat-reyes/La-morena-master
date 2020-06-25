@@ -25,7 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/categoryImage"
-            android:src="@drawable/cristal">
+            android:src="@drawable/ic_servicio_de_auto"
+        >
         </ImageView>
         <TextView
             android:id="@+id/categoryName"
@@ -34,7 +35,7 @@
             android:layout_marginTop="10dp"
             android:textSize="15dp"
             android:layout_gravity="center"
-            android:text="Aguardiente"/>
+            android:text="Lavado"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
