@@ -72,7 +72,7 @@ public class RegistryUser extends AppCompatActivity {
         usuario = User.getInstance();
         url = new Url();
         queue = Volley.newRequestQueue(RegistryUser.this);
-         inicializarCampos();
+        //inicializarCampos();
         Utils.veirifyConnection(this);
     }
 
@@ -243,7 +243,7 @@ public class RegistryUser extends AppCompatActivity {
             this.name.setError(validateName);
             response = false;
         }
-        if(cardId.equals("") || cardId.length()<10){
+        if(cardId.equals("") || cardId.length()<6){
             String validateName = getResources().getString(R.string.validateField);
             this.cardId.setError(validateName);
             response = false;

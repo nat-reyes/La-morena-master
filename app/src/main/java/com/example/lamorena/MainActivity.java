@@ -40,21 +40,28 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.View;
+
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -76,6 +83,7 @@ public class MainActivity extends AppCompatActivity
     private String userPhotoUrl;
     private TextView userName;
     private String userEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("rol//" + Utils.rol);
@@ -89,6 +97,8 @@ public class MainActivity extends AppCompatActivity
         // setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
 
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
 
         /** Drawer */
 
@@ -113,7 +123,6 @@ public class MainActivity extends AppCompatActivity
         tabLayout.setupWithViewPager(viewPager);
 
 
-
 //        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
 //        TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
 //        tabs.setupWithViewPager(pager);
@@ -122,15 +131,15 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void habilitarMap(){
+    private void habilitarMap() {
 
 
     }
 
 
-    private void showProfilePhoto (final ImageView userPhoto , String link){
+    private void showProfilePhoto(final ImageView userPhoto, String link) {
 
-        Utils.LoadPhotoAsync loadPhotoAsync = new Utils.LoadPhotoAsync(){
+        Utils.LoadPhotoAsync loadPhotoAsync = new Utils.LoadPhotoAsync() {
 
             @Override
             protected void onPostExecute(Bitmap bmp) {
@@ -150,31 +159,31 @@ public class MainActivity extends AppCompatActivity
         userLevel = (TextView) view.findViewById(R.id.userLevel);
         userPhoto = (ImageView) view.findViewById(R.id.userPhoto);
 //        setHeader(username,userLevel,userPhoto);
-     //   setHeaderData(username,userLevel,userPhoto);
+        //   setHeaderData(username,userLevel,userPhoto);
 
     }
 
-    private void setHeader(TextView username,TextView userLevel,ImageView userPhoto) {
+    private void setHeader(TextView username, TextView userLevel, ImageView userPhoto) {
         SQLiteDatabase sqLiteDatabase = conectionSQLiteHelper.getReadableDatabase();
         String userId = getIntent().getStringExtra("userId");
-        String [] parameters = {userId};
-        String [] fields = {Utils.ATRIBUTE_USER_FIRSTNAME,Utils.ATRIBUTE_USER_PICTURE};
-        Cursor cursor = sqLiteDatabase.query(Utils.TABLE_USER,fields,Utils.ATRIBUTE_USER_ID+"=?",parameters,null,null,null);
+        String[] parameters = {userId};
+        String[] fields = {Utils.ATRIBUTE_USER_FIRSTNAME, Utils.ATRIBUTE_USER_PICTURE};
+        Cursor cursor = sqLiteDatabase.query(Utils.TABLE_USER, fields, Utils.ATRIBUTE_USER_ID + "=?", parameters, null, null, null);
         cursor.moveToFirst();
-        username.setText(getResources().getString(R.string.hi)+" "+cursor.getString(0));
-        showProfilePhoto(userPhoto,cursor.getString(1));
+        username.setText(getResources().getString(R.string.hi) + " " + cursor.getString(0));
+        showProfilePhoto(userPhoto, cursor.getString(1));
         cursor.close();
     }
 
-    private void setHeaderData (){
+    private void setHeaderData() {
         System.out.println("hey");
 
         Map<String, Object> userMap = Utils.sesion;
-      //  userId = getIntent().getStringExtra("userId");
-      //  userPhotoUrl = getIntent().getStringExtra("userPhoto");
-         username.setText(userMap.get("nombre")+""+" "+userMap.get("apellido")+"");
-         userLevel.setText(Utils.rol);
-     //   if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
+        //  userId = getIntent().getStringExtra("userId");
+        //  userPhotoUrl = getIntent().getStringExtra("userPhoto");
+        username.setText(userMap.get("nombre") + "" + " " + userMap.get("apellido") + "");
+        userLevel.setText(Utils.rol);
+        //   if(userPhotoUrl!=null || !userPhotoUrl.isEmpty()) showProfilePhoto(userPhoto,userPhotoUrl);
     }
 
     @Override
@@ -182,20 +191,23 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public class ViewPagerAdapter extends FragmentStatePagerAdapter{
+
+    public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
-        String [] tituloTabs = {getResources().getString(R.string.categories),getResources().getString(R.string.offers)};
+        String[] tituloTabs = {getResources().getString(R.string.categories), getResources().getString(R.string.offers)};
 
         @Override
         public Fragment getItem(int i) {
 
-            switch (i){
-                case 0: return new Categories();
-                case 1: return new Offers();
+            switch (i) {
+                case 0:
+                    return new Categories();
+                case 1:
+                    return new Offers();
             }
             return null;
         }
@@ -205,7 +217,7 @@ public class MainActivity extends AppCompatActivity
             return 2;
         }
 
-        public CharSequence getPageTitle ( int position){
+        public CharSequence getPageTitle(int position) {
 
             return tituloTabs[position];
         }
@@ -220,6 +232,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -250,48 +263,48 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.logout){
+        if (id == R.id.logout) {
             SharedPreferences preferences = getSharedPreferences("credentials", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.clear();
             editor.commit();
             LoginManager.getInstance().logOut();
             mAuth.signOut();
-            if (mGoogleSignInClient!=null){
+            if (mGoogleSignInClient != null) {
                 mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Utils.GoToNextActivityCleanStack(MainActivity.this, Login.class,true,null);
+                        Utils.GoToNextActivityCleanStack(MainActivity.this, Login.class, true, null);
                     }
                 });
-            }else{
-                Utils.GoToNextActivityCleanStack(MainActivity.this, Login.class,true,null);
+            } else {
+                Utils.GoToNextActivityCleanStack(MainActivity.this, Login.class, true, null);
             }
-        }else if(id == R.id.account){
+        } else if (id == R.id.account) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("userPhoto",userPhotoUrl));
-            extras.add(new Utils.Extra("userEmail",userEmail));
-            Utils.GoToNextActivityCleanStack(MainActivity.this, ProfileActivity.class,false,extras);
-        }else if(id == R.id.employee){
+            extras.add(new Utils.Extra("userPhoto", userPhotoUrl));
+            extras.add(new Utils.Extra("userEmail", userEmail));
+            Utils.GoToNextActivityCleanStack(MainActivity.this, ProfileActivity.class, false, extras);
+        } else if (id == R.id.employee) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, Employee.class,false,extras);
-        }else if(id == R.id.ingreso){
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Employee.class, false, extras);
+        } else if (id == R.id.ingreso) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("accion","activos"));
-            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class,false,extras);
-        }else if(id == R.id.historial){
+            extras.add(new Utils.Extra("accion", "activos"));
+            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class, false, extras);
+        } else if (id == R.id.historial) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            extras.add(new Utils.Extra("accion","historial"));
-            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class,false,extras);
-        }else if(id == R.id.service){
+            extras.add(new Utils.Extra("accion", "historial"));
+            Utils.GoToNextActivityCleanStack(MainActivity.this, listIngresos.class, false, extras);
+        } else if (id == R.id.service) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, Service.class,false,extras);
-        }else if(id == R.id.aseguradora){
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Service.class, false, extras);
+        } else if (id == R.id.aseguradora) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, Insurer.class,false,extras);
-        }else if(id == R.id.ingresoAdmin){
+            Utils.GoToNextActivityCleanStack(MainActivity.this, Insurer.class, false, extras);
+        } else if (id == R.id.ingresoAdmin) {
             ArrayList<Utils.Extra> extras = new ArrayList<>();
-            Utils.GoToNextActivityCleanStack(MainActivity.this, IngresoVehiculo.class,false,extras);
+            Utils.GoToNextActivityCleanStack(MainActivity.this, IngresoVehiculo.class, false, extras);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

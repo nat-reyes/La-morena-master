@@ -119,9 +119,12 @@ public class Utils {
     {
         Intent intent = new Intent(activity, clase ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         if(params!=null){
+            System.out.println("existe");
             for (Extra param: params) {
+                System.out.println(param.getClave()+"_"+param.getValor());
                 intent.putExtra(param.getClave(),param.getValor());
             }
+            System.out.println("-_-_-_");
         }
         activity.startActivity(intent);
 
@@ -229,6 +232,22 @@ public class Utils {
         String llave = userMap1.get("IdCard")+"";
         System.out.println("<3 --------- id card "+llave);
         db.collection("empleados").document(llave).set(userMap1)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("SUCCESS", "CREATE");
+                    }
+                });
+
+    }
+    public static void updateUserFirebaseDatabase(FirebaseUser user, FirebaseFirestore db,Map<String, Object> userMap1){
+
+        System.out.println(user.getUid()+" - "+user);
+
+        System.out.println(user.getUid()+" - "+user);
+        String llave = userMap1.get("email")+"";
+        System.out.println("<3 --------- id card "+llave);
+        db.collection("Users").document(user.getUid()).set(userMap1)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

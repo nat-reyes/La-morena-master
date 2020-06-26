@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,8 +22,18 @@ import com.ethanhua.skeleton.Skeleton;
 import com.example.lamorena.Activities.ProductInfoActivity;
 import com.example.lamorena.Adapters.CategoryAdapter;
 import com.example.lamorena.Entities.Category;
+import com.example.lamorena.Entities.Servicio;
 import com.example.lamorena.Helpers.Utils;
 import com.example.lamorena.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +54,14 @@ public class Categories extends Fragment implements CategoryAdapter.OnCategoryCl
     private static final String ARG_PARAM2 = "param2";
     private RecyclerView recyclerViewCategory;
     private CategoryAdapter categoryAdapter;
+    private ArrayList<Servicio> mData;
+
+
+    private CollectionReference mquery;
+    private FirebaseUser user;
+    private FirebaseFirestore db;
+
+
     SearchView searchView;
     SwipeRefreshLayout mSwipeRefreshLayout;
     ArrayList<Category> categories;
@@ -55,6 +74,54 @@ public class Categories extends Fragment implements CategoryAdapter.OnCategoryCl
 
     public Categories() {
         // Required empty public constructor
+        db = FirebaseFirestore.getInstance();
+        mData=new ArrayList<>();
+        getData();
+    }
+    public void getData() {
+
+        mquery = db.collection("Servicios");
+        mquery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        DocumentReference docRef = db.collection("Servicios").document(document.getId());
+                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        System.out.println("existe");
+                                        String placa = "";
+                                        Object estado = true;
+                                        Servicio item = new Servicio();
+                                        for (String clave : document.getData().keySet()) {
+                                            System.out.println(clave + "____*");
+                                            if (clave.equalsIgnoreCase("Nombre")) {
+                                                item.setNombre((String) document.getData().get(clave));
+                                            } else if (clave.equalsIgnoreCase("Precio")) {
+                                                item.setPrecio((String) document.getData().get(clave));
+                                            }
+                                        }
+                                        mData.add(item);
+                                    } else {
+                                        Log.d("tag", "Document snapshot" + document.getData());
+                                    }
+                                } else {
+                                    Log.d("TAG", "No such document");
+                                }
+                            }
+                        });
+                    }
+                } else {
+                    Log.w("Cuentas:", "Error getting doc.", task.getException());
+                }
+            }
+        });
+
     }
 
     /**
@@ -166,7 +233,8 @@ public class Categories extends Fragment implements CategoryAdapter.OnCategoryCl
         recyclerViewCategory = (RecyclerView) view.findViewById(R.id.recyclerCategory);
         recyclerViewCategory.setLayoutManager(new GridLayoutManager(getContext(),2));
        // recyclerViewCategory.setLayoutManager(new LinearLayoutManager(getContext()));
-        categoryAdapter = new CategoryAdapter(categories,getActivity(),getContext(),this);
+        System.out.println("_._<3____1");
+        categoryAdapter = new CategoryAdapter(mData,getActivity(),getContext(),this);
 
         Skeleton.bind(recyclerViewCategory)
                 .adapter(categoryAdapter)
@@ -197,7 +265,9 @@ public class Categories extends Fragment implements CategoryAdapter.OnCategoryCl
 
     public void shuffle(){
         Collections.shuffle(categories, new Random(System.currentTimeMillis()));
-        categoryAdapter = new CategoryAdapter(categories,getActivity(),getContext(),this);
+        System.out.println("_._<3____2");
+        ArrayList<Servicio> md=new ArrayList<>();
+        categoryAdapter = new CategoryAdapter(mData,getActivity(),getContext(),this);
         recyclerViewCategory.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCategory.setAdapter(categoryAdapter);
     }

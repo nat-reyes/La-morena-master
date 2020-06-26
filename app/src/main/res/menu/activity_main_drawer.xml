@@ -17,7 +17,7 @@
                     android:title="Ingresos" />
                 <item
                     android:id="@+id/historial"
-                    android:icon="@drawable/ic_repairing"
+                    android:icon="@drawable/ic_historial"
                     android:title="Historial" />
             </group>
 

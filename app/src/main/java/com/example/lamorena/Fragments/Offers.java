@@ -241,14 +241,7 @@ public class Offers extends Fragment implements ProductAdapterFirebase.OnProduct
 
     @Override
     public void onProductClick(int pos,String type) {
-        switch (type){
-            case Utils.CLICKCARD:
-                Utils.GoToNextActivityCleanStack(getActivity(), ProductInfoActivity.class,false,null);
-                break;
-            case Utils.CLICKADDCART:
-//r                showFragmentBottomSheetAddCart();
-                break;
-        }
+
 
     }
 

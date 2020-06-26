@@ -16,16 +16,7 @@
     app:shapeAppearance="@style/MediumComponent"
     app:strokeWidth="5dp">
 
-    <TextView
-        android:id="@+id/productDiscount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_gravity="left"
-        android:text="20 OFF"
-        android:textColor="@color/red"
-        android:textSize="12dp"
-        />
+
 
 
     <ImageView

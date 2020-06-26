@@ -57,11 +57,13 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 viewHolder = new ViewHolderProductCart(view,productClickListener);
                 break;
             case TYPE_PRODUCTSEARCH:
+                System.out.println("_____1");
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_preview_item,parent,false);
                 viewHolder =  new ViewHolderProduct(view,productClickListener);
                 break;
 
                 default:
+                    System.out.println("_____2");
                     view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_preview_item,parent,false);
                     viewHolder =  new ViewHolderProductNoElements(view);
                     break;
@@ -102,6 +104,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 } else {
                     ArrayList <Product> filteredList = new ArrayList<>();
                     for (Product row : products) {
+                        System.out.println(row+"<3");
                         if (row.getName().toLowerCase().contains(charString.toLowerCase())) {
                             filteredList.add(row);
                         }
@@ -134,12 +137,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public ViewHolderProduct(@NonNull View itemView, OnProductClickListener productClickListener) {
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.productName);
-            price = (TextView) itemView.findViewById(R.id.productPrice);
-            discount = (TextView) itemView.findViewById(R.id.productDiscount);
-            discountPrice = (TextView) itemView.findViewById(R.id.productPriceDiscount);
-            quantity = (TextView) itemView.findViewById(R.id.productQuantity);
-            productImage = (ImageView) itemView.findViewById(R.id.productImage);
-            favImage = (ImageView) itemView.findViewById(R.id.favIcon);
+            price = (TextView) itemView.findViewById(R.id.productPriceDiscount);
 //            addCart = (Button)itemView.findViewById(R.id.addCartButton);
             this.onProductClickListener = productClickListener;
             onClickProductCard(itemView);

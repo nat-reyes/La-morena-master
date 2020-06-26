@@ -59,11 +59,13 @@ public class ProductAdapterFirebase extends FirestoreAdapter<RecyclerView.ViewHo
                 viewHolder = new ViewHolderProductCart(view,productClickListener);
                 break;
             case TYPE_PRODUCTSEARCH:
+                System.out.println("_____3");
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_preview_item,parent,false);
                 viewHolder =  new ViewHolderProduct(view,productClickListener);
                 break;
 
             default:
+                System.out.println("_____4");
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_list_preview_item,parent,false);
                 viewHolder =  new ViewHolderProductNoElements(view);
                 break;
@@ -138,9 +140,6 @@ public class ProductAdapterFirebase extends FirestoreAdapter<RecyclerView.ViewHo
             super(itemView);
             name = (TextView) itemView.findViewById(R.id.productName);
             price = (TextView) itemView.findViewById(R.id.productPrice);
-            discount = (TextView) itemView.findViewById(R.id.productDiscount);
-            discountPrice = (TextView) itemView.findViewById(R.id.productPriceDiscount);
-            quantity = (TextView) itemView.findViewById(R.id.productQuantity);
             productImage = (ImageView) itemView.findViewById(R.id.productImage);
             favImage = (ImageView) itemView.findViewById(R.id.favIcon);
          //   addCart = (Button)itemView.findViewById(R.id.addCartButton);
@@ -150,21 +149,21 @@ public class ProductAdapterFirebase extends FirestoreAdapter<RecyclerView.ViewHo
         }
 
         private void onClickProductCard(View v){
-            v.setOnClickListener(new View.OnClickListener() {
+            /*v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     productClickListener.onProductClick(getAdapterPosition(), Utils.CLICKCARD);
                 }
-            });
+            });*/
         }
 
         private void onClickAddCart (Button button){
-            button.setOnClickListener(new View.OnClickListener() {
+            /*button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     productClickListener.onProductClick(getAdapterPosition(), Utils.CLICKADDCART);
                 }
-            });
+            });*/
         }
 
         private void bind (final DocumentSnapshot snapshot, int pos){
