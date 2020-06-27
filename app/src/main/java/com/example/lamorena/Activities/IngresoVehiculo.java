@@ -26,6 +26,7 @@ public class IngresoVehiculo extends AppCompatActivity {
         setContentView(R.layout.activity_content_ingreso);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
         initViews();
         initActions();
 

@@ -50,7 +50,7 @@ public class listIngresos extends AppCompatActivity {
         mData = new ArrayList<>();
         setContentView(R.layout.list_frag_ingreso);
         ActionBar actionBar = getSupportActionBar();
-        //actionBar.setTitle("Listado");
+        actionBar.setTitle("Listado");
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         Intent intent = getIntent();

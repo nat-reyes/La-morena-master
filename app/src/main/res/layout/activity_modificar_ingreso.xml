@@ -8,6 +8,22 @@
     android:gravity="center"
     tools:context="com.example.lamorena.crud.registrarIngreso">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-95dp"
+            android:layout_marginLeft="100dp"
+            android:text="DATOS INGRESO"
+            android:textAlignment="center"
+            android:textAppearance="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +38,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-50dp"
             android:orientation="vertical">
+
+
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -49,11 +69,37 @@
                         android:orientation="vertical"
                         android:gravity="center_horizontal">
 
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="clip_horizontal">
+                            android:layout_marginTop="10dp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="Cedula Cliente"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/mod_cedula"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:text="Cedula"
+                                android:textSize="18dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            >
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -75,34 +121,10 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:gravity="clip_horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="Cedula Cliente"
-                                android:textSize="18dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/mod_cedula"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:text="Cedula"
-                                android:textSize="18dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="clip_horizontal">
 
                             <TextView
@@ -128,7 +150,7 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="clip_horizontal">
 
                             <TextView
@@ -136,7 +158,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_margin="10dp"
-                                android:text="total"
+                                android:text="Total"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
@@ -153,7 +175,7 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="clip_horizontal">
 
                             <TextView
@@ -177,6 +199,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+
                             android:gravity="clip_horizontal">
 
                             <TextView

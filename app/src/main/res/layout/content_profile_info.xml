@@ -226,10 +226,11 @@
             </TableRow>
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_login"
-                    android:layout_width="match_parent"
+                    android:layout_width="10dp"
                     android:layout_height="match_parent"
                     android:layout_below="@id/cv_one_login"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
                     android:layout_gravity="center"
                     style="@style/SmallComponent"
                     app:cornerRadius="10dp"
